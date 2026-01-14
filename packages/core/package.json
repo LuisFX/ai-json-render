@@ -1,6 +1,7 @@
 {
   "name": "@json-render/core",
   "version": "0.1.0",
+  "license": "Apache-2.0",
   "description": "JSON becomes real things. Define your catalog, register your components, let AI generate.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

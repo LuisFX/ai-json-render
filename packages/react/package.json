@@ -1,6 +1,7 @@
 {
   "name": "@json-render/react",
   "version": "0.1.0",
+  "license": "Apache-2.0",
   "description": "React renderer for @json-render/core. JSON becomes React components.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
