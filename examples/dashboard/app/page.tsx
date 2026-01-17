@@ -9,6 +9,11 @@ import {
   Renderer,
 } from "@json-render/react";
 import { componentRegistry } from "@/components/ui";
+import { generateNextJSProject, type ExportedFile } from "@/lib/codegen";
+import {
+  CodeHighlight,
+  getLanguageFromPath,
+} from "@/components/code-highlight";
 
 const INITIAL_DATA = {
   analytics: {
@@ -69,10 +74,19 @@ const ACTION_HANDLERS = {
 
 function DashboardContent() {
   const [prompt, setPrompt] = useState("");
+  const [showCodeExport, setShowCodeExport] = useState(false);
+  const [selectedFile, setSelectedFile] = useState<string | null>(null);
   const { tree, isStreaming, error, send, clear } = useUIStream({
     api: "/api/generate",
     onError: (err) => console.error("Generation error:", err),
   });
+
+  const exportedFiles = tree
+    ? generateNextJSProject(tree, {
+        projectName: "my-dashboard",
+        data: INITIAL_DATA,
+      })
+    : [];
 
   const handleSubmit = useCallback(
     async (e: React.FormEvent) => {
@@ -83,6 +97,26 @@ function DashboardContent() {
     [prompt, send],
   );
 
+  const downloadAllFiles = useCallback(() => {
+    // Create a simple zip-like download by creating individual file downloads
+    // For a real implementation, you'd use a library like JSZip
+    const allContent = exportedFiles
+      .map((f) => `// ========== ${f.path} ==========\n${f.content}`)
+      .join("\n\n");
+
+    const blob = new Blob([allContent], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "my-dashboard-project.txt";
+    a.click();
+    URL.revokeObjectURL(url);
+  }, [exportedFiles]);
+
+  const copyFileContent = useCallback((content: string) => {
+    navigator.clipboard.writeText(content);
+  }, []);
+
   const examples = [
     "Revenue dashboard with metrics and chart",
     "Recent transactions table",
@@ -90,6 +124,13 @@ function DashboardContent() {
   ];
 
   const hasElements = tree && Object.keys(tree.elements).length > 0;
+
+  // Auto-select first file when modal opens
+  const activeFile =
+    selectedFile || (exportedFiles.length > 0 ? exportedFiles[0]?.path : null);
+  const activeFileContent = exportedFiles.find(
+    (f) => f.path === activeFile,
+  )?.content;
 
   return (
     <div style={{ maxWidth: 960, margin: "0 auto", padding: "48px 24px" }}>
@@ -145,20 +186,39 @@ function DashboardContent() {
             {isStreaming ? "Generating..." : "Generate"}
           </button>
           {hasElements && (
-            <button
-              type="button"
-              onClick={clear}
-              style={{
-                padding: "12px 16px",
-                background: "transparent",
-                color: "var(--muted)",
-                border: "1px solid var(--border)",
-                borderRadius: "var(--radius)",
-                fontSize: 16,
-              }}
-            >
-              Clear
-            </button>
+            <>
+              <button
+                type="button"
+                onClick={() => {
+                  setSelectedFile(null);
+                  setShowCodeExport(true);
+                }}
+                style={{
+                  padding: "12px 16px",
+                  background: "transparent",
+                  color: "var(--foreground)",
+                  border: "1px solid var(--border)",
+                  borderRadius: "var(--radius)",
+                  fontSize: 16,
+                }}
+              >
+                Export Project
+              </button>
+              <button
+                type="button"
+                onClick={clear}
+                style={{
+                  padding: "12px 16px",
+                  background: "transparent",
+                  color: "var(--muted)",
+                  border: "1px solid var(--border)",
+                  borderRadius: "var(--radius)",
+                  fontSize: 16,
+                }}
+              >
+                Clear
+              </button>
+            </>
           )}
         </div>
 
@@ -249,6 +309,193 @@ function DashboardContent() {
             {JSON.stringify(tree, null, 2)}
           </pre>
         </details>
+      )}
+
+      {/* Code Export Modal */}
+      {showCodeExport && (
+        <div
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0, 0, 0, 0.7)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 50,
+          }}
+          onClick={() => setShowCodeExport(false)}
+        >
+          <div
+            style={{
+              background: "var(--background)",
+              border: "1px solid var(--border)",
+              borderRadius: "var(--radius)",
+              width: "90%",
+              maxWidth: 1000,
+              height: "80vh",
+              overflow: "hidden",
+              display: "flex",
+              flexDirection: "column",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div
+              style={{
+                padding: "16px 20px",
+                borderBottom: "1px solid var(--border)",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <div>
+                <h2 style={{ margin: 0, fontSize: 18, fontWeight: 600 }}>
+                  Export Next.js Project
+                </h2>
+                <p
+                  style={{
+                    margin: "4px 0 0",
+                    fontSize: 13,
+                    color: "var(--muted)",
+                  }}
+                >
+                  {exportedFiles.length} files generated
+                </p>
+              </div>
+              <div style={{ display: "flex", gap: 8 }}>
+                <button
+                  onClick={downloadAllFiles}
+                  style={{
+                    padding: "8px 16px",
+                    background: "var(--foreground)",
+                    color: "var(--background)",
+                    border: "none",
+                    borderRadius: "var(--radius)",
+                    fontSize: 14,
+                    fontWeight: 500,
+                    cursor: "pointer",
+                  }}
+                >
+                  Download All
+                </button>
+                <button
+                  onClick={() => setShowCodeExport(false)}
+                  style={{
+                    padding: "8px 16px",
+                    background: "transparent",
+                    color: "var(--muted)",
+                    border: "1px solid var(--border)",
+                    borderRadius: "var(--radius)",
+                    fontSize: 14,
+                    cursor: "pointer",
+                  }}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div style={{ flex: 1, display: "flex", overflow: "hidden" }}>
+              {/* File List */}
+              <div
+                style={{
+                  width: 240,
+                  borderRight: "1px solid var(--border)",
+                  overflow: "auto",
+                  padding: "8px 0",
+                }}
+              >
+                {exportedFiles.map((file) => (
+                  <button
+                    key={file.path}
+                    onClick={() => setSelectedFile(file.path)}
+                    style={{
+                      display: "block",
+                      width: "100%",
+                      padding: "8px 16px",
+                      background:
+                        activeFile === file.path
+                          ? "var(--border)"
+                          : "transparent",
+                      border: "none",
+                      textAlign: "left",
+                      fontSize: 13,
+                      fontFamily: "monospace",
+                      color:
+                        activeFile === file.path
+                          ? "var(--foreground)"
+                          : "var(--muted)",
+                      cursor: "pointer",
+                    }}
+                  >
+                    {file.path}
+                  </button>
+                ))}
+              </div>
+
+              {/* File Content */}
+              <div
+                style={{
+                  flex: 1,
+                  overflow: "auto",
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                {activeFile && (
+                  <>
+                    <div
+                      style={{
+                        padding: "8px 16px",
+                        borderBottom: "1px solid var(--border)",
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        background: "var(--card)",
+                      }}
+                    >
+                      <span style={{ fontSize: 13, fontFamily: "monospace" }}>
+                        {activeFile}
+                      </span>
+                      <button
+                        onClick={() =>
+                          activeFileContent &&
+                          copyFileContent(activeFileContent)
+                        }
+                        style={{
+                          padding: "4px 12px",
+                          background: "var(--border)",
+                          color: "var(--foreground)",
+                          border: "none",
+                          borderRadius: "var(--radius)",
+                          fontSize: 12,
+                          cursor: "pointer",
+                        }}
+                      >
+                        Copy
+                      </button>
+                    </div>
+                    <div
+                      style={{
+                        flex: 1,
+                        padding: 16,
+                        overflow: "auto",
+                        background: "var(--card)",
+                      }}
+                    >
+                      <CodeHighlight
+                        code={activeFileContent || ""}
+                        language={getLanguageFromPath(activeFile)}
+                      />
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

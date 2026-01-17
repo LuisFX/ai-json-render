@@ -150,6 +150,96 @@ export const catalog = createCatalog({
         </div>
       </section>
 
+      {/* Code Export */}
+      <section className="border-t border-border">
+        <div className="max-w-5xl mx-auto px-6 py-24">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl font-semibold mb-4">Export as Code</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Export generated UI as standalone React components. No runtime
+              dependencies required.
+            </p>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-12">
+            <div className="min-w-0">
+              <h3 className="text-lg font-semibold mb-4">Generated UI Tree</h3>
+              <p className="text-muted-foreground mb-6 text-sm">
+                AI generates a JSON structure from the user&apos;s prompt.
+              </p>
+              <Code lang="json">{`{
+  "root": "card",
+  "elements": {
+    "card": {
+      "key": "card",
+      "type": "Card",
+      "props": { "title": "Revenue" },
+      "children": ["metric", "chart"]
+    },
+    "metric": {
+      "key": "metric",
+      "type": "Metric",
+      "props": {
+        "label": "Total Revenue",
+        "valuePath": "analytics/revenue",
+        "format": "currency"
+      }
+    },
+    "chart": {
+      "key": "chart",
+      "type": "Chart",
+      "props": {
+        "dataPath": "analytics/salesByRegion"
+      }
+    }
+  }
+}`}</Code>
+            </div>
+            <div className="min-w-0">
+              <h3 className="text-lg font-semibold mb-4">
+                Exported React Code
+              </h3>
+              <p className="text-muted-foreground mb-6 text-sm">
+                Export as a standalone Next.js project with all components.
+              </p>
+              <Code lang="tsx">{`"use client";
+
+import { Card, Metric, Chart } from "@/components/ui";
+
+const data = {
+  analytics: {
+    revenue: 125000,
+    salesByRegion: [
+      { label: "US", value: 45000 },
+      { label: "EU", value: 35000 },
+    ],
+  },
+};
+
+export default function Page() {
+  return (
+    <Card data={data} title="Revenue">
+      <Metric
+        data={data}
+        label="Total Revenue"
+        valuePath="analytics/revenue"
+        format="currency"
+      />
+      <Chart data={data} dataPath="analytics/salesByRegion" />
+    </Card>
+  );
+}`}</Code>
+            </div>
+          </div>
+          <div className="mt-8 text-center">
+            <p className="text-sm text-muted-foreground">
+              The export includes{" "}
+              <code className="text-foreground">package.json</code>, component
+              files, styles, and everything needed to run independently.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Features */}
       <section className="border-t border-border">
         <div className="max-w-5xl mx-auto px-6 py-24">
@@ -165,6 +255,10 @@ export const catalog = createCatalog({
                 desc: "Progressive rendering as JSON streams from the model",
               },
               {
+                title: "Code Export",
+                desc: "Export as standalone React code with no runtime dependencies",
+              },
+              {
                 title: "Data Binding",
                 desc: "Two-way binding with JSON Pointer paths",
               },
@@ -175,10 +269,6 @@ export const catalog = createCatalog({
               {
                 title: "Visibility",
                 desc: "Conditional show/hide based on data or auth",
-              },
-              {
-                title: "Validation",
-                desc: "Built-in and custom validation functions",
               },
             ].map((feature) => (
               <div key={feature.title}>

@@ -12,11 +12,13 @@
   "dependencies": {
     "@ai-sdk/gateway": "^3.0.13",
     "ai": "^6.0.33",
+    "@json-render/codegen": "workspace:*",
     "@json-render/core": "workspace:*",
     "@json-render/react": "workspace:*",
     "next": "16.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "shiki": "^3.0.0",
     "zod": "^4.0.0"
   },
   "devDependencies": {

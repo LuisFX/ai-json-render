@@ -159,9 +159,16 @@ if (typeof window !== "undefined") {
 interface CodeBlockProps {
   code: string;
   lang: "json" | "tsx" | "typescript";
+  fillHeight?: boolean;
+  hideCopyButton?: boolean;
 }
 
-export function CodeBlock({ code, lang }: CodeBlockProps) {
+export function CodeBlock({
+  code,
+  lang,
+  fillHeight,
+  hideCopyButton,
+}: CodeBlockProps) {
   const [html, setHtml] = useState<string>("");
 
   useEffect(() => {
@@ -180,19 +187,21 @@ export function CodeBlock({ code, lang }: CodeBlockProps) {
   }, [code, lang]);
 
   if (!html) {
-    return null;
+    return fillHeight ? <div className="p-3" /> : null;
   }
 
   return (
-    <div className="relative group">
-      <div className="sticky top-0 float-right z-10">
-        <CopyButton
-          text={code}
-          className="opacity-0 group-hover:opacity-100 text-neutral-400"
-        />
-      </div>
+    <div className={`relative group ${fillHeight ? "p-3" : ""}`}>
+      {!hideCopyButton && (
+        <div className="float-right sticky top-3 z-10 ml-2">
+          <CopyButton
+            text={code}
+            className="opacity-0 group-hover:opacity-100 text-neutral-400"
+          />
+        </div>
+      )}
       <div
-        className="text-[11px] leading-relaxed [&_pre]:bg-transparent! [&_pre]:p-0! [&_pre]:m-0! [&_pre]:border-none! [&_pre]:rounded-none! [&_pre]:text-[11px]! [&_code]:bg-transparent! [&_code]:p-0! [&_code]:rounded-none! [&_code]:text-[11px]!"
+        className="text-[11px] leading-relaxed [&_pre]:bg-transparent! [&_pre]:p-0! [&_pre]:m-0! [&_pre]:border-none! [&_pre]:rounded-none! [&_pre]:text-[11px]! [&_pre]:overflow-visible! [&_code]:bg-transparent! [&_code]:p-0! [&_code]:rounded-none! [&_code]:text-[11px]!"
         dangerouslySetInnerHTML={{ __html: html }}
       />
     </div>
