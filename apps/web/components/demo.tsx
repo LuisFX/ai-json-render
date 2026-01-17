@@ -161,7 +161,7 @@ const SIMULATION_STAGES: SimulationStage[] = [
 type Mode = "simulation" | "interactive";
 type Phase = "typing" | "streaming" | "complete";
 type Tab = "stream" | "json";
-type RenderView = "render" | "code";
+type RenderView = "dynamic" | "static";
 
 export function Demo() {
   const [mode, setMode] = useState<Mode>("simulation");
@@ -171,7 +171,7 @@ export function Demo() {
   const [stageIndex, setStageIndex] = useState(-1);
   const [streamLines, setStreamLines] = useState<string[]>([]);
   const [activeTab, setActiveTab] = useState<Tab>("json");
-  const [renderView, setRenderView] = useState<RenderView>("render");
+  const [renderView, setRenderView] = useState<RenderView>("dynamic");
   const [simulationTree, setSimulationTree] = useState<UITree | null>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [showExportModal, setShowExportModal] = useState(false);
@@ -1078,17 +1078,22 @@ Open [http://localhost:3000](http://localhost:3000) to view.
         <div className="min-w-0">
           <div className="flex items-center justify-between mb-2 h-6">
             <div className="flex items-center gap-4">
-              {(["render", "code"] as const).map((view) => (
+              {(
+                [
+                  { key: "dynamic", label: "live render" },
+                  { key: "static", label: "static code" },
+                ] as const
+              ).map(({ key, label }) => (
                 <button
-                  key={view}
-                  onClick={() => setRenderView(view)}
+                  key={key}
+                  onClick={() => setRenderView(key)}
                   className={`text-xs font-mono transition-colors ${
-                    renderView === view
+                    renderView === key
                       ? "text-foreground"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
-                  {view}
+                  {label}
                 </button>
               ))}
             </div>
@@ -1125,7 +1130,7 @@ Open [http://localhost:3000](http://localhost:3000) to view.
             </div>
           </div>
           <div className="border border-border rounded bg-background h-96 grid relative group">
-            {renderView === "code" && (
+            {renderView === "static" && (
               <div className="absolute top-2 right-2 z-10">
                 <CopyButton
                   text={generatedCode}
@@ -1133,7 +1138,7 @@ Open [http://localhost:3000](http://localhost:3000) to view.
                 />
               </div>
             )}
-            {renderView === "render" ? (
+            {renderView === "dynamic" ? (
               <div className="overflow-auto">
                 {currentTree && currentTree.root ? (
                   <div className="animate-in fade-in duration-200 w-full min-h-full flex items-center justify-center p-3 py-4">
@@ -1265,7 +1270,7 @@ Open [http://localhost:3000](http://localhost:3000) to view.
                     <path d="M3 6h18M3 12h18M3 18h18" />
                   </svg>
                 </button>
-                <span className="text-sm font-mono">export</span>
+                <span className="text-sm font-mono">export static code</span>
                 <span className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded hidden sm:inline">
                   {exportedFiles.length} files
                 </span>
