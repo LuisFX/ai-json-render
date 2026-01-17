@@ -79,7 +79,7 @@ function App() {
   const { prompt } = await req.json();
   
   const result = streamText({
-    model: 'anthropic/claude-opus-4.5',
+    model: 'anthropic/claude-haiku-4.5',
     system: generateCatalogPrompt(catalog),
     prompt,
   });
