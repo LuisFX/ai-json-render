@@ -3,7 +3,5 @@ export default function PlaygroundLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div className="h-screen flex flex-col overflow-hidden">{children}</div>
-  );
+  return <div className="h-dvh flex flex-col overflow-hidden">{children}</div>;
 }

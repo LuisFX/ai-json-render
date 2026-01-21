@@ -330,7 +330,7 @@ ${jsx}
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={handleKeyDown}
           placeholder="Describe changes..."
-          className="w-full bg-background text-sm resize-none outline-none placeholder:text-muted-foreground/50"
+          className="w-full bg-background text-base sm:text-sm resize-none outline-none placeholder:text-muted-foreground/50"
           rows={2}
         />
         <div className="flex justify-between items-center mt-2">

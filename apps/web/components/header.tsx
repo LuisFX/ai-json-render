@@ -51,7 +51,8 @@ export function Header() {
             href="/playground"
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            Playground
+            <span className="sm:hidden">Play</span>
+            <span className="hidden sm:inline">Playground</span>
           </Link>
           <Link
             href="/docs"
