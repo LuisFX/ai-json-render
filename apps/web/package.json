@@ -12,6 +12,7 @@
     "check-types": "next typegen && tsc --noEmit"
   },
   "dependencies": {
+    "@ai-sdk/anthropic": "^3.0.23",
     "@ai-sdk/gateway": "^3.0.13",
     "@json-render/codegen": "workspace:*",
     "@json-render/core": "workspace:*",

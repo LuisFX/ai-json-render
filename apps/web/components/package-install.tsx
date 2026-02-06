@@ -140,10 +140,10 @@ interface PackageInstallProps {
 }
 
 const packageManagers = [
+  { label: "bun", value: "bun", command: "bun add" },
   { label: "npm", value: "npm", command: "npm install" },
   { label: "pnpm", value: "pnpm", command: "pnpm add" },
   { label: "yarn", value: "yarn", command: "yarn add" },
-  { label: "bun", value: "bun", command: "bun add" },
 ];
 
 export async function PackageInstall({ packages }: PackageInstallProps) {

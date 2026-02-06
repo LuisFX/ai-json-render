@@ -9,7 +9,7 @@ This package provides framework-agnostic utilities for building code generators.
 ```bash
 npm install @json-render/codegen
 # or
-pnpm add @json-render/codegen
+bun add @json-render/codegen
 ```
 
 ## Utilities

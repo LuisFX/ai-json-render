@@ -15,7 +15,7 @@
 ```bash
 npm install @json-render/react @json-render/core
 # or
-pnpm add @json-render/react @json-render/core
+bun add @json-render/react @json-render/core
 ```
 
 ## Quick Start

@@ -8,7 +8,7 @@ Instructions for AI coding agents working with this codebase.
 
 ## Workflow
 
-- Run `pnpm type-check` after each turn to ensure type safety
+- Run `bun type-check` after each turn to ensure type safety
 
 <!-- opensrc:start -->
 

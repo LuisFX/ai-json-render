@@ -1,4 +1,5 @@
 import { streamText } from "ai";
+import { anthropic } from "@ai-sdk/anthropic";
 import { componentList } from "@/lib/catalog";
 
 export const maxDuration = 30;
@@ -58,8 +59,6 @@ EXAMPLE - Revenue Dashboard:
 
 Generate JSONL patches now:`;
 
-const DEFAULT_MODEL = "anthropic/claude-haiku-4.5";
-
 export async function POST(req: Request) {
   const { prompt, context } = await req.json();
 
@@ -70,8 +69,12 @@ export async function POST(req: Request) {
     fullPrompt += `\n\nAVAILABLE DATA:\n${JSON.stringify(context.data, null, 2)}`;
   }
 
+  const model = anthropic(
+    process.env.AI_GATEWAY_MODEL || "claude-3-5-sonnet-20241022",
+  );
+
   const result = streamText({
-    model: process.env.AI_GATEWAY_MODEL || DEFAULT_MODEL,
+    model,
     system: SYSTEM_PROMPT,
     prompt: fullPrompt,
     temperature: 0.7,

@@ -162,7 +162,7 @@ const propsStr = serializeProps({
         code generation in action:
       </p>
       <Code lang="bash">{`cd examples/dashboard
-pnpm dev
+bun dev
 # Open http://localhost:3001
 # Generate a widget, then click "Export Project"`}</Code>
     </article>

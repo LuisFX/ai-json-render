@@ -186,8 +186,8 @@ Actions with confirmation dialogs and callbacks:
 ```bash
 git clone https://github.com/vercel-labs/json-render
 cd json-render
-pnpm install
-pnpm dev
+bun install
+bun dev
 ```
 
 - http://localhost:3000 — Docs & Playground

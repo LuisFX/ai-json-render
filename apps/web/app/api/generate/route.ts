@@ -1,4 +1,5 @@
 import { streamText } from "ai";
+import { anthropic } from "@ai-sdk/anthropic";
 
 export const maxDuration = 30;
 
@@ -78,7 +79,6 @@ EXAMPLE (Blog with responsive grid):
 Generate JSONL:`;
 
 const MAX_PROMPT_LENGTH = 500;
-const DEFAULT_MODEL = "anthropic/claude-haiku-4.5";
 
 export async function POST(req: Request) {
   const { prompt, context } = await req.json();
@@ -107,8 +107,12 @@ IMPORTANT: The current UI is already loaded. Output ONLY the patches needed to m
 DO NOT output patches for elements that don't need to change. Only output what's necessary for the requested modification.`;
   }
 
+  const model = anthropic(
+    process.env.AI_GATEWAY_MODEL || "claude-3-5-sonnet-20241022",
+  );
+
   const result = streamText({
-    model: process.env.AI_GATEWAY_MODEL || DEFAULT_MODEL,
+    model,
     system: SYSTEM_PROMPT,
     prompt: userPrompt,
     temperature: 0.7,
