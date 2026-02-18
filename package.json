@@ -11,8 +11,10 @@
     "url": "https://github.com/vercel-labs/json-render/issues"
   },
   "scripts": {
+    "db:setup": "cd ai-render-infra && docker compose up -d && sleep 3 && cd ../examples/dashboard && DATABASE_URL=postgresql://postgres:postgres@localhost:15432/json_render_dashboard_example pnpm db:push",
     "build": "turbo run build",
     "dev": "turbo run dev --concurrency 15",
+    "dev:plain": "turbo run dev --concurrency 15 --ui=stream",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "type-check": "turbo run check-types",
@@ -43,6 +45,14 @@
   "packageManager": "pnpm@10.29.3",
   "engines": {
     "node": ">=18"
+  },
+  "pnpm": {
+    "overrides": {
+      "remotion": "4.0.418",
+      "@remotion/player": "4.0.418",
+      "@remotion/renderer": "4.0.418",
+      "@remotion/bundler": "4.0.418"
+    }
   },
   "lint-staged": {
     "*.{ts,tsx}": "prettier --write"

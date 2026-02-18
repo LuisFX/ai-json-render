@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@ai-sdk/gateway": "^3.0.39",
+    "@repo/ai-config": "workspace:*",
     "@expo/vector-icons": "^15.0.3",
     "@json-render/core": "workspace:*",
     "@json-render/react-native": "workspace:*",

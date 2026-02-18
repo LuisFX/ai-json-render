@@ -5,15 +5,15 @@
   "private": true,
   "license": "Apache-2.0",
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack --port 3000",
     "build": "next build",
     "start": "next start",
     "lint": "eslint --max-warnings 0",
     "check-types": "next typegen && tsc --noEmit"
   },
   "dependencies": {
-    "@ai-sdk/gateway": "^3.0.13",
     "@ai-sdk/react": "3.0.79",
+    "@repo/ai-config": "workspace:*",
     "@json-render/codegen": "workspace:*",
     "@json-render/core": "workspace:*",
     "@json-render/react": "workspace:*",

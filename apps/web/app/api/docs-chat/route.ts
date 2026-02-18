@@ -1,6 +1,7 @@
 import { readFile } from "fs/promises";
 import { join } from "path";
 import { convertToModelMessages, stepCountIs, streamText } from "ai";
+import { getModel } from "@repo/ai-config";
 import type { ModelMessage, UIMessage } from "ai";
 import { createBashTool } from "bash-tool";
 import { headers } from "next/headers";
@@ -9,8 +10,6 @@ import { mdxToCleanMarkdown } from "@/lib/mdx-to-markdown";
 import { minuteRateLimit, dailyRateLimit } from "@/lib/rate-limit";
 
 export const maxDuration = 60;
-
-const DEFAULT_MODEL = "anthropic/claude-haiku-4.5";
 
 const SYSTEM_PROMPT = `You are a helpful documentation assistant for json-render, a library for AI-generated UI with guardrails.
 
@@ -113,7 +112,7 @@ export async function POST(req: Request) {
   } = await createBashTool({ files: docsFiles });
 
   const result = streamText({
-    model: DEFAULT_MODEL,
+    model: getModel(),
     system: SYSTEM_PROMPT,
     messages: await convertToModelMessages(messages),
     stopWhen: stepCountIs(5),

@@ -1,10 +1,16 @@
 "use client";
 
 import { useState, useCallback, useRef, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { createSpecStreamCompiler } from "@json-render/core";
-import { Player, PlayerRef } from "@remotion/player";
-import { Renderer, type TimelineSpec } from "@json-render/remotion";
+import type { PlayerRef } from "@remotion/player";
+import type { TimelineSpec } from "@json-render/remotion";
 import { createHighlighter, type Highlighter } from "shiki";
+
+const RemotionPlayer = dynamic(
+  () => import("./RemotionPlayer").then((m) => m.RemotionPlayer),
+  { ssr: false },
+);
 
 /**
  * Check if spec is complete enough to render
@@ -396,21 +402,7 @@ export default function Home() {
                 data-player-container
               >
                 {spec && isSpecComplete(spec) ? (
-                  <Player
-                    ref={playerRef}
-                    component={Renderer}
-                    inputProps={{ spec }}
-                    durationInFrames={spec.composition.durationInFrames}
-                    fps={spec.composition.fps}
-                    compositionWidth={spec.composition.width}
-                    compositionHeight={spec.composition.height}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                    }}
-                    controls
-                    loop
-                  />
+                  <RemotionPlayer ref={playerRef} spec={spec} />
                 ) : (
                   <div className="h-full flex items-center justify-center text-white/30 text-sm">
                     {isGenerating ? (

@@ -303,6 +303,8 @@ The `setState` action updates the state model directly, which re-evaluates visib
 git clone https://github.com/vercel-labs/json-render
 cd json-render
 pnpm install
+cp examples/dashboard/.env.example examples/dashboard/.env   # add your API keys
+pnpm db:setup   # postgres + schema (run once)
 pnpm dev
 ```
 

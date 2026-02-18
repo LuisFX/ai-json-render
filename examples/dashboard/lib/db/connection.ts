@@ -2,7 +2,6 @@ import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 import * as schema from "./schema";
 
-// Lazy initialization to allow builds without DATABASE_URL
 let _db: ReturnType<typeof drizzle<typeof schema>> | null = null;
 let _migrationClient: ReturnType<typeof postgres> | null = null;
 
@@ -14,7 +13,6 @@ function getConnectionString(): string {
   return connectionString;
 }
 
-// For query purposes - lazily initialized
 export const db = new Proxy({} as ReturnType<typeof drizzle<typeof schema>>, {
   get(_target, prop) {
     if (!_db) {

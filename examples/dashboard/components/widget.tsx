@@ -109,12 +109,33 @@ export function Widget({
                 spec: completedSpec,
               }),
             });
-            const saved = await res.json();
+            const text = await res.text();
+            if (!text) {
+              toast.error("Empty response from server");
+              return;
+            }
+            const saved = JSON.parse(text);
+            if (!res.ok) {
+              const msg = saved.error || `Request failed: ${res.status}`;
+              const isDbError =
+                msg.includes("ECONNREFUSED") || msg.includes("Failed query");
+              toast.error(
+                isDbError ? "Database not ready. Run: pnpm db:setup" : msg,
+              );
+              return;
+            }
             setWidgetId(saved.id);
             onSaved?.(saved.id);
           }
         } catch (err) {
+          const msg =
+            err instanceof Error ? err.message : "Failed to save widget";
           console.error("Failed to save widget:", err);
+          toast.error(
+            msg.includes("ECONNREFUSED") || msg.includes("Failed query")
+              ? "Database not ready. Run: pnpm db:setup"
+              : msg,
+          );
         }
       }
     },

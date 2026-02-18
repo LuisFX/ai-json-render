@@ -10,19 +10,27 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
-  const body = await req.json();
+  try {
+    const body = await req.json();
 
-  if (!body.prompt || !body.spec) {
+    if (!body.prompt || !body.spec) {
+      return Response.json(
+        { error: "prompt and spec are required" },
+        { status: 400 },
+      );
+    }
+
+    const widget = await createWidget({
+      prompt: body.prompt,
+      spec: body.spec,
+    });
+
+    return Response.json(widget, { status: 201 });
+  } catch (err) {
+    console.error("Failed to create widget:", err);
     return Response.json(
-      { error: "prompt and spec are required" },
-      { status: 400 },
+      { error: err instanceof Error ? err.message : "Failed to create widget" },
+      { status: 500 },
     );
   }
-
-  const widget = await createWidget({
-    prompt: body.prompt,
-    spec: body.spec,
-  });
-
-  return Response.json(widget, { status: 201 });
 }

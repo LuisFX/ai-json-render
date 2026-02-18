@@ -4,6 +4,12 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  remotion: 4.0.418
+  '@remotion/player': 4.0.418
+  '@remotion/renderer': 4.0.418
+  '@remotion/bundler': 4.0.418
+
 importers:
 
   .:
@@ -48,11 +54,10 @@ importers:
         specifier: ^4.0.17
         version: 4.0.17(@opentelemetry/api@1.9.0)(@types/node@22.19.6)(jiti@2.6.1)(jsdom@27.4.0)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
 
+  ai-render-infra: {}
+
   apps/web:
     dependencies:
-      '@ai-sdk/gateway':
-        specifier: ^3.0.13
-        version: 3.0.13(zod@4.3.5)
       '@ai-sdk/react':
         specifier: 3.0.79
         version: 3.0.79(react@19.2.3)(zod@4.3.5)
@@ -86,6 +91,9 @@ importers:
       '@radix-ui/react-tabs':
         specifier: ^1.1.13
         version: 1.1.13(@types/react-dom@19.2.3(@types/react@19.2.3))(@types/react@19.2.3)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@repo/ai-config':
+        specifier: workspace:*
+        version: link:../../packages/ai-config
       '@upstash/ratelimit':
         specifier: ^2.0.8
         version: 2.0.8(@upstash/redis@1.36.1)
@@ -222,6 +230,9 @@ importers:
       '@react-three/fiber':
         specifier: ^9.5.0
         version: 9.5.0(@types/react@19.2.3)(expo-asset@12.0.12(expo@54.0.33)(react-native@0.83.1(@babel/core@7.29.0)(@types/react@19.2.3)(react@19.2.4))(react@19.2.4))(expo-file-system@19.0.21(expo@54.0.33)(react-native@0.83.1(@babel/core@7.29.0)(@types/react@19.2.3)(react@19.2.4)))(expo@54.0.33)(react-dom@19.2.4(react@19.2.4))(react-native@0.83.1(@babel/core@7.29.0)(@types/react@19.2.3)(react@19.2.4))(react@19.2.4)(three@0.182.0)
+      '@repo/ai-config':
+        specifier: workspace:*
+        version: link:../../packages/ai-config
       '@streamdown/code':
         specifier: ^1.0.2
         version: 1.0.2(react@19.2.4)
@@ -307,9 +318,6 @@ importers:
 
   examples/dashboard:
     dependencies:
-      '@ai-sdk/gateway':
-        specifier: ^3.0.13
-        version: 3.0.13(zod@4.3.5)
       '@dnd-kit/core':
         specifier: 6.3.1
         version: 6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -328,6 +336,9 @@ importers:
       '@json-render/react':
         specifier: workspace:*
         version: link:../../packages/react
+      '@repo/ai-config':
+        specifier: workspace:*
+        version: link:../../packages/ai-config
       ai:
         specifier: ^6.0.33
         version: 6.0.33(zod@4.3.5)
@@ -434,6 +445,9 @@ importers:
       '@json-render/react-native':
         specifier: workspace:*
         version: link:../../packages/react-native
+      '@repo/ai-config':
+        specifier: workspace:*
+        version: link:../../packages/ai-config
       ai:
         specifier: ^6.0.77
         version: 6.0.77(zod@4.3.5)
@@ -483,9 +497,6 @@ importers:
 
   examples/remotion:
     dependencies:
-      '@ai-sdk/gateway':
-        specifier: ^3.0.13
-        version: 3.0.13(zod@4.3.5)
       '@json-render/core':
         specifier: workspace:*
         version: link:../../packages/core
@@ -501,6 +512,9 @@ importers:
       '@remotion/renderer':
         specifier: 4.0.418
         version: 4.0.418(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@repo/ai-config':
+        specifier: workspace:*
+        version: link:../../packages/ai-config
       ai:
         specifier: ^6.0.70
         version: 6.0.70(zod@4.3.5)
@@ -584,6 +598,28 @@ importers:
       eslint:
         specifier: ^9.39.0
         version: 9.39.2(jiti@2.6.1)
+
+  packages/ai-config:
+    dependencies:
+      '@ai-sdk/anthropic':
+        specifier: ^3.0.45
+        version: 3.0.45(zod@4.3.5)
+      '@ai-sdk/gateway':
+        specifier: ^3.0.13
+        version: 3.0.42(zod@4.3.5)
+    devDependencies:
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      '@types/node':
+        specifier: ^22.10.0
+        version: 22.19.6
+      tsup:
+        specifier: ^8.0.2
+        version: 8.5.1(jiti@2.6.1)(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
+      typescript:
+        specifier: ^5.4.5
+        version: 5.9.2
 
   packages/codegen:
     dependencies:
@@ -832,6 +868,12 @@ packages:
   '@acemir/cssom@0.9.31':
     resolution: {integrity: sha512-ZnR3GSaH+/vJ0YlHau21FjfLYjMpYVIzTD8M8vIEQvIGxeOXyXdzCI140rrCY862p/C/BbzWsjc1dgnM9mkoTA==}
 
+  '@ai-sdk/anthropic@3.0.45':
+    resolution: {integrity: sha512-bpIS3RakSsaUhCRTIvL9bcVNeeUMDXWbndpYdXNeMJIIPcElTcvwktvla+JxIfbeK1AdQjB8ggYVChepeXPGwQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.25.76 || ^4.1.8
+
   '@ai-sdk/gateway@3.0.13':
     resolution: {integrity: sha512-g7nE4PFtngOZNZSy1lOPpkC+FAiHxqBJXqyRMEG7NUrEVZlz5goBdtHg1YgWRJIX776JTXAmbOI5JreAKVAsVA==}
     engines: {node: '>=18'}
@@ -864,6 +906,12 @@ packages:
 
   '@ai-sdk/provider-utils@4.0.14':
     resolution: {integrity: sha512-7bzKd9lgiDeXM7O4U4nQ8iTxguAOkg8LZGD9AfDVZYjO5cKYRwBPwVjboFcVrxncRHu0tYxZtXZtiLKpG4pEng==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.25.76 || ^4.1.8
+
+  '@ai-sdk/provider-utils@4.0.15':
+    resolution: {integrity: sha512-8XiKWbemmCbvNN0CLR9u3PQiet4gtEVIrX4zzLxnCj06AwsEDJwJVBbKrEI4t6qE8XRSIvU2irka0dcpziKW6w==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
@@ -10009,6 +10057,12 @@ snapshots:
 
   '@acemir/cssom@0.9.31': {}
 
+  '@ai-sdk/anthropic@3.0.45(zod@4.3.5)':
+    dependencies:
+      '@ai-sdk/provider': 3.0.8
+      '@ai-sdk/provider-utils': 4.0.15(zod@4.3.5)
+      zod: 4.3.5
+
   '@ai-sdk/gateway@3.0.13(zod@4.3.5)':
     dependencies:
       '@ai-sdk/provider': 3.0.2
@@ -10045,6 +10099,13 @@ snapshots:
       zod: 4.3.5
 
   '@ai-sdk/provider-utils@4.0.14(zod@4.3.5)':
+    dependencies:
+      '@ai-sdk/provider': 3.0.8
+      '@standard-schema/spec': 1.1.0
+      eventsource-parser: 3.0.6
+      zod: 4.3.5
+
+  '@ai-sdk/provider-utils@4.0.15(zod@4.3.5)':
     dependencies:
       '@ai-sdk/provider': 3.0.8
       '@standard-schema/spec': 1.1.0

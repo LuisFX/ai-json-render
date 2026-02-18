@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack --port 3003",
     "build": "next build",
     "start": "next start",
     "lint": "eslint --max-warnings 0",
@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@ai-sdk/gateway": "^3.0.13",
+    "@repo/ai-config": "workspace:*",
     "@ai-sdk/react": "^3.0.84",
     "@json-render/core": "workspace:*",
     "@json-render/react": "workspace:*",
