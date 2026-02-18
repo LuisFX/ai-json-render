@@ -27,7 +27,9 @@ Built from the catalog. Includes:
 
 The catalog is the vocabulary. The model is told to use only those components and actions.
 
-> **Code:** `packages/core/src/schema.ts` 546-979 (generatePrompt); `apps/web/lib/render/catalog.ts` (playgroundCatalog).
+> **Code:** `packages/core/src/schema.ts` 546-979 (generatePrompt), 752-767 (component list), 1158-1233 (formatZodType); `apps/web/lib/render/catalog.ts` (playgroundCatalog, components ~15).
+
+For what the LLM sees (names, schemas, descriptions) and how correctness is enforced, see [dev/07-prompt-engineering](../dev/07-prompt-engineering.md).
 
 ---
 
@@ -96,4 +98,4 @@ const result = streamText({
 
 We rely on prompt design, not schema enforcement. The model can still output wrong things; we just don't apply them.
 
-> **Code:** Format rules in `packages/core/src/schema.ts` 591-596, 965-982; parsing skip in `packages/react/src/hooks.ts` 62-64, 334.
+> **Code:** Format rules in `packages/core/src/schema.ts` 591-596, 965-982; parsing skip in `packages/react/src/hooks.ts` 62-64, 334; unknown component handling in `packages/react/src/renderer.tsx` 241-246.

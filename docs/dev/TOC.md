@@ -105,7 +105,7 @@ Ports 3000–3003 are used when all apps start together. If a port is busy, Next
 
 **LLM integration.** Catalog-driven prompts: catalog.prompt() for system prompt, buildUserPrompt for user prompt. Refinement modes.
 
-**TLDR:** catalog.prompt() with customRules, buildUserPrompt options, JSON Patch format for LLMs, API route pattern, catalog best practices, common issues.
+**TLDR:** catalog.prompt() with customRules, buildUserPrompt options, what the LLM sees (component names + schemas + descriptions), how correctness is enforced (prompt, parsing, renderer fallback, optional catalog.validate()), JSON Patch format, API route pattern, catalog best practices.
 
 ---
 

@@ -4,6 +4,21 @@ What Playground and Dashboard share, and what they don't.
 
 ---
 
+## Catalog Locations
+
+Each app has its own catalog. The LLM sees **only** the components from the catalog passed to `catalog.prompt()` for that app. There is no global shared list.
+
+| App | File | Export | Line (components start) |
+|-----|------|--------|-------------------------|
+| Playground | `apps/web/lib/render/catalog.ts` | `playgroundCatalog` | ~15 |
+| Dashboard | `examples/dashboard/lib/render/catalog.ts` | `dashboardCatalog` | ~12 |
+| Chat | `examples/chat/lib/render/catalog.ts` | `explorerCatalog` | ~48 (uses `shadcnComponentDefinitions`) |
+| Shared definitions | `packages/shadcn/src/catalog.ts` | `shadcnComponentDefinitions` | 13 |
+
+Playground and Dashboard define their catalogs inline. Chat imports from `@json-render/shadcn/catalog` for some components. See [07-prompt-engineering.md](../dev/07-prompt-engineering.md) for what the LLM sees and how correctness is enforced.
+
+---
+
 ## Shared Packages
 
 Both depend on:
@@ -49,8 +64,8 @@ The streaming pipeline is the same shared code.
 ## Duplicated (Same Pattern, Different Files)
 
 | Concept | Playground | Dashboard |
-|---------|------------|-----------|
-| Catalog definition | `apps/web/lib/render/catalog.ts` | `examples/dashboard/lib/render/catalog.ts` |
+|---------|------------|------------|
+| Catalog definition | `apps/web/lib/render/catalog.ts` (components ~15) | `examples/dashboard/lib/render/catalog.ts` (components ~12) |
 | Registry (components + actions) | `apps/web/lib/render/registry.tsx` | `examples/dashboard/lib/render/registry.tsx` |
 | Renderer wrapper | `apps/web/lib/render/renderer.tsx` | `examples/dashboard/lib/render/renderer.tsx` |
 | shadcn-style UI | `apps/web/components/ui/button.tsx` etc. | `examples/dashboard/components/ui/button.tsx` etc. |

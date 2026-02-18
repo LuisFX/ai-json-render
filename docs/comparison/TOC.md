@@ -12,7 +12,7 @@ Side-by-side comparison of the two main example apps.
 
 ## [01-SHARED-CODE.md](./01-SHARED-CODE.md)
 
-**What they share.** Packages, pipeline, identical code paths. What's duplicated vs. app-specific.
+**What they share.** Catalog locations (each app has its own; LLM sees only that app's catalog), packages, pipeline, identical code paths. What's duplicated vs. app-specific.
 
 ---
 
@@ -37,3 +37,4 @@ Side-by-side comparison of the two main example apps.
 | Prompts | [playground/02-PROMPT-FLOW](../playground/02-PROMPT-FLOW.md) | [dashboard/02-PROMPT-FLOW](../dashboard/02-PROMPT-FLOW.md) |
 | React code | [playground/03-REACT-CODE](../playground/03-REACT-CODE.md) | — |
 | DB persistence | — | [dashboard/03-DB-PERSISTENCE](../dashboard/03-DB-PERSISTENCE.md) |
+| Catalogs & LLM | [dev/07-prompt-engineering](../dev/07-prompt-engineering.md) (what LLM sees, correctness) | same |

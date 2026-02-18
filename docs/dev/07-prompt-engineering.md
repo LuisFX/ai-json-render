@@ -84,6 +84,60 @@ The catalog's `prompt()` method:
 4. Injects default rules (output format, patch structure)
 5. Appends custom rules when provided
 
+## Catalogs and the LLM
+
+Each app has its own catalog. The LLM sees **only** the components and actions from the catalog passed to `catalog.prompt()`. There is no global shared list.
+
+### What the LLM Sees
+
+The LLM receives full schema information for each component, not just names:
+
+| Field | Source | Example |
+|-------|--------|---------|
+| Component name | `Object.keys(components)` | `Card`, `Button` |
+| Props schema | `formatZodType(def.props)` | `{ title?: string, description?: string, maxWidth?: "sm" \| "md" \| "lg" \| "full" }` |
+| Description | `def.description` | "Container card for content sections" |
+| Slots | `def.slots` | `[accepts children]` when present |
+| Events | `def.events` | `[events: press, change]` when present |
+
+Example of what appears in the system prompt:
+
+```
+AVAILABLE COMPONENTS (40):
+
+- Card: { title?: string, description?: string, maxWidth?: "sm" | "md" | "lg" | "full", centered?: boolean } - Container card for content sections [accepts children]
+- Button: { label: string, variant?: "primary" | "secondary" | "danger", disabled?: boolean } - Clickable button [events: press]
+...
+```
+
+> **Code:** Component list built in `packages/core/src/schema.ts` 752-767. Props formatting via `formatZodType` at 1158-1233.
+
+### Catalog Locations
+
+| App | Catalog file | Export |
+|-----|--------------|--------|
+| Playground | `apps/web/lib/render/catalog.ts` | `playgroundCatalog` |
+| Dashboard | `examples/dashboard/lib/render/catalog.ts` | `dashboardCatalog` |
+| Chat | `examples/chat/lib/render/catalog.ts` | `explorerCatalog` (uses `shadcnComponentDefinitions`) |
+| Shared definitions | `packages/shadcn/src/catalog.ts` | `shadcnComponentDefinitions` |
+
+Playground and Dashboard define their catalogs inline; Chat imports from `@json-render/shadcn/catalog` for some components.
+
+## How Correctness Is Enforced
+
+The system does not fully enforce schema correctness. It relies on several layers:
+
+| Layer | What it does | Code |
+|-------|--------------|------|
+| **Prompt design** | Instructs the LLM to use only listed components and follow the format | `packages/core/src/schema.ts` 591-596, 752-767 |
+| **Examples** | Uses real catalog component names and `getExampleProps()` for realistic examples | `packages/core/src/schema.ts` 604-669 |
+| **Parsing** | Invalid JSONL lines are skipped; only valid patches affect the spec | `packages/react/src/hooks.ts` 62-64 |
+| **Renderer fallback** | Unknown `type` resolves to `registry[type] ?? fallback`. If neither exists, logs a warning and returns `null` | `packages/react/src/renderer.tsx` 241-246 |
+| **validateSpec** | Structural checks (root, children, `visible`/`on` placement). Optional; not used by Playground/Dashboard by default | `packages/core/src/spec-validator.ts` |
+| **catalog.validate()** | Full Zod validation of spec against catalog. Optional; documented but not used by Playground/Dashboard | `packages/core/src/schema.ts` 418-427 |
+
+To add strict validation, call `catalog.validate(spec)` before rendering. See [Custom Schema](/docs/custom-schema) for an example.
+
 ## buildUserPrompt
 
 User prompts are built with `buildUserPrompt` from `@json-render/core`:
