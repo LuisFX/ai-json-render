@@ -53,6 +53,15 @@ Ports 3000–3003 are used when all apps start together. If a port is busy, Next
 
 ---
 
+## FormSpec JSON enhancement (F# FormSpec mapping)
+
+| Doc | Topic |
+|-----|-------|
+| [form-spec/TOC.md](../form-spec/TOC.md) | Index |
+| [form-spec/00-BRAINSTORM.md](../form-spec/00-BRAINSTORM.md) | Phased plan: Steps, Form fields, Scoring, ClinicalPathway |
+
+---
+
 ## [01-system-overview.md](./01-system-overview.md)
 
 **What it is.** json-render is a Generative UI framework: you define a catalog of components and actions, the AI generates JSON specs constrained to that catalog, and you render them as React components.
