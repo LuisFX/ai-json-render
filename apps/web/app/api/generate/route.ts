@@ -4,20 +4,33 @@ import { buildUserPrompt } from "@json-render/core";
 import { getModel } from "@repo/ai-config";
 import { minuteRateLimit, dailyRateLimit } from "@/lib/rate-limit";
 import { playgroundCatalog } from "@/lib/render/catalog";
+import { formSpecCatalog } from "@/lib/render/form-spec-catalog";
 
 export const maxDuration = 30;
 
-const SYSTEM_PROMPT = playgroundCatalog.prompt({
-  customRules: [
-    "NEVER use viewport height classes (min-h-screen, h-screen) - the UI renders inside a fixed-size container.",
-    "NEVER use page background colors (bg-gray-50) - the container has its own background.",
-    "For forms or small UIs: use Card as root with maxWidth:'sm' or 'md' and centered:true.",
-    "For content-heavy UIs (blogs, dashboards, product listings): use Stack or Grid as root. Use Grid with 2-3 columns for card layouts.",
-    "Wrap each repeated item in a Card for visual separation and structure.",
-    "Use realistic, professional sample data. Include 3-5 items with varied content. Never leave state arrays empty.",
-    'For form inputs (Input, Textarea, Select), always include checks for validation (e.g. required, email, minLength). Always pair checks with a $bindState expression on the value prop (e.g. { "$bindState": "/path" }).',
-  ],
-});
+function getSystemPrompt(mode?: string) {
+  const catalog = mode === "form" ? formSpecCatalog : playgroundCatalog;
+  const baseRules =
+    mode === "form"
+      ? [
+          "Use FormSpec components: Step, Form, Stack, Input, Textarea, Radio, Select, Checkbox, CheckboxList, TagList, TextAutoComplete, Matrix, Signature, Message, ReadOnly, PluginField, Button.",
+          "For multi-step forms: use Step as container for each section. Root can be first Step or a Stack of Steps. Output /steps array with { key, order, label } for each step.",
+        ]
+      : [
+          "NEVER use viewport height classes (min-h-screen, h-screen) - the UI renders inside a fixed-size container.",
+          "NEVER use page background colors (bg-gray-50) - the container has its own background.",
+          "For forms or small UIs: use Card as root with maxWidth:'sm' or 'md' and centered:true.",
+          "For content-heavy UIs (blogs, dashboards, product listings): use Stack or Grid as root. Use Grid with 2-3 columns for card layouts.",
+          "Wrap each repeated item in a Card for visual separation and structure.",
+          "Use realistic, professional sample data. Include 3-5 items with varied content. Never leave state arrays empty.",
+          'For form inputs (Input, Textarea, Select), always include checks for validation (e.g. required, email, minLength). Always pair checks with a $bindState expression on the value prop (e.g. { "$bindState": "/path" }).',
+          'For multi-step forms: use Step as container for each section. Root can be first Step or a Stack of Steps. Output /steps array with { key, order, label } for each step. Example: {"op":"add","path":"/steps","value":[{"key":"step-1","order":1,"label":"Demographics"},{"key":"step-2","order":2,"label":"Assessment"}]}',
+        ];
+
+  return catalog.prompt({
+    customRules: baseRules,
+  });
+}
 
 const MAX_PROMPT_LENGTH = 500;
 
@@ -49,6 +62,7 @@ export async function POST(req: Request) {
   }
 
   const { prompt, context } = await req.json();
+  const mode = context?.mode;
 
   const userPrompt = buildUserPrompt({
     prompt,
@@ -58,7 +72,7 @@ export async function POST(req: Request) {
 
   const result = streamText({
     model: getModel(),
-    system: SYSTEM_PROMPT,
+    system: getSystemPrompt(mode),
     prompt: userPrompt,
     temperature: 0.7,
   });

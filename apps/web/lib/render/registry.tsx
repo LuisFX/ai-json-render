@@ -302,6 +302,27 @@ export const { registry, executeAction } = defineRegistry(playgroundCatalog, {
       );
     },
 
+    Step: ({ props, children }) => {
+      const value = `step-${props.order}`;
+      return (
+        <AccordionPrimitive
+          type="single"
+          collapsible
+          defaultValue={props.order === 1 ? value : undefined}
+          className="w-full"
+        >
+          <AccordionItem value={value} className="border rounded-lg px-4 py-2">
+            <AccordionTrigger className="hover:no-underline">
+              <span className="font-medium">
+                {props.order}. {props.label}
+              </span>
+            </AccordionTrigger>
+            <AccordionContent className="pt-2">{children}</AccordionContent>
+          </AccordionItem>
+        </AccordionPrimitive>
+      );
+    },
+
     Dialog: ({ props, children }) => {
       const [open, setOpen] = useStateBinding<boolean>(props.openPath);
       return (

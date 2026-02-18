@@ -26,6 +26,17 @@ export const schema = defineSchema(
           visible: s.any(),
         }),
       ),
+      /** Optional step metadata for multi-step forms (FormSpec) */
+      steps: {
+        ...s.array(
+          s.object({
+            key: s.string(),
+            order: s.number(),
+            label: s.string(),
+          }),
+        ),
+        ...s.optional(),
+      },
     }),
 
     // What the CATALOG must provide

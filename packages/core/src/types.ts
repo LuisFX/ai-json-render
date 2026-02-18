@@ -161,6 +161,15 @@ export type VisibilityCondition =
   | OrCondition;
 
 /**
+ * Step metadata for multi-step forms (FormSpec)
+ */
+export interface StepMeta {
+  key: string;
+  order: number;
+  label: string;
+}
+
+/**
  * Flat UI tree structure (optimized for LLM generation)
  */
 export interface Spec {
@@ -171,6 +180,8 @@ export interface Spec {
   /** Optional initial state to seed the state model.
    *  Components using statePath will read from / write to this state. */
   state?: Record<string, unknown>;
+  /** Optional step metadata for multi-step forms (FormSpec) */
+  steps?: StepMeta[];
 }
 
 /**

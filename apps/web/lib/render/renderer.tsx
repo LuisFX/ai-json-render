@@ -13,6 +13,7 @@ import {
 } from "@json-render/react";
 
 import { registry, Fallback } from "./registry";
+import { formRegistry } from "./form-registry";
 
 // =============================================================================
 // PlaygroundRenderer
@@ -22,6 +23,7 @@ interface PlaygroundRendererProps {
   spec: Spec | null;
   data?: Record<string, unknown>;
   loading?: boolean;
+  mode?: "ui" | "form";
 }
 
 const fallbackRenderer = (renderProps: { element: { type: string } }) => (
@@ -72,8 +74,11 @@ export function PlaygroundRenderer({
   spec,
   data,
   loading,
+  mode = "ui",
 }: PlaygroundRendererProps): ReactNode {
   if (!spec) return null;
+
+  const activeRegistry = mode === "form" ? formRegistry : registry;
 
   return (
     <StateProvider initialState={data ?? spec.state}>
@@ -82,7 +87,7 @@ export function PlaygroundRenderer({
           <ValidatedActions>
             <Renderer
               spec={spec}
-              registry={registry}
+              registry={activeRegistry}
               fallback={fallbackRenderer}
               loading={loading}
             />

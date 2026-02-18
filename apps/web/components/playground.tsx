@@ -18,10 +18,12 @@ import { Header } from "./header";
 import { Sheet, SheetContent, SheetTitle } from "./ui/sheet";
 import { PlaygroundRenderer } from "@/lib/render/renderer";
 import { playgroundCatalog } from "@/lib/render/catalog";
+import { formSpecCatalog } from "@/lib/render/form-spec-catalog";
 import { buildCatalogDisplayData } from "@/lib/render/catalog-display";
 
 type Tab = "json" | "nested" | "stream" | "catalog";
 type RenderView = "preview" | "code";
+type PlaygroundMode = "ui" | "form";
 type MobileView =
   | "json"
   | "nested"
@@ -104,6 +106,7 @@ export function Playground() {
   const [renderView, setRenderView] = useState<RenderView>("preview");
   const [mobileView, setMobileView] = useState<MobileView>("preview");
   const [versionsSheetOpen, setVersionsSheetOpen] = useState(false);
+  const [mode, setMode] = useState<PlaygroundMode>("ui");
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const mobileInputRef = useRef<HTMLTextAreaElement>(null);
   const versionsEndRef = useRef<HTMLDivElement>(null);
@@ -219,8 +222,11 @@ export function Playground() {
     setSelectedVersionId(newVersionId);
     setInputValue("");
 
-    // Pass the current tree as context so the API can iterate on it
-    await send(inputValue.trim(), { previousSpec: currentTreeRef.current });
+    // Pass the current tree and mode so the API can iterate and use correct catalog
+    await send(inputValue.trim(), {
+      previousSpec: currentTreeRef.current,
+      mode,
+    });
   }, [inputValue, isStreaming, send]);
 
   const handleKeyDown = useCallback(
@@ -465,10 +471,13 @@ ${jsx}
     </div>
   );
 
-  // Catalog data for the catalog tab
+  // Catalog data for the catalog tab (depends on mode)
   const catalogData = useMemo(
-    () => buildCatalogDisplayData(playgroundCatalog.data),
-    [],
+    () =>
+      buildCatalogDisplayData(
+        mode === "form" ? formSpecCatalog.data : playgroundCatalog.data,
+      ),
+    [mode],
   );
 
   // Code pane content
@@ -483,7 +492,21 @@ ${jsx}
 
   const codePane = (
     <div className="h-full flex flex-col border-t border-border">
-      <div className="border-b border-border px-3 h-9 flex items-center gap-3">
+      <div className="border-b border-border px-3 h-9 flex items-center gap-3 shrink-0 overflow-x-auto">
+        {(["ui", "form"] as const).map((m) => (
+          <button
+            key={m}
+            onClick={() => setMode(m)}
+            className={`text-xs font-mono transition-colors shrink-0 ${
+              mode === m
+                ? "text-foreground"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            {m}
+          </button>
+        ))}
+        <span className="text-muted-foreground/50">|</span>
         {(["json", "nested", "stream", "catalog"] as const).map((tab) => (
           <button
             key={tab}
@@ -645,7 +668,21 @@ ${jsx}
   // Preview pane content
   const previewPane = (
     <div className="h-full flex flex-col border-t border-border">
-      <div className="border-b border-border px-3 h-9 flex items-center gap-3">
+      <div className="border-b border-border px-3 h-9 flex items-center gap-3 shrink-0 overflow-x-auto">
+        {(["ui", "form"] as const).map((m) => (
+          <button
+            key={m}
+            onClick={() => setMode(m)}
+            className={`text-xs font-mono transition-colors shrink-0 ${
+              mode === m
+                ? "text-foreground"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            {m}
+          </button>
+        ))}
+        <span className="text-muted-foreground/50 shrink-0">|</span>
         {(
           [
             { key: "preview", label: "preview" },
@@ -677,6 +714,7 @@ ${jsx}
                 spec={currentTree}
                 data={currentTree.state}
                 loading={isStreaming}
+                mode={mode}
               />
             </div>
           ) : (
@@ -723,6 +761,21 @@ ${jsx}
       <div className="flex lg:hidden flex-col flex-1 min-h-0">
         {/* Top toolbar */}
         <div className="border-b border-border px-3 h-9 flex items-center gap-3 shrink-0 overflow-x-auto">
+          {/* Mode toggle */}
+          {(["ui", "form"] as const).map((m) => (
+            <button
+              key={m}
+              onClick={() => setMode(m)}
+              className={`text-xs font-mono transition-colors shrink-0 ${
+                mode === m
+                  ? "text-foreground"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {m}
+            </button>
+          ))}
+          <span className="text-muted-foreground/50 shrink-0">|</span>
           {/* Version badge */}
           <button
             onClick={() => setVersionsSheetOpen(true)}
@@ -916,6 +969,7 @@ ${jsx}
                   spec={currentTree}
                   data={currentTree.state}
                   loading={isStreaming}
+                  mode={mode}
                 />
               </div>
             ) : (

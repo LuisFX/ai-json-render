@@ -97,6 +97,18 @@ export const playgroundCatalog = defineCatalog(schema, {
       description: "Collapsible section with trigger. Children render inside.",
     },
 
+    Step: {
+      props: z.object({
+        label: z.string(),
+        order: z.number(),
+        description: z.string().nullable(),
+      }),
+      slots: ["default"],
+      description:
+        "Form section container for multi-step forms. Use for logical form sections. Children are the fields in this step. Renders as accordion item.",
+      example: { label: "Patient Demographics", order: 1 },
+    },
+
     Dialog: {
       props: z.object({
         title: z.string(),
