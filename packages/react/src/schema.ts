@@ -37,6 +37,21 @@ export const schema = defineSchema(
         ),
         ...s.optional(),
       },
+      /** Optional score config for scored forms (FormSpec) */
+      score: {
+        ...s.object({
+          maxScore: s.number(),
+          ranges: s.array(
+            s.object({
+              min: s.number(),
+              max: s.number(),
+              label: s.string(),
+              tag: s.string(),
+            }),
+          ),
+        }),
+        ...s.optional(),
+      },
     }),
 
     // What the CATALOG must provide

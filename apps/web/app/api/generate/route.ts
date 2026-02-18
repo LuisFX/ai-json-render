@@ -13,8 +13,12 @@ function getSystemPrompt(mode?: string) {
   const baseRules =
     mode === "form"
       ? [
-          "Use FormSpec components: Step, Form, Stack, Input, Textarea, Radio, Select, Checkbox, CheckboxList, TagList, TextAutoComplete, Matrix, Signature, Message, ReadOnly, PluginField, Button.",
-          "For multi-step forms: use Step as container for each section. Root can be first Step or a Stack of Steps. Output /steps array with { key, order, label } for each step.",
+          "Use FormSpec components: Step, Form, Stack, Input, Textarea, Radio, Select, Checkbox, CheckboxList, TagList, TextAutoComplete, Matrix, Signature, Message, ReadOnly, ScoreSummary, PluginField, Button.",
+          "Wrap the form in Form with submitAction and a Stack of Steps. Use Step for each section; root can be first Step or Stack of Steps. Output /steps with { key, order, label } for each step.",
+          "For Input/Textarea: use { $bindState } on value/checked. Add checks for validation (required, email, minLength). Use Input type for email, password, date, number when appropriate.",
+          "For choice fields (Radio, Select, CheckboxList, TagList, TextAutoComplete): options use { value, description, optionKey?, score? }. Use score on options for scored forms.",
+          "For scored forms: add score to Radio/Select/CheckboxList options. Output /score with { maxScore, ranges: [{ min, max, label, tag }] }. Use tag: success|warning|danger|info|primary. Include ScoreSummary component with currentScore from state.",
+          "Use Matrix for Likert/severity scales (items=rows, options=columns). Use Message for validation hints. Use ReadOnly for instructions (collapsible, formatting). Use Signature for consent. Use Button with on.press bound to formSubmit for submit.",
         ]
       : [
           "NEVER use viewport height classes (min-h-screen, h-screen) - the UI renders inside a fixed-size container.",

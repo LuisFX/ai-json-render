@@ -220,6 +220,25 @@ export const formSpecCatalog = defineCatalog(schema, {
       slots: [],
       description: "Read-only content block.",
     },
+    ScoreSummary: {
+      props: z.object({
+        maxScore: z.number(),
+        currentScore: z.number().nullable(),
+        ranges: z
+          .array(
+            z.object({
+              min: z.number(),
+              max: z.number(),
+              label: z.string(),
+              tag: z.string().nullable(),
+            }),
+          )
+          .nullable(),
+      }),
+      slots: [],
+      description:
+        "Displays score for scored forms. Use currentScore from state. Ranges show severity bands (success/warning/danger).",
+    },
 
     // Extensibility
     PluginField: {

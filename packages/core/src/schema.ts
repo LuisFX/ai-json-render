@@ -1302,12 +1302,23 @@ function zodToJsonSchema(schema: z.ZodType): object {
   }
 }
 
+/** Fallback when InferCatalogInput resolves to never (e.g. complex schema defs from dist) */
+type CatalogParam<TDef extends SchemaDefinition> =
+  InferCatalogInput<TDef["catalog"]> extends never
+    ? {
+        components?: Record<string, unknown>;
+        actions?: Record<string, unknown>;
+      }
+    : InferCatalogInput<TDef["catalog"]>;
+
 /**
  * Shorthand: Define a catalog directly from a schema
  */
 export function defineCatalog<
   TDef extends SchemaDefinition,
-  TCatalog extends InferCatalogInput<TDef["catalog"]>,
+  TCatalog extends CatalogParam<TDef>,
 >(schema: Schema<TDef>, catalog: TCatalog): Catalog<TDef, TCatalog> {
-  return schema.createCatalog(catalog);
+  return schema.createCatalog(
+    catalog as InferCatalogInput<TDef["catalog"]>,
+  ) as Catalog<TDef, TCatalog>;
 }

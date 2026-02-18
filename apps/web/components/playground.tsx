@@ -86,11 +86,19 @@ function specToNested(spec: Spec): Record<string, unknown> {
   return result;
 }
 
-const EXAMPLE_PROMPTS = [
+const EXAMPLE_PROMPTS_UI = [
   "Create a login form",
   "Build a pricing page",
   "Design a user profile card",
   "Make a contact form",
+];
+
+const EXAMPLE_PROMPTS_FORM = [
+  "Create a clinical assessment form with demographics, symptoms checklist, and signature",
+  "Build a multi-step intake form with 3 steps: contact info, medical history, consent",
+  "Design a scored risk assessment form with Radio/Select options that have scores and ScoreSummary ranges",
+  "Make a patient registration form with Input, Textarea, Select, Checkbox, and Matrix for severity scales",
+  "Build a PHQ-9 style depression screening: Matrix with 9 items (questions), options 0-4 with scores, ScoreSummary with ranges 0-4 minimal, 5-9 mild, 10-14 moderate, 15-19 moderately severe, 20-27 severe",
 ];
 
 export function Playground() {
@@ -310,6 +318,9 @@ ${jsx}
 }`;
   }, [currentTree]);
 
+  const examplePrompts =
+    mode === "form" ? EXAMPLE_PROMPTS_FORM : EXAMPLE_PROMPTS_UI;
+
   // Chat pane content
   const chatPane = (
     <div className="h-full flex flex-col border-t border-border">
@@ -324,10 +335,12 @@ ${jsx}
         {versions.length === 0 ? (
           <div className="flex-1 flex flex-col items-center justify-center text-center px-4">
             <p className="text-sm text-muted-foreground mb-4">
-              Describe what you want to build, then iterate on it.
+              {mode === "form"
+                ? "Describe the form you want to build (e.g. multi-step, scored, field types)."
+                : "Describe what you want to build, then iterate on it."}
             </p>
             <div className="flex flex-wrap gap-2 justify-center">
-              {EXAMPLE_PROMPTS.map((prompt) => (
+              {examplePrompts.map((prompt) => (
                 <button
                   key={prompt}
                   onMouseDown={(e) => {
@@ -408,7 +421,11 @@ ${jsx}
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="Describe changes..."
+          placeholder={
+            mode === "form"
+              ? "Describe form or changes (e.g. add step, add scored Radio)..."
+              : "Describe changes..."
+          }
           className="w-full bg-background text-base sm:text-sm resize-none outline-none placeholder:text-muted-foreground/50"
           rows={2}
           autoFocus
@@ -981,10 +998,12 @@ ${jsx}
                 ) : (
                   <>
                     <p className="text-sm text-muted-foreground mb-4">
-                      Describe what you want to build, then iterate on it.
+                      {mode === "form"
+                        ? "Describe the form you want to build (e.g. multi-step, scored, field types)."
+                        : "Describe what you want to build, then iterate on it."}
                     </p>
                     <div className="flex flex-wrap gap-2 justify-center">
-                      {EXAMPLE_PROMPTS.map((prompt) => (
+                      {examplePrompts.map((prompt) => (
                         <button
                           key={prompt}
                           onMouseDown={(e) => {
@@ -1033,7 +1052,11 @@ ${jsx}
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Describe changes..."
+            placeholder={
+              mode === "form"
+                ? "Describe form or changes (e.g. add step, add scored Radio)..."
+                : "Describe changes..."
+            }
             className="w-full bg-background text-base resize-none outline-none placeholder:text-muted-foreground/50"
             rows={2}
           />

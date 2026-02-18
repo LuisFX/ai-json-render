@@ -484,6 +484,54 @@ export const { registry: formRegistry, executeAction } = defineRegistry(
           </div>
         </div>
       ),
+      ScoreSummary: ({ props }) => {
+        const current = props.currentScore ?? null;
+        const max = props.maxScore ?? 0;
+        const ranges = (props.ranges ?? []) as Array<{
+          min: number;
+          max: number;
+          label: string;
+          tag: string | null;
+        }>;
+        const activeRange =
+          current !== null
+            ? ranges.find((r) => current >= r.min && current <= r.max)
+            : null;
+        const tagClass =
+          activeRange?.tag === "danger"
+            ? "bg-red-500/20 text-red-700 dark:text-red-400"
+            : activeRange?.tag === "warning"
+              ? "bg-yellow-500/20 text-yellow-700 dark:text-yellow-400"
+              : activeRange?.tag === "success"
+                ? "bg-green-500/20 text-green-700 dark:text-green-400"
+                : activeRange?.tag === "info"
+                  ? "bg-blue-500/20 text-blue-700 dark:text-blue-400"
+                  : "bg-muted text-muted-foreground";
+
+        return (
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <span className="font-medium">
+                Score: {current !== null ? current : "-"} / {max}
+              </span>
+              {activeRange && (
+                <span className={`text-xs px-2 py-0.5 rounded ${tagClass}`}>
+                  {activeRange.label}
+                </span>
+              )}
+            </div>
+            {ranges.length > 0 && (
+              <div className="flex flex-wrap gap-1 text-xs text-muted-foreground">
+                {ranges.map((r, i) => (
+                  <span key={i}>
+                    {r.min}-{r.max}: {r.label}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        );
+      },
 
       Message: ({ props }) => {
         const variant =

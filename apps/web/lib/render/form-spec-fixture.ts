@@ -13,6 +13,14 @@ export const formSpecFullFixture: Spec = {
     { key: "step-2", order: 2, label: "Assessment" },
     { key: "step-3", order: 3, label: "Signature" },
   ],
+  score: {
+    maxScore: 30,
+    ranges: [
+      { min: 0, max: 9, label: "Low risk", tag: "success" },
+      { min: 10, max: 19, label: "Moderate", tag: "warning" },
+      { min: 20, max: 30, label: "High risk", tag: "danger" },
+    ],
+  },
   state: {
     name: "",
     email: "",

@@ -21,6 +21,9 @@ describe("formSpecCatalog", () => {
       order: 1,
       label: "Demographics",
     });
+    expect(result.data?.score).toBeDefined();
+    expect(result.data?.score?.maxScore).toBe(30);
+    expect(result.data?.score?.ranges).toHaveLength(3);
 
     const elements = result.data?.elements ?? {};
     const types = Object.values(elements).map((el) => el.type);

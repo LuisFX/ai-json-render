@@ -169,6 +169,20 @@ export interface StepMeta {
   label: string;
 }
 
+/** Score range for FormSpec scoring (maps to ScoreColor tag) */
+export interface ScoreRange {
+  min: number;
+  max: number;
+  label: string;
+  tag: "unspecified" | "primary" | "info" | "success" | "warning" | "danger";
+}
+
+/** Top-level score config for scored forms (FormSpec) */
+export interface ScoreMeta {
+  maxScore: number;
+  ranges: ScoreRange[];
+}
+
 /**
  * Flat UI tree structure (optimized for LLM generation)
  */
@@ -182,6 +196,8 @@ export interface Spec {
   state?: Record<string, unknown>;
   /** Optional step metadata for multi-step forms (FormSpec) */
   steps?: StepMeta[];
+  /** Optional score config for scored forms (FormSpec) */
+  score?: ScoreMeta;
 }
 
 /**
