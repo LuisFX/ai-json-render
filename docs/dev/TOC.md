@@ -17,6 +17,42 @@ Ports 3000–3003 are used when all apps start together. If a port is busy, Next
 
 ---
 
+## Playground deep-dive (port 3000)
+
+| Doc | Topic |
+|-----|-------|
+| [playground/TOC.md](../playground/TOC.md) | Index |
+| [playground/00-ARCHITECTURE.md](../playground/00-ARCHITECTURE.md) | Pipeline diagram |
+| [playground/01-JSONL-PATCHES.md](../playground/01-JSONL-PATCHES.md) | JSONL, patches, parsing |
+| [playground/02-PROMPT-FLOW.md](../playground/02-PROMPT-FLOW.md) | Prompts, catalog |
+| [playground/03-REACT-CODE.md](../playground/03-REACT-CODE.md) | Spec to React code |
+
+---
+
+## Dashboard deep-dive (port 3001)
+
+| Doc | Topic |
+|-----|-------|
+| [dashboard/TOC.md](../dashboard/TOC.md) | Index |
+| [dashboard/00-ARCHITECTURE.md](../dashboard/00-ARCHITECTURE.md) | Pipeline, widgets, DB |
+| [dashboard/01-JSONL-PATCHES.md](../dashboard/01-JSONL-PATCHES.md) | JSONL (same as playground) |
+| [dashboard/02-PROMPT-FLOW.md](../dashboard/02-PROMPT-FLOW.md) | dashboardCatalog, actions |
+| [dashboard/03-DB-PERSISTENCE.md](../dashboard/03-DB-PERSISTENCE.md) | Save, load, reconstitute, reorder |
+
+---
+
+## Playground vs Dashboard (side-by-side)
+
+| Doc | Topic |
+|-----|-------|
+| [comparison/TOC.md](../comparison/TOC.md) | Index |
+| [comparison/00-OVERVIEW.md](../comparison/00-OVERVIEW.md) | Ports, layout, one-sentence summary |
+| [comparison/01-SHARED-CODE.md](../comparison/01-SHARED-CODE.md) | Shared packages, pipeline, duplicated |
+| [comparison/02-SIDE-BY-SIDE.md](../comparison/02-SIDE-BY-SIDE.md) | Feature comparison tables |
+| [comparison/03-FINAL-SPEC.md](../comparison/03-FINAL-SPEC.md) | Spec structure (root, elements, state, UIElement) |
+
+---
+
 ## [01-system-overview.md](./01-system-overview.md)
 
 **What it is.** json-render is a Generative UI framework: you define a catalog of components and actions, the AI generates JSON specs constrained to that catalog, and you render them as React components.
