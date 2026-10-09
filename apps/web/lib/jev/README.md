@@ -1,10 +1,10 @@
 # Jev composing catalog UI
 
-Open **`/playground`** and select **jev** in the **default / jev** toggle. Hover or focus the Jev option with its info icon to read its experimental status. This experiment uses Jev through Vercel AI Gateway to compose a tree and edit it in follow-up requests. It renders with the **actual playground catalog and registry**, including the existing shadcn components, state bindings, validation, and action handlers.
+Open **`/playground`** and select **jev** in the **default / jev** toggle. Hover or focus the Jev option with its info icon to read its experimental status. This experiment uses TypeSafe Jev (`@typesafe-ai/sdk`) to compose a tree and edit it in follow-up requests. It renders with the **actual playground catalog and registry**, including the existing shadcn components, state bindings, validation, and action handlers.
 
 ## Run
 
-Set `JEV_AI_GATEWAY_API_KEY` in `apps/web/.env.local` or the server environment. The playground uses this dedicated Gateway key for Jev; the default model continues to use `AI_GATEWAY_API_KEY`. Jev does not fall back to the default model's key. The Gateway team must permit the `typesafe-ai` provider. No separate TypeSafe API key is required.
+Set `TYPESAFE_API_KEY` in `apps/web/.env.local` for the Jev toggle (TypeSafe's native key; the playground calls `api.typesafe.ai` via `@typesafe-ai/sdk`). Set `OPENAI_API_KEY` (and optional `OPENAI_MODEL`) for the default playground model via `@ai-sdk/openai`. `AI_GATEWAY_API_KEY` is only used if OpenAI is unset.
 
 From the repository root:
 
@@ -55,13 +55,14 @@ Try `Design a user profile card`, then `Remove the bio` or `Make the avatar smal
 
 ## Transport and files
 
-The server uses Gateway's experimental v4 evaluation transport with model `typesafe-ai/jev`. This was verified against `@ai-sdk/gateway@4.0.85`. Native fetch avoids upgrading the workspace's AI SDK 6 dependencies or bypassing its minimum release age. The protocol can change; migrate to the eligible AI SDK evaluation API with a plain model string when appropriate.
+The playground evaluator calls TypeSafe System One (`jev-latest`) with `TYPESAFE_API_KEY`. `@ai-sdk/typesafe-ai` targets AI SDK 7 and is not used here; this repo stays on `ai@6`. Core still ships `experimental_createEvaluator` as the Gateway adapter for apps that want that path.
 
 - `grammar.ts`: playground-owned values and atomic candidates.
 - `packages/core/src/experimental-compose.ts`: public provider-independent composer.
 - `packages/core/src/experimental-composition-batch.ts`: parallel membership and layout decisions for new trees.
 - `packages/core/src/experimental-composition-tree.ts`: internal seed validation and tree edit helpers.
 - `packages/core/src/experimental-evaluator.ts`: public Gateway evaluator adapter.
+- `typesafe-evaluator.ts`: playground TypeSafe System One adapter.
 - `compose.ts`: public API consumer with playground instructions and cost display.
 - `../../app/api/generate/route.ts`: shared rate-limited endpoint, dispatching the selected model.
 - `response.ts`: adapts composition snapshots into the playground's JSONL spec patches and decision metadata.

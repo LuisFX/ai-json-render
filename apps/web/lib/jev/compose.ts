@@ -1,6 +1,5 @@
 import {
   experimental_composeSpec,
-  experimental_createEvaluator,
   type Experimental_CompositionEvaluator,
   type Experimental_CompositionEvent,
   type Experimental_CompositionStep,
@@ -8,6 +7,7 @@ import {
 } from "@json-render/core";
 import { playgroundCatalog } from "../render/catalog";
 import { buildCandidates, MAX_ELEMENTS, platformState } from "./grammar";
+import { createTypeSafeEvaluator } from "./typesafe-evaluator";
 
 export type Evaluate = Experimental_CompositionEvaluator;
 export type TraceStep = Experimental_CompositionStep;
@@ -22,10 +22,7 @@ export type CompositionEvent =
 export async function* composeUI(
   prompt: string,
   signal: AbortSignal,
-  evaluate: Evaluate = experimental_createEvaluator({
-    model: "typesafe-ai/jev",
-    apiKey: process.env.JEV_AI_GATEWAY_API_KEY ?? "",
-  }),
+  evaluate: Evaluate = createTypeSafeEvaluator(),
   initialSpec?: Spec,
 ): AsyncGenerator<CompositionEvent> {
   for await (const event of experimental_composeSpec({

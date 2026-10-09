@@ -1,3 +1,4 @@
+import { createOpenAI } from "@ai-sdk/openai";
 import { streamText } from "ai";
 import { headers } from "next/headers";
 import type { Spec, EditMode } from "@json-render/core";
@@ -28,7 +29,18 @@ const PLAYGROUND_RULES = [
 ];
 
 const MAX_PROMPT_LENGTH = 500;
-const DEFAULT_MODEL = "anthropic/claude-haiku-4.5";
+const DEFAULT_GATEWAY_MODEL = "anthropic/claude-haiku-4.5";
+const DEFAULT_OPENAI_MODEL = "gpt-5.4-mini";
+
+function playgroundLanguageModel() {
+  const openaiKey = process.env.OPENAI_API_KEY?.trim();
+  if (openaiKey) {
+    return createOpenAI({ apiKey: openaiKey })(
+      process.env.OPENAI_MODEL?.trim() || DEFAULT_OPENAI_MODEL,
+    );
+  }
+  return process.env.AI_GATEWAY_MODEL || DEFAULT_GATEWAY_MODEL;
+}
 
 function getSystemPrompt(isYaml: boolean, editModes?: EditMode[]): string {
   if (isYaml) {
@@ -108,18 +120,21 @@ export async function POST(req: Request) {
         editModes,
       });
 
+  const openaiKey = process.env.OPENAI_API_KEY?.trim();
   const result = streamText({
-    model: process.env.AI_GATEWAY_MODEL || DEFAULT_MODEL,
+    model: playgroundLanguageModel(),
     abortSignal: req.signal,
-    system: [
-      {
-        role: "system",
-        content: systemPrompt,
-        providerOptions: {
-          anthropic: { cacheControl: { type: "ephemeral" } },
-        },
-      },
-    ],
+    system: openaiKey
+      ? systemPrompt
+      : [
+          {
+            role: "system",
+            content: systemPrompt,
+            providerOptions: {
+              anthropic: { cacheControl: { type: "ephemeral" } },
+            },
+          },
+        ],
     prompt: userPrompt,
     temperature: 0.7,
   });

@@ -1,4 +1,4 @@
-import { agent } from "@/lib/agent";
+import { createAgent } from "@/lib/agent";
 import { minuteRateLimit, dailyRateLimit } from "@/lib/rate-limit";
 import {
   convertToModelMessages,
@@ -8,6 +8,11 @@ import {
 } from "ai";
 import { pipeJsonRender } from "@json-render/core";
 import { headers } from "next/headers";
+import {
+  createCompositionStreamResponse,
+  lastAssistantSpec,
+  lastUserPrompt,
+} from "@/lib/jev/response";
 
 export const maxDuration = 60;
 
@@ -49,8 +54,16 @@ export async function POST(req: Request) {
     );
   }
 
+  if (body.model === "typesafe-ai/jev") {
+    return createCompositionStreamResponse(
+      req,
+      lastUserPrompt(uiMessages),
+      lastAssistantSpec(uiMessages),
+    );
+  }
+
   const modelMessages = await convertToModelMessages(uiMessages);
-  const result = await agent.stream({ messages: modelMessages });
+  const result = await createAgent().stream({ messages: modelMessages });
 
   const stream = createUIMessageStream({
     execute: async ({ writer }) => {

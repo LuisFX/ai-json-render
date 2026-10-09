@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback, useRef, useEffect, useMemo } from "react";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport, type UIMessage } from "ai";
 import {
@@ -15,6 +15,7 @@ import {
   ArrowDown,
   ArrowUp,
   ChevronRight,
+  Info,
   Loader2,
   Sparkles,
 } from "lucide-react";
@@ -27,12 +28,56 @@ import { code } from "@streamdown/code";
 
 type AppDataParts = { [SPEC_DATA_PART]: SpecDataPart };
 type AppMessage = UIMessage<unknown, AppDataParts>;
+type ChatModel = "default" | "typesafe-ai/jev";
 
-// =============================================================================
-// Transport
-// =============================================================================
-
-const transport = new DefaultChatTransport({ api: "/api/generate" });
+function ModelToggle({
+  model,
+  onChange,
+  disabled,
+}: {
+  model: ChatModel;
+  onChange: (model: ChatModel) => void;
+  disabled: boolean;
+}) {
+  return (
+    <div
+      role="group"
+      aria-label="Model"
+      className="flex shrink-0 items-center rounded border border-border text-[10px] font-mono overflow-hidden"
+    >
+      <button
+        type="button"
+        aria-label="Default model"
+        aria-pressed={model === "default"}
+        disabled={disabled}
+        onClick={() => onChange("default")}
+        className={`px-1.5 py-0.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset disabled:opacity-50 ${
+          model === "default"
+            ? "bg-muted text-foreground"
+            : "text-muted-foreground hover:text-foreground"
+        }`}
+      >
+        default
+      </button>
+      <button
+        type="button"
+        aria-label="Jev (experimental)"
+        aria-pressed={model === "typesafe-ai/jev"}
+        disabled={disabled}
+        title="Experimental. Jev composes UI from prepared sample weather, GitHub, crypto, and Hacker News recipes. It cannot fetch live tools or invent copy."
+        onClick={() => onChange("typesafe-ai/jev")}
+        className={`flex items-center gap-1 px-1.5 py-0.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset disabled:opacity-50 ${
+          model === "typesafe-ai/jev"
+            ? "bg-muted text-foreground"
+            : "text-muted-foreground hover:text-foreground"
+        }`}
+      >
+        jev
+        <Info className="size-2.5" aria-hidden="true" />
+      </button>
+    </div>
+  );
+}
 
 // =============================================================================
 // Suggestions (shown in empty state)
@@ -284,12 +329,24 @@ function MessageBubble({
 
 export default function ChatPage() {
   const [input, setInput] = useState("");
+  const [model, setModel] = useState<ChatModel>("default");
+  const modelRef = useRef<ChatModel>("default");
+  modelRef.current = model;
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLElement>(null);
   const [showScrollButton, setShowScrollButton] = useState(false);
   const isStickToBottom = useRef(true);
   const isAutoScrolling = useRef(false);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+
+  const transport = useMemo(
+    () =>
+      new DefaultChatTransport<AppMessage>({
+        api: "/api/generate",
+        body: () => ({ model: modelRef.current }),
+      }),
+    [],
+  );
 
   const { messages, sendMessage, setMessages, status, error } =
     useChat<AppMessage>({ transport });
@@ -381,6 +438,11 @@ export default function ChatPage() {
           <h1 className="text-lg font-semibold">json-render Chat Example</h1>
         </div>
         <div className="flex items-center gap-2">
+          <ModelToggle
+            model={model}
+            onChange={setModel}
+            disabled={isStreaming}
+          />
           {messages.length > 0 && (
             <button
               onClick={handleClear}
@@ -404,8 +466,9 @@ export default function ChatPage() {
                   What would you like to explore?
                 </h2>
                 <p className="text-muted-foreground">
-                  Ask about weather, GitHub repos, crypto prices, or Hacker News
-                  -- the agent will fetch real data and build a dashboard.
+                  {model === "typesafe-ai/jev"
+                    ? "Jev composes a dashboard from prepared sample weather, GitHub, crypto, and Hacker News data. Switch to default to fetch live tools."
+                    : "Ask about weather, GitHub repos, crypto prices, or Hacker News -- the agent will fetch real data and build a dashboard."}
                 </p>
               </div>
 

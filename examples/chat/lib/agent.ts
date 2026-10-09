@@ -1,13 +1,11 @@
 import { ToolLoopAgent, stepCountIs } from "ai";
-import { gateway } from "@ai-sdk/gateway";
 import { explorerCatalog } from "./render/catalog";
+import { chatLanguageModel } from "./model";
 import { getWeather } from "./tools/weather";
 import { getGitHubRepo, getGitHubPullRequests } from "./tools/github";
 import { getCryptoPrice, getCryptoPriceHistory } from "./tools/crypto";
 import { getHackerNewsTop } from "./tools/hackernews";
 import { webSearch } from "./tools/search";
-
-const DEFAULT_MODEL = "anthropic/claude-haiku-4.5";
 
 const AGENT_INSTRUCTIONS = `You are a knowledgeable assistant that helps users explore data and learn about any topic. You look up real-time information, build visual dashboards, and create rich educational content.
 
@@ -141,18 +139,21 @@ ${explorerCatalog.prompt({
   ],
 })}`;
 
-export const agent = new ToolLoopAgent({
-  model: gateway(process.env.AI_GATEWAY_MODEL || DEFAULT_MODEL),
-  instructions: AGENT_INSTRUCTIONS,
-  tools: {
-    getWeather,
-    getGitHubRepo,
-    getGitHubPullRequests,
-    getCryptoPrice,
-    getCryptoPriceHistory,
-    getHackerNewsTop,
-    webSearch,
-  },
-  stopWhen: stepCountIs(5),
-  temperature: 0.7,
-});
+/** Built per request so OPENAI_API_KEY / OPENAI_MODEL resolve at call time. */
+export function createAgent() {
+  return new ToolLoopAgent({
+    model: chatLanguageModel(),
+    instructions: AGENT_INSTRUCTIONS,
+    tools: {
+      getWeather,
+      getGitHubRepo,
+      getGitHubPullRequests,
+      getCryptoPrice,
+      getCryptoPriceHistory,
+      getHackerNewsTop,
+      webSearch,
+    },
+    stopWhen: stepCountIs(5),
+    temperature: 0.7,
+  });
+}

@@ -164,7 +164,7 @@ The playground is a reference implementation: [candidates and server wrapper](ht
 
 ## Playground capabilities
 
-To self-host the playground, set `JEV_AI_GATEWAY_API_KEY` on the server for Jev. The default model uses `AI_GATEWAY_API_KEY`; Jev requires its own key and does not fall back to that variable. This is a playground convention: the reusable evaluator accepts whichever server-side key your app passes as `apiKey`.
+To self-host the playground, set `TYPESAFE_API_KEY` on the server for Jev (TypeSafe's native key; the playground calls `api.typesafe.ai` via `@typesafe-ai/sdk`). The default model uses `OPENAI_API_KEY` via `@ai-sdk/openai`. `AI_GATEWAY_API_KEY` is only used if OpenAI is unset. The [chat example](https://github.com/vercel-labs/json-render/tree/main/examples/chat) uses the same split: default `ToolLoopAgent` on OpenAI with live tools, and a **jev** toggle that streams prepared explorer recipes as `data-spec` parts. Jev still cannot invent copy or fetch those tools.
 
 The playground offers 17 component types with prepared account/contact fields, validation rules, synthetic profile and commerce data, and local Save/Reset/Submit actions. Profile choices include an avatar, display name, role, bio, email, location, and membership badge, bound to the supplied record. A title in double quotes becomes an extra Heading candidate. Values entered in the rendered preview stay in the browser.
 

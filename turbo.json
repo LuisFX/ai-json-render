@@ -4,9 +4,11 @@
   "globalEnv": [
     "AI_GATEWAY_API_KEY",
     "JEV_AI_GATEWAY_API_KEY",
+    "TYPESAFE_API_KEY",
     "ANTHROPIC_API_KEY",
     "CLAUDE_CODE_MODEL",
     "OPENAI_API_KEY",
+    "OPENAI_MODEL",
     "CODEX_MODEL",
     "PI_MODEL",
     "AI_GATEWAY_MODEL",

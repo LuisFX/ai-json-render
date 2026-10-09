@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { diffToPatches, type Spec } from "@json-render/core";
 import { composeUI } from "./compose";
+import { typeSafeApiKey } from "./typesafe-evaluator";
 
 const inputSchema = z.object({ prompt: z.string().trim().min(1).max(1000) });
 const previousSpecSchema = z
@@ -45,11 +46,11 @@ export function createCompositionResponse(
       { status: 400 },
     );
   const initialSpec = previous?.success ? (previous.data as Spec) : undefined;
-  if (!process.env.JEV_AI_GATEWAY_API_KEY?.trim())
+  if (!typeSafeApiKey())
     return Response.json(
       {
         error:
-          "Jev is temporarily unavailable. Choose the default model to continue.",
+          "Jev is temporarily unavailable. Set TYPESAFE_API_KEY to continue.",
       },
       { status: 503 },
     );

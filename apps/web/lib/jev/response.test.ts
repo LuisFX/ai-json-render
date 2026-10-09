@@ -14,7 +14,7 @@ afterEach(() => {
 describe("playground composition response", () => {
   it("passes the selected spec to the composer and streams patches relative to it", async () => {
     vi.stubEnv("AI_GATEWAY_API_KEY", "");
-    vi.stubEnv("JEV_AI_GATEWAY_API_KEY", "test");
+    vi.stubEnv("TYPESAFE_API_KEY", "test");
     const initialSpec: Spec = {
       root: "card",
       elements: {
@@ -59,7 +59,7 @@ describe("playground composition response", () => {
   });
 
   it("adapts snapshots to the existing patch stream, including the final decision", async () => {
-    vi.stubEnv("JEV_AI_GATEWAY_API_KEY", "test");
+    vi.stubEnv("TYPESAFE_API_KEY", "test");
     const spec: Spec = {
       root: "card",
       elements: { card: { type: "Card", props: {}, children: [] } },
@@ -114,7 +114,7 @@ describe("playground composition response", () => {
   });
 
   it("retains unavailable outcomes and sends failures in the shared protocol", async () => {
-    vi.stubEnv("JEV_AI_GATEWAY_API_KEY", "test");
+    vi.stubEnv("TYPESAFE_API_KEY", "test");
     vi.mocked(composeUI).mockImplementation(async function* () {
       yield {
         type: "complete",
@@ -148,7 +148,7 @@ describe("playground composition response", () => {
       }).status,
     ).toBe(400);
     vi.stubEnv("AI_GATEWAY_API_KEY", "default-model-key");
-    vi.stubEnv("JEV_AI_GATEWAY_API_KEY", "");
+    vi.stubEnv("TYPESAFE_API_KEY", "");
     expect(createCompositionResponse(request, "Create a form").status).toBe(
       503,
     );

@@ -39,6 +39,7 @@ export default defineConfig({
       "packages/**/*.test.tsx",
       "apps/web/lib/jev/**/*.test.ts",
       "apps/web/lib/use-playground-stream.test.ts",
+      "examples/chat/lib/jev/**/*.test.ts",
     ],
     server: {
       deps: {
