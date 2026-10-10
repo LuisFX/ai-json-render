@@ -1,0 +1,12 @@
+{
+  "componentName": "Timeline",
+  "agentSource": "examples/chat-standalone/lib/agent.ts",
+  "agentWorkflowMentions": [
+    "- Use Timeline for historical events, processes, step-by-step explanations, or milestones.",
+    "- Array binding: \"items\": { \"$state\": \"/quiz/questions\" } (for Accordion, Timeline, etc.)"
+  ],
+  "customRulesMentions": [
+    "\"For educational prompts ('teach me about', 'explain', 'what is'), use a mix of Callout, Accordion, Timeline, and charts to make the content visually rich.\","
+  ],
+  "mentionedInAgent": true
+}

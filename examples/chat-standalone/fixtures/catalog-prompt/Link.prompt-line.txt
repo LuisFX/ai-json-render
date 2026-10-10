@@ -1,0 +1,1 @@
+- Link: { text: string, href: string } - External link that opens in a new tab

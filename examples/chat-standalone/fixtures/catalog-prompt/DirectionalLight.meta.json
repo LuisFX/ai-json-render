@@ -1,0 +1,14 @@
+{
+  "componentName": "DirectionalLight",
+  "catalogSource": "examples/chat-standalone/lib/render/catalog.ts",
+  "description": "Directional light like sunlight. Position sets direction, not location.",
+  "slots": null,
+  "events": null,
+  "promptLine": "- DirectionalLight: { position?: Array<number>, color?: string, intensity?: number } - Directional light like sunlight. Position sets direction, not location.",
+  "promptMentions": [
+    "- DirectionalLight: { position?: Array<number>, color?: string, intensity?: number } - Directional light like sunlight. Position sets direction, not location."
+  ],
+  "promptMode": "standalone",
+  "promptFullLength": 22951,
+  "promptSha256": "b5b59e6c3d103cfed155fe42d8884eac60c7ab629889b200f266c83d5ce765b7"
+}

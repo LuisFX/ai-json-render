@@ -1,0 +1,16 @@
+{
+  "componentName": "Group3D",
+  "catalogSource": "examples/chat-standalone/lib/render/catalog.ts",
+  "description": "3D group for positioning, rotating, and animating children together. Use to create orbits: position a planet inside a Group3D and animate the group's rotation.",
+  "slots": [
+    "default"
+  ],
+  "events": null,
+  "promptLine": "- Group3D: { position?: Array<number>, rotation?: Array<number>, scale?: Array<number>, animation?: { rotate?: Array<number> } } - 3D group for positioning, rotating, and animating children together. Use to create orbits: position a planet inside a Group3D and animate the group's rotation. [accepts children]",
+  "promptMentions": [
+    "- Group3D: { position?: Array<number>, rotation?: Array<number>, scale?: Array<number>, animation?: { rotate?: Array<number> } } - 3D group for positioning, rotating, and animating children together. Use to create orbits: position a planet inside a Group3D and animate the group's rotation. [accepts children]"
+  ],
+  "promptMode": "standalone",
+  "promptFullLength": 22951,
+  "promptSha256": "b5b59e6c3d103cfed155fe42d8884eac60c7ab629889b200f266c83d5ce765b7"
+}

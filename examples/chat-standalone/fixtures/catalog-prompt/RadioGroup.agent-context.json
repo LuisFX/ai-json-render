@@ -1,0 +1,11 @@
+{
+  "componentName": "RadioGroup",
+  "agentSource": "examples/chat-standalone/lib/agent.ts",
+  "agentWorkflowMentions": [
+    "- RadioGroup: Renders radio buttons. Writes selected value to statePath automatically.",
+    "   - A RadioGroup with the answer options, writing to /q1, /q2, etc.",
+    "   Card > Stack(vertical) > [Text(question), RadioGroup(options), Button(Check Answer), Text(Correct! visible when right), Callout(Wrong, visible when wrong & submitted)]"
+  ],
+  "customRulesMentions": [],
+  "mentionedInAgent": true
+}

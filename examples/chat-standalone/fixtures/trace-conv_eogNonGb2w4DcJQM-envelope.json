@@ -1,0 +1,2807 @@
+{
+  "id": "conv_eogNonGb2w4DcJQM",
+  "title": "Build a crypto dashboard for Bitcoin, Ethereum, and Solana",
+  "name": null,
+  "forkedFrom": null,
+  "ownerSlug": null,
+  "createdAt": "2026-09-12T15:37:31.823Z",
+  "updatedAt": "2026-09-12T16:06:38.080Z",
+  "pinnedAt": null,
+  "archivedAt": null,
+  "messageCount": 8,
+  "preview": "The per \"coin\" cards need to be better looking. Today, they have no price in the display:\n\nBitcoin (BTC)\nCurrent Price\n\n",
+  "artifact": null,
+  "messages": [
+    {
+      "parts": [
+        {
+          "type": "text",
+          "text": "Build a crypto dashboard for Bitcoin, Ethereum, and Solana"
+        }
+      ],
+      "id": "bLB3r2sVQfq6VnES",
+      "role": "user"
+    },
+    {
+      "id": "ExAd1UZWK5cxAmCp",
+      "role": "assistant",
+      "parts": [
+        {
+          "type": "step-start"
+        },
+        {
+          "type": "tool-getCryptoPrice",
+          "toolCallId": "call_s8d5oU0qbdGjVUXkChdDvoMS",
+          "state": "output-available",
+          "input": {
+            "coinId": "bitcoin"
+          },
+          "output": {
+            "id": "bitcoin",
+            "symbol": "BTC",
+            "name": "Bitcoin",
+            "rank": 1,
+            "price": 77390,
+            "marketCap": 1554228970820,
+            "volume24h": 21233889130,
+            "change24h": -1.66,
+            "change7d": -2.94,
+            "change30d": 21.27,
+            "high24h": 78007,
+            "low24h": 76952,
+            "allTimeHigh": 126080,
+            "allTimeHighDate": "2025-10-06T10:57:42.000Z",
+            "circulatingSupply": 20083337,
+            "totalSupply": 20083390,
+            "sparkline7d": [
+              {
+                "date": "Sep 5",
+                "price": 79730.88
+              },
+              {
+                "date": "Sep 5",
+                "price": 79906.56
+              },
+              {
+                "date": "Sep 6",
+                "price": 79526.8
+              },
+              {
+                "date": "Sep 6",
+                "price": 79848.99
+              },
+              {
+                "date": "Sep 7",
+                "price": 79180.44
+              },
+              {
+                "date": "Sep 7",
+                "price": 78927.13
+              },
+              {
+                "date": "Sep 8",
+                "price": 78535.16
+              },
+              {
+                "date": "Sep 8",
+                "price": 78722.42
+              },
+              {
+                "date": "Sep 9",
+                "price": 78949.21
+              },
+              {
+                "date": "Sep 9",
+                "price": 78329.35
+              },
+              {
+                "date": "Sep 10",
+                "price": 77359.53
+              },
+              {
+                "date": "Sep 10",
+                "price": 76824.79
+              },
+              {
+                "date": "Sep 11",
+                "price": 78783.77
+              },
+              {
+                "date": "Sep 11",
+                "price": 77256.75
+              }
+            ]
+          },
+          "callProviderMetadata": {
+            "openai": {
+              "itemId": "fc_0ccaae6668ec64f8006aa571ce0b2487d0874bec33567f194b"
+            }
+          },
+          "resultProviderMetadata": {
+            "openai": {
+              "itemId": "fc_0ccaae6668ec64f8006aa571ce0b2487d0874bec33567f194b"
+            }
+          }
+        },
+        {
+          "type": "tool-getCryptoPrice",
+          "toolCallId": "call_wc34LjJuMxWmOdH8TaSxJYRB",
+          "state": "output-available",
+          "input": {
+            "coinId": "ethereum"
+          },
+          "output": {
+            "id": "ethereum",
+            "symbol": "ETH",
+            "name": "Ethereum",
+            "rank": 2,
+            "price": 2537.46,
+            "marketCap": 309699278132,
+            "volume24h": 13262098530,
+            "change24h": -2.77,
+            "change7d": 3.25,
+            "change30d": 34.14,
+            "high24h": 2580.2,
+            "low24h": 2508.19,
+            "allTimeHigh": 4946.05,
+            "allTimeHighDate": "2025-08-24T11:21:03.000Z",
+            "circulatingSupply": 122041373.10305338,
+            "totalSupply": 122041373.1030533,
+            "sparkline7d": [
+              {
+                "date": "Sep 5",
+                "price": 2457.49
+              },
+              {
+                "date": "Sep 5",
+                "price": 2503.42
+              },
+              {
+                "date": "Sep 6",
+                "price": 2477.48
+              },
+              {
+                "date": "Sep 6",
+                "price": 2510.13
+              },
+              {
+                "date": "Sep 7",
+                "price": 2489.8
+              },
+              {
+                "date": "Sep 7",
+                "price": 2484.31
+              },
+              {
+                "date": "Sep 8",
+                "price": 2484.82
+              },
+              {
+                "date": "Sep 8",
+                "price": 2493.76
+              },
+              {
+                "date": "Sep 9",
+                "price": 2498.59
+              },
+              {
+                "date": "Sep 9",
+                "price": 2474.49
+              },
+              {
+                "date": "Sep 10",
+                "price": 2442.73
+              },
+              {
+                "date": "Sep 10",
+                "price": 2446.38
+              },
+              {
+                "date": "Sep 11",
+                "price": 2606.74
+              },
+              {
+                "date": "Sep 11",
+                "price": 2513.54
+              }
+            ]
+          },
+          "callProviderMetadata": {
+            "openai": {
+              "itemId": "fc_0ccaae6668ec64f8006aa571ce0b3487d0a591a855ac3660af"
+            }
+          },
+          "resultProviderMetadata": {
+            "openai": {
+              "itemId": "fc_0ccaae6668ec64f8006aa571ce0b3487d0a591a855ac3660af"
+            }
+          }
+        },
+        {
+          "type": "tool-getCryptoPrice",
+          "toolCallId": "call_m1C7GeplepZZ4CyQtH5aXMpy",
+          "state": "output-available",
+          "input": {
+            "coinId": "solana"
+          },
+          "output": {
+            "id": "solana",
+            "symbol": "SOL",
+            "name": "Solana",
+            "rank": 7,
+            "price": 101.96,
+            "marketCap": 59806775348,
+            "volume24h": 2869273312,
+            "change24h": -1.45,
+            "change7d": -0.89,
+            "change30d": 33.44,
+            "high24h": 102.98,
+            "low24h": 100.64,
+            "allTimeHigh": 293.31,
+            "allTimeHighDate": "2025-01-19T03:15:27.000Z",
+            "circulatingSupply": 586632816.4906648,
+            "totalSupply": 633924084.6054469,
+            "sparkline7d": [
+              {
+                "date": "Sep 5",
+                "price": 102.88
+              },
+              {
+                "date": "Sep 5",
+                "price": 104.38
+              },
+              {
+                "date": "Sep 6",
+                "price": 105.67
+              },
+              {
+                "date": "Sep 6",
+                "price": 105.73
+              },
+              {
+                "date": "Sep 7",
+                "price": 104.65
+              },
+              {
+                "date": "Sep 7",
+                "price": 103.28
+              },
+              {
+                "date": "Sep 8",
+                "price": 103.3
+              },
+              {
+                "date": "Sep 8",
+                "price": 103.49
+              },
+              {
+                "date": "Sep 9",
+                "price": 103.47
+              },
+              {
+                "date": "Sep 9",
+                "price": 101.85
+              },
+              {
+                "date": "Sep 10",
+                "price": 100.14
+              },
+              {
+                "date": "Sep 10",
+                "price": 99.31
+              },
+              {
+                "date": "Sep 11",
+                "price": 103.26
+              },
+              {
+                "date": "Sep 11",
+                "price": 101.81
+              }
+            ]
+          },
+          "callProviderMetadata": {
+            "openai": {
+              "itemId": "fc_0ccaae6668ec64f8006aa571ce0b3c87d0979fec46583c5d18"
+            }
+          },
+          "resultProviderMetadata": {
+            "openai": {
+              "itemId": "fc_0ccaae6668ec64f8006aa571ce0b3c87d0979fec46583c5d18"
+            }
+          }
+        },
+        {
+          "type": "tool-getCryptoPriceHistory",
+          "toolCallId": "call_6GFzxaWwyRJqHIyCMFMGAZ4Z",
+          "state": "output-available",
+          "input": {
+            "coinId": "bitcoin",
+            "days": 30
+          },
+          "output": {
+            "coinId": "bitcoin",
+            "days": 30,
+            "priceHistory": [
+              {
+                "date": "Aug 13",
+                "price": 63401.3
+              },
+              {
+                "date": "Aug 14",
+                "price": 62993.65
+              },
+              {
+                "date": "Aug 16",
+                "price": 63086.12
+              },
+              {
+                "date": "Aug 17",
+                "price": 64121.61
+              },
+              {
+                "date": "Aug 19",
+                "price": 68529.26
+              },
+              {
+                "date": "Aug 20",
+                "price": 74501.33
+              },
+              {
+                "date": "Aug 22",
+                "price": 76964.49
+              },
+              {
+                "date": "Aug 23",
+                "price": 76947.53
+              },
+              {
+                "date": "Aug 25",
+                "price": 79498.89
+              },
+              {
+                "date": "Aug 26",
+                "price": 78817
+              },
+              {
+                "date": "Aug 28",
+                "price": 78370.58
+              },
+              {
+                "date": "Aug 29",
+                "price": 78140.31
+              },
+              {
+                "date": "Aug 31",
+                "price": 78554.14
+              },
+              {
+                "date": "Sep 1",
+                "price": 77523.34
+              },
+              {
+                "date": "Sep 3",
+                "price": 81321.71
+              },
+              {
+                "date": "Sep 4",
+                "price": 79591.53
+              },
+              {
+                "date": "Sep 6",
+                "price": 79707.93
+              },
+              {
+                "date": "Sep 7",
+                "price": 78887.12
+              },
+              {
+                "date": "Sep 9",
+                "price": 78586.85
+              },
+              {
+                "date": "Sep 10",
+                "price": 76870.16
+              },
+              {
+                "date": "Sep 12",
+                "price": 77389.61
+              }
+            ]
+          },
+          "callProviderMetadata": {
+            "openai": {
+              "itemId": "fc_0ccaae6668ec64f8006aa571ce0b4487d094f43178c20dee21"
+            }
+          },
+          "resultProviderMetadata": {
+            "openai": {
+              "itemId": "fc_0ccaae6668ec64f8006aa571ce0b4487d094f43178c20dee21"
+            }
+          }
+        },
+        {
+          "type": "tool-getCryptoPriceHistory",
+          "toolCallId": "call_bnDjupziLtPbwc6NkL6nDXI2",
+          "state": "output-available",
+          "input": {
+            "coinId": "ethereum",
+            "days": 30
+          },
+          "output": {
+            "coinId": "ethereum",
+            "days": 30,
+            "priceHistory": [
+              {
+                "date": "Aug 13",
+                "price": 1880.73
+              },
+              {
+                "date": "Aug 14",
+                "price": 1880.98
+              },
+              {
+                "date": "Aug 16",
+                "price": 1882.34
+              },
+              {
+                "date": "Aug 17",
+                "price": 1892.85
+              },
+              {
+                "date": "Aug 19",
+                "price": 2085.36
+              },
+              {
+                "date": "Aug 20",
+                "price": 2340.7
+              },
+              {
+                "date": "Aug 22",
+                "price": 2410.26
+              },
+              {
+                "date": "Aug 23",
+                "price": 2431.25
+              },
+              {
+                "date": "Aug 25",
+                "price": 2482.29
+              },
+              {
+                "date": "Aug 26",
+                "price": 2492.32
+              },
+              {
+                "date": "Aug 28",
+                "price": 2473.41
+              },
+              {
+                "date": "Aug 29",
+                "price": 2456.94
+              },
+              {
+                "date": "Aug 31",
+                "price": 2466.93
+              },
+              {
+                "date": "Sep 1",
+                "price": 2413.18
+              },
+              {
+                "date": "Sep 3",
+                "price": 2515.53
+              },
+              {
+                "date": "Sep 4",
+                "price": 2452.75
+              },
+              {
+                "date": "Sep 6",
+                "price": 2479.61
+              },
+              {
+                "date": "Sep 7",
+                "price": 2484.87
+              },
+              {
+                "date": "Sep 9",
+                "price": 2490.02
+              },
+              {
+                "date": "Sep 10",
+                "price": 2446.34
+              },
+              {
+                "date": "Sep 12",
+                "price": 2537.66
+              }
+            ]
+          },
+          "callProviderMetadata": {
+            "openai": {
+              "itemId": "fc_0ccaae6668ec64f8006aa571ce0b4c87d0b68130f31116d52e"
+            }
+          },
+          "resultProviderMetadata": {
+            "openai": {
+              "itemId": "fc_0ccaae6668ec64f8006aa571ce0b4c87d0b68130f31116d52e"
+            }
+          }
+        },
+        {
+          "type": "tool-getCryptoPriceHistory",
+          "toolCallId": "call_KpFsr9ZLGajdtfvk0YkcTm2d",
+          "state": "output-available",
+          "input": {
+            "coinId": "solana",
+            "days": 30
+          },
+          "output": {
+            "coinId": "solana",
+            "days": 30,
+            "priceHistory": [
+              {
+                "date": "Aug 13",
+                "price": 75.63
+              },
+              {
+                "date": "Aug 14",
+                "price": 75.36
+              },
+              {
+                "date": "Aug 16",
+                "price": 75.51
+              },
+              {
+                "date": "Aug 17",
+                "price": 75.43
+              },
+              {
+                "date": "Aug 19",
+                "price": 81.84
+              },
+              {
+                "date": "Aug 20",
+                "price": 89.12
+              },
+              {
+                "date": "Aug 22",
+                "price": 93.06
+              },
+              {
+                "date": "Aug 23",
+                "price": 93.72
+              },
+              {
+                "date": "Aug 25",
+                "price": 98.33
+              },
+              {
+                "date": "Aug 26",
+                "price": 101.05
+              },
+              {
+                "date": "Aug 28",
+                "price": 105.34
+              },
+              {
+                "date": "Aug 29",
+                "price": 105.06
+              },
+              {
+                "date": "Aug 31",
+                "price": 102.81
+              },
+              {
+                "date": "Sep 1",
+                "price": 100.23
+              },
+              {
+                "date": "Sep 3",
+                "price": 105.13
+              },
+              {
+                "date": "Sep 4",
+                "price": 101.9
+              },
+              {
+                "date": "Sep 6",
+                "price": 105.76
+              },
+              {
+                "date": "Sep 7",
+                "price": 103.31
+              },
+              {
+                "date": "Sep 9",
+                "price": 103.06
+              },
+              {
+                "date": "Sep 10",
+                "price": 99.3
+              },
+              {
+                "date": "Sep 12",
+                "price": 101.96
+              }
+            ]
+          },
+          "callProviderMetadata": {
+            "openai": {
+              "itemId": "fc_0ccaae6668ec64f8006aa571ce0b5087d08211b6c00d09f690"
+            }
+          },
+          "resultProviderMetadata": {
+            "openai": {
+              "itemId": "fc_0ccaae6668ec64f8006aa571ce0b5087d08211b6c00d09f690"
+            }
+          }
+        },
+        {
+          "type": "step-start"
+        },
+        {
+          "type": "text",
+          "text": "",
+          "providerMetadata": {
+            "openai": {
+              "itemId": "msg_0c5abc6932065382006aa571ceffec87d0b935a8071f143484",
+              "phase": "final_answer"
+            }
+          },
+          "state": "done"
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/root",
+              "value": "dashboard"
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/prices",
+              "value": {
+                "bitcoin": {
+                  "id": "bitcoin",
+                  "symbol": "BTC",
+                  "name": "Bitcoin",
+                  "rank": 1,
+                  "price": 77390,
+                  "marketCap": 1554228970820,
+                  "volume24h": 21233889130,
+                  "change24h": -1.66,
+                  "change7d": -2.94,
+                  "change30d": 21.27,
+                  "high24h": 78007,
+                  "low24h": 76952,
+                  "allTimeHigh": 126080,
+                  "allTimeHighDate": "2025-10-06T10:57:42.000Z",
+                  "circulatingSupply": 20083337,
+                  "totalSupply": 20083390,
+                  "sparkline7d": [
+                    {
+                      "date": "Sep 5",
+                      "price": 79730.88
+                    },
+                    {
+                      "date": "Sep 5",
+                      "price": 79906.56
+                    },
+                    {
+                      "date": "Sep 6",
+                      "price": 79526.8
+                    },
+                    {
+                      "date": "Sep 6",
+                      "price": 79848.99
+                    },
+                    {
+                      "date": "Sep 7",
+                      "price": 79180.44
+                    },
+                    {
+                      "date": "Sep 7",
+                      "price": 78927.13
+                    },
+                    {
+                      "date": "Sep 8",
+                      "price": 78535.16
+                    },
+                    {
+                      "date": "Sep 8",
+                      "price": 78722.42
+                    },
+                    {
+                      "date": "Sep 9",
+                      "price": 78949.21
+                    },
+                    {
+                      "date": "Sep 9",
+                      "price": 78329.35
+                    },
+                    {
+                      "date": "Sep 10",
+                      "price": 77359.53
+                    },
+                    {
+                      "date": "Sep 10",
+                      "price": 76824.79
+                    },
+                    {
+                      "date": "Sep 11",
+                      "price": 78783.77
+                    },
+                    {
+                      "date": "Sep 11",
+                      "price": 77256.75
+                    }
+                  ]
+                },
+                "ethereum": {
+                  "id": "ethereum",
+                  "symbol": "ETH",
+                  "name": "Ethereum",
+                  "rank": 2,
+                  "price": 2537.46,
+                  "marketCap": 309699278132,
+                  "volume24h": 13262098530,
+                  "change24h": -2.77,
+                  "change7d": 3.25,
+                  "change30d": 34.14,
+                  "high24h": 2580.2,
+                  "low24h": 2508.19,
+                  "allTimeHigh": 4946.05,
+                  "allTimeHighDate": "2025-08-24T11:21:03.000Z",
+                  "circulatingSupply": 122041373.10305338,
+                  "totalSupply": 122041373.1030533,
+                  "sparkline7d": [
+                    {
+                      "date": "Sep 5",
+                      "price": 2457.49
+                    },
+                    {
+                      "date": "Sep 5",
+                      "price": 2503.42
+                    },
+                    {
+                      "date": "Sep 6",
+                      "price": 2477.48
+                    },
+                    {
+                      "date": "Sep 6",
+                      "price": 2510.13
+                    },
+                    {
+                      "date": "Sep 7",
+                      "price": 2489.8
+                    },
+                    {
+                      "date": "Sep 7",
+                      "price": 2484.31
+                    },
+                    {
+                      "date": "Sep 8",
+                      "price": 2484.82
+                    },
+                    {
+                      "date": "Sep 8",
+                      "price": 2493.76
+                    },
+                    {
+                      "date": "Sep 9",
+                      "price": 2498.59
+                    },
+                    {
+                      "date": "Sep 9",
+                      "price": 2474.49
+                    },
+                    {
+                      "date": "Sep 10",
+                      "price": 2442.73
+                    },
+                    {
+                      "date": "Sep 10",
+                      "price": 2446.38
+                    },
+                    {
+                      "date": "Sep 11",
+                      "price": 2606.74
+                    },
+                    {
+                      "date": "Sep 11",
+                      "price": 2513.54
+                    }
+                  ]
+                },
+                "solana": {
+                  "id": "solana",
+                  "symbol": "SOL",
+                  "name": "Solana",
+                  "rank": 7,
+                  "price": 101.96,
+                  "marketCap": 59806775348,
+                  "volume24h": 2869273312,
+                  "change24h": -1.45,
+                  "change7d": -0.89,
+                  "change30d": 33.44,
+                  "high24h": 102.98,
+                  "low24h": 100.64,
+                  "allTimeHigh": 293.31,
+                  "allTimeHighDate": "2025-01-19T03:15:27.000Z",
+                  "circulatingSupply": 586632816.4906648,
+                  "totalSupply": 633924084.6054469,
+                  "sparkline7d": [
+                    {
+                      "date": "Sep 5",
+                      "price": 102.88
+                    },
+                    {
+                      "date": "Sep 5",
+                      "price": 104.38
+                    },
+                    {
+                      "date": "Sep 6",
+                      "price": 105.67
+                    },
+                    {
+                      "date": "Sep 6",
+                      "price": 105.73
+                    },
+                    {
+                      "date": "Sep 7",
+                      "price": 104.65
+                    },
+                    {
+                      "date": "Sep 7",
+                      "price": 103.28
+                    },
+                    {
+                      "date": "Sep 8",
+                      "price": 103.3
+                    },
+                    {
+                      "date": "Sep 8",
+                      "price": 103.49
+                    },
+                    {
+                      "date": "Sep 9",
+                      "price": 103.47
+                    },
+                    {
+                      "date": "Sep 9",
+                      "price": 101.85
+                    },
+                    {
+                      "date": "Sep 10",
+                      "price": 100.14
+                    },
+                    {
+                      "date": "Sep 10",
+                      "price": 99.31
+                    },
+                    {
+                      "date": "Sep 11",
+                      "price": 103.26
+                    },
+                    {
+                      "date": "Sep 11",
+                      "price": 101.81
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/history30d",
+              "value": {
+                "bitcoin": [
+                  {
+                    "date": "Aug 13",
+                    "price": 63401.3
+                  },
+                  {
+                    "date": "Aug 14",
+                    "price": 62993.65
+                  },
+                  {
+                    "date": "Aug 16",
+                    "price": 63086.12
+                  },
+                  {
+                    "date": "Aug 17",
+                    "price": 64121.61
+                  },
+                  {
+                    "date": "Aug 19",
+                    "price": 68529.26
+                  },
+                  {
+                    "date": "Aug 20",
+                    "price": 74501.33
+                  },
+                  {
+                    "date": "Aug 22",
+                    "price": 76964.49
+                  },
+                  {
+                    "date": "Aug 23",
+                    "price": 76947.53
+                  },
+                  {
+                    "date": "Aug 25",
+                    "price": 79498.89
+                  },
+                  {
+                    "date": "Aug 26",
+                    "price": 78817
+                  },
+                  {
+                    "date": "Aug 28",
+                    "price": 78370.58
+                  },
+                  {
+                    "date": "Aug 29",
+                    "price": 78140.31
+                  },
+                  {
+                    "date": "Aug 31",
+                    "price": 78554.14
+                  },
+                  {
+                    "date": "Sep 1",
+                    "price": 77523.34
+                  },
+                  {
+                    "date": "Sep 3",
+                    "price": 81321.71
+                  },
+                  {
+                    "date": "Sep 4",
+                    "price": 79591.53
+                  },
+                  {
+                    "date": "Sep 6",
+                    "price": 79707.93
+                  },
+                  {
+                    "date": "Sep 7",
+                    "price": 78887.12
+                  },
+                  {
+                    "date": "Sep 9",
+                    "price": 78586.85
+                  },
+                  {
+                    "date": "Sep 10",
+                    "price": 76870.16
+                  },
+                  {
+                    "date": "Sep 12",
+                    "price": 77389.61
+                  }
+                ],
+                "ethereum": [
+                  {
+                    "date": "Aug 13",
+                    "price": 1880.73
+                  },
+                  {
+                    "date": "Aug 14",
+                    "price": 1880.98
+                  },
+                  {
+                    "date": "Aug 16",
+                    "price": 1882.34
+                  },
+                  {
+                    "date": "Aug 17",
+                    "price": 1892.85
+                  },
+                  {
+                    "date": "Aug 19",
+                    "price": 2085.36
+                  },
+                  {
+                    "date": "Aug 20",
+                    "price": 2340.7
+                  },
+                  {
+                    "date": "Aug 22",
+                    "price": 2410.26
+                  },
+                  {
+                    "date": "Aug 23",
+                    "price": 2431.25
+                  },
+                  {
+                    "date": "Aug 25",
+                    "price": 2482.29
+                  },
+                  {
+                    "date": "Aug 26",
+                    "price": 2492.32
+                  },
+                  {
+                    "date": "Aug 28",
+                    "price": 2473.41
+                  },
+                  {
+                    "date": "Aug 29",
+                    "price": 2456.94
+                  },
+                  {
+                    "date": "Aug 31",
+                    "price": 2466.93
+                  },
+                  {
+                    "date": "Sep 1",
+                    "price": 2413.18
+                  },
+                  {
+                    "date": "Sep 3",
+                    "price": 2515.53
+                  },
+                  {
+                    "date": "Sep 4",
+                    "price": 2452.75
+                  },
+                  {
+                    "date": "Sep 6",
+                    "price": 2479.61
+                  },
+                  {
+                    "date": "Sep 7",
+                    "price": 2484.87
+                  },
+                  {
+                    "date": "Sep 9",
+                    "price": 2490.02
+                  },
+                  {
+                    "date": "Sep 10",
+                    "price": 2446.34
+                  },
+                  {
+                    "date": "Sep 12",
+                    "price": 2537.66
+                  }
+                ],
+                "solana": [
+                  {
+                    "date": "Aug 13",
+                    "price": 75.63
+                  },
+                  {
+                    "date": "Aug 14",
+                    "price": 75.36
+                  },
+                  {
+                    "date": "Aug 16",
+                    "price": 75.51
+                  },
+                  {
+                    "date": "Aug 17",
+                    "price": 75.43
+                  },
+                  {
+                    "date": "Aug 19",
+                    "price": 81.84
+                  },
+                  {
+                    "date": "Aug 20",
+                    "price": 89.12
+                  },
+                  {
+                    "date": "Aug 22",
+                    "price": 93.06
+                  },
+                  {
+                    "date": "Aug 23",
+                    "price": 93.72
+                  },
+                  {
+                    "date": "Aug 25",
+                    "price": 98.33
+                  },
+                  {
+                    "date": "Aug 26",
+                    "price": 101.05
+                  },
+                  {
+                    "date": "Aug 28",
+                    "price": 105.34
+                  },
+                  {
+                    "date": "Aug 29",
+                    "price": 105.06
+                  },
+                  {
+                    "date": "Aug 31",
+                    "price": 102.81
+                  },
+                  {
+                    "date": "Sep 1",
+                    "price": 100.23
+                  },
+                  {
+                    "date": "Sep 3",
+                    "price": 105.13
+                  },
+                  {
+                    "date": "Sep 4",
+                    "price": 101.9
+                  },
+                  {
+                    "date": "Sep 6",
+                    "price": 105.76
+                  },
+                  {
+                    "date": "Sep 7",
+                    "price": 103.31
+                  },
+                  {
+                    "date": "Sep 9",
+                    "price": 103.06
+                  },
+                  {
+                    "date": "Sep 10",
+                    "price": 99.3
+                  },
+                  {
+                    "date": "Sep 12",
+                    "price": 101.96
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/main",
+              "value": {
+                "type": "Stack",
+                "props": {
+                  "direction": "vertical",
+                  "gap": "lg",
+                  "align": "stretch",
+                  "className": "dark"
+                },
+                "children": [
+                  "header",
+                  "summary-grid",
+                  "trend-grid",
+                  "history-card",
+                  "details-tabs"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/header",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Crypto Dashboard",
+                  "description": "Bitcoin, Ethereum, and Solana market snapshot",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "header-content"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/header-content",
+              "value": {
+                "type": "Stack",
+                "props": {
+                  "direction": "vertical",
+                  "gap": "sm"
+                },
+                "children": [
+                  "header-heading",
+                  "header-callout"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/header-heading",
+              "value": {
+                "type": "Heading",
+                "props": {
+                  "text": "Live Crypto Overview",
+                  "level": "h1"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/header-callout",
+              "value": {
+                "type": "Callout",
+                "props": {
+                  "type": "important",
+                  "title": "Market context",
+                  "content": "Prices, market caps, and historical trends are based on the latest available data for BTC, ETH, and SOL."
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/summary-grid",
+              "value": {
+                "type": "Grid",
+                "props": {
+                  "columns": 3,
+                  "gap": "md"
+                },
+                "children": [
+                  "btc-card",
+                  "eth-card",
+                  "sol-card"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/btc-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Bitcoin (BTC)",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "btc-stack"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/btc-stack",
+              "value": {
+                "type": "Stack",
+                "props": {
+                  "direction": "vertical",
+                  "gap": "sm"
+                },
+                "children": [
+                  "btc-price",
+                  "btc-metrics"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/btc-price",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "Current Price",
+                  "value": {
+                    "$template": "$${/state/prices/bitcoin/price}"
+                  },
+                  "detail": {
+                    "$template": "24h: ${/state/prices/bitcoin/change24h}% | 7d: ${/state/prices/bitcoin/change7d}%"
+                  }
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/btc-metrics",
+              "value": {
+                "type": "Stack",
+                "props": {
+                  "direction": "horizontal",
+                  "gap": "sm"
+                },
+                "children": [
+                  "btc-mcap",
+                  "btc-volume"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/btc-mcap",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "Market Cap",
+                  "value": {
+                    "$template": "$${/state/prices/bitcoin/marketCap}"
+                  },
+                  "trend": "neutral"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/btc-volume",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "24h Volume",
+                  "value": {
+                    "$template": "$${/state/prices/bitcoin/volume24h}"
+                  },
+                  "trend": "neutral"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/eth-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Ethereum (ETH)",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "eth-stack"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/eth-stack",
+              "value": {
+                "type": "Stack",
+                "props": {
+                  "direction": "vertical",
+                  "gap": "sm"
+                },
+                "children": [
+                  "eth-price",
+                  "eth-metrics"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/eth-price",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "Current Price",
+                  "value": {
+                    "$template": "$${/state/prices/ethereum/price}"
+                  },
+                  "detail": {
+                    "$template": "24h: ${/state/prices/ethereum/change24h}% | 7d: ${/state/prices/ethereum/change7d}%"
+                  }
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/eth-metrics",
+              "value": {
+                "type": "Stack",
+                "props": {
+                  "direction": "horizontal",
+                  "gap": "sm"
+                },
+                "children": [
+                  "eth-mcap",
+                  "eth-volume"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/eth-mcap",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "Market Cap",
+                  "value": {
+                    "$template": "$${/state/prices/ethereum/marketCap}"
+                  },
+                  "trend": "neutral"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/eth-volume",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "24h Volume",
+                  "value": {
+                    "$template": "$${/state/prices/ethereum/volume24h}"
+                  },
+                  "trend": "neutral"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/sol-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Solana (SOL)",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "sol-stack"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/sol-stack",
+              "value": {
+                "type": "Stack",
+                "props": {
+                  "direction": "vertical",
+                  "gap": "sm"
+                },
+                "children": [
+                  "sol-price",
+                  "sol-metrics"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/sol-price",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "Current Price",
+                  "value": {
+                    "$template": "$${/state/prices/solana/price}"
+                  },
+                  "detail": {
+                    "$template": "24h: ${/state/prices/solana/change24h}% | 7d: ${/state/prices/solana/change7d}%"
+                  }
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/sol-metrics",
+              "value": {
+                "type": "Stack",
+                "props": {
+                  "direction": "horizontal",
+                  "gap": "sm"
+                },
+                "children": [
+                  "sol-mcap",
+                  "sol-volume"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/sol-mcap",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "Market Cap",
+                  "value": {
+                    "$template": "$${/state/prices/solana/marketCap}"
+                  },
+                  "trend": "neutral"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/sol-volume",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "24h Volume",
+                  "value": {
+                    "$template": "$${/state/prices/solana/volume24h}"
+                  },
+                  "trend": "neutral"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/trend-grid",
+              "value": {
+                "type": "Grid",
+                "props": {
+                  "columns": 3,
+                  "gap": "md"
+                },
+                "children": [
+                  "btc-trend",
+                  "eth-trend",
+                  "sol-trend"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/btc-trend",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Bitcoin Trend",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "btc-chart"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/btc-chart",
+              "value": {
+                "type": "LineChart",
+                "props": {
+                  "title": "30-Day Price",
+                  "data": {
+                    "$state": "/state/history30d/bitcoin"
+                  },
+                  "xKey": "date",
+                  "yKey": "price",
+                  "color": "#F7931A",
+                  "height": 240
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/eth-trend",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Ethereum Trend",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "eth-chart"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/eth-chart",
+              "value": {
+                "type": "LineChart",
+                "props": {
+                  "title": "30-Day Price",
+                  "data": {
+                    "$state": "/state/history30d/ethereum"
+                  },
+                  "xKey": "date",
+                  "yKey": "price",
+                  "color": "#627EEA",
+                  "height": 240
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/sol-trend",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Solana Trend",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "sol-chart"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/sol-chart",
+              "value": {
+                "type": "LineChart",
+                "props": {
+                  "title": "30-Day Price",
+                  "data": {
+                    "$state": "/state/history30d/solana"
+                  },
+                  "xKey": "date",
+                  "yKey": "price",
+                  "color": "#14F195",
+                  "height": 240
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/history-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Key Market Stats",
+                  "description": "Compare core metrics across the three assets",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "history-table"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/history-table",
+              "value": {
+                "type": "Table",
+                "props": {
+                  "data": [
+                    {
+                      "asset": "Bitcoin",
+                      "symbol": "BTC",
+                      "rank": 1,
+                      "price": 77390,
+                      "marketCap": 1554228970820,
+                      "change24h": -1.66,
+                      "high24h": 78007,
+                      "low24h": 76952
+                    },
+                    {
+                      "asset": "Ethereum",
+                      "symbol": "ETH",
+                      "rank": 2,
+                      "price": 2537.46,
+                      "marketCap": 309699278132,
+                      "change24h": -2.77,
+                      "high24h": 2580.2,
+                      "low24h": 2508.19
+                    },
+                    {
+                      "asset": "Solana",
+                      "symbol": "SOL",
+                      "rank": 7,
+                      "price": 101.96,
+                      "marketCap": 59806775348,
+                      "change24h": -1.45,
+                      "high24h": 102.98,
+                      "low24h": 100.64
+                    }
+                  ],
+                  "columns": [
+                    {
+                      "key": "asset",
+                      "label": "Asset"
+                    },
+                    {
+                      "key": "symbol",
+                      "label": "Symbol"
+                    },
+                    {
+                      "key": "rank",
+                      "label": "Rank"
+                    },
+                    {
+                      "key": "price",
+                      "label": "Price"
+                    },
+                    {
+                      "key": "change24h",
+                      "label": "24h Change"
+                    },
+                    {
+                      "key": "marketCap",
+                      "label": "Market Cap"
+                    },
+                    {
+                      "key": "high24h",
+                      "label": "24h High"
+                    },
+                    {
+                      "key": "low24h",
+                      "label": "24h Low"
+                    }
+                  ],
+                  "emptyMessage": "No market data available"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/details-tabs",
+              "value": {
+                "type": "Tabs",
+                "props": {
+                  "defaultValue": "supply",
+                  "tabs": [
+                    {
+                      "value": "supply",
+                      "label": "Supply"
+                    },
+                    {
+                      "value": "performance",
+                      "label": "Performance"
+                    },
+                    {
+                      "value": "sources",
+                      "label": "Sources"
+                    }
+                  ]
+                },
+                "children": [
+                  "tab-supply",
+                  "tab-performance",
+                  "tab-sources"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/tab-supply",
+              "value": {
+                "type": "TabContent",
+                "props": {
+                  "value": "supply"
+                },
+                "children": [
+                  "supply-card"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/supply-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Supply Breakdown",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "supply-pie"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/supply-pie",
+              "value": {
+                "type": "PieChart",
+                "props": {
+                  "title": "Circulating vs Total Supply",
+                  "data": [
+                    {
+                      "asset": "Bitcoin circulating",
+                      "value": 20083337
+                    },
+                    {
+                      "asset": "Bitcoin remaining",
+                      "value": 53
+                    },
+                    {
+                      "asset": "Ethereum circulating",
+                      "value": 122041373.10305338
+                    },
+                    {
+                      "asset": "Solana circulating",
+                      "value": 586632816.4906648
+                    },
+                    {
+                      "asset": "Solana remaining",
+                      "value": 47291268.1147821
+                    }
+                  ],
+                  "nameKey": "asset",
+                  "valueKey": "value",
+                  "height": 280
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/tab-performance",
+              "value": {
+                "type": "TabContent",
+                "props": {
+                  "value": "performance"
+                },
+                "children": [
+                  "performance-card"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/performance-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Performance Snapshot",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "performance-accordion"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/performance-accordion",
+              "value": {
+                "type": "Accordion",
+                "props": {
+                  "type": "multiple",
+                  "items": [
+                    {
+                      "title": "Bitcoin",
+                      "content": "30d: +21.27% | ATH: $126,080 | 7d sparkline shows a mild pullback after a strong run-up."
+                    },
+                    {
+                      "title": "Ethereum",
+                      "content": "30d: +34.14% | ATH: $4,946.05 | Strong 30-day performance with recent consolidation near the mid-$2.5k range."
+                    },
+                    {
+                      "title": "Solana",
+                      "content": "30d: +33.44% | ATH: $293.31 | Momentum remains positive despite a slight weekly dip."
+                    }
+                  ]
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/tab-sources",
+              "value": {
+                "type": "TabContent",
+                "props": {
+                  "value": "sources"
+                },
+                "children": [
+                  "sources-card"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/sources-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Data Notes",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "sources-stack"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/sources-stack",
+              "value": {
+                "type": "Stack",
+                "props": {
+                  "direction": "vertical",
+                  "gap": "sm"
+                },
+                "children": [
+                  "source-1",
+                  "source-2",
+                  "source-3"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/source-1",
+              "value": {
+                "type": "Text",
+                "props": {
+                  "content": "BTC, ETH, and SOL prices, market caps, and volume are sourced from live crypto market data."
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/source-2",
+              "value": {
+                "type": "Text",
+                "props": {
+                  "content": "30-day history charts use the latest available historical price series returned by the data API."
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/source-3",
+              "value": {
+                "type": "Text",
+                "props": {
+                  "content": "All values are formatted for dashboard display and may differ slightly from exchange quotes."
+                },
+                "children": []
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "type": "text",
+          "text": "add a 24h change column"
+        }
+      ],
+      "id": "h5pwZIs9PhX3TX2m",
+      "role": "user"
+    },
+    {
+      "id": "NBw9CSBoNfcBYj6n",
+      "role": "assistant",
+      "parts": [
+        {
+          "type": "step-start"
+        },
+        {
+          "type": "text",
+          "text": "",
+          "providerMetadata": {
+            "openai": {
+              "itemId": "msg_0c5abc6932065382006aa57251a82487d08a941092fcbae9a0",
+              "phase": "final_answer"
+            }
+          },
+          "state": "done"
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "replace",
+              "path": "/elements/history-table/props/columns",
+              "value": [
+                {
+                  "key": "asset",
+                  "label": "Asset"
+                },
+                {
+                  "key": "symbol",
+                  "label": "Symbol"
+                },
+                {
+                  "key": "rank",
+                  "label": "Rank"
+                },
+                {
+                  "key": "price",
+                  "label": "Price"
+                },
+                {
+                  "key": "change24h",
+                  "label": "24h Change"
+                },
+                {
+                  "key": "marketCap",
+                  "label": "Market Cap"
+                },
+                {
+                  "key": "high24h",
+                  "label": "24h High"
+                },
+                {
+                  "key": "low24h",
+                  "label": "24h Low"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "type": "text",
+          "text": "make it dark"
+        }
+      ],
+      "id": "B05Z7UXRhevJ14qi",
+      "role": "user"
+    },
+    {
+      "id": "nUn7fnOLUfergxyp",
+      "role": "assistant",
+      "parts": [
+        {
+          "type": "step-start"
+        },
+        {
+          "type": "text",
+          "text": "",
+          "providerMetadata": {
+            "openai": {
+              "itemId": "msg_0c5abc6932065382006aa57263dd1487d0882febe4b2726cbd",
+              "phase": "final_answer"
+            }
+          },
+          "state": "done"
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "replace",
+              "path": "/elements/main/props",
+              "value": {
+                "direction": "vertical",
+                "gap": "lg",
+                "align": "stretch",
+                "className": "dark"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "type": "text",
+          "text": "The per \"coin\" cards need to be better looking. Today, they have no price in the display:\n\nBitcoin (BTC)\nCurrent Price\n\n$\n24h: % | 7d: %\n\nMarket Cap\n\n$\n24h Volume\n\n$"
+        }
+      ],
+      "id": "LK8SFsNvkLnpFyuD",
+      "role": "user"
+    },
+    {
+      "id": "Gm9gBE03HoFccKF2",
+      "role": "assistant",
+      "parts": [
+        {
+          "type": "step-start"
+        },
+        {
+          "type": "text",
+          "text": "",
+          "providerMetadata": {
+            "openai": {
+              "itemId": "msg_0c5abc6932065382006aa5774d8ea087d095a1d9bb860458fc",
+              "phase": "final_answer"
+            }
+          },
+          "state": "done"
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/priceFormat",
+              "value": {
+                "bitcoin": {
+                  "price": "$77,390",
+                  "marketCap": "$1,554,228,970,820",
+                  "volume24h": "$21,233,889,130",
+                  "detail": "24h: -1.66% | 7d: -2.94%"
+                },
+                "ethereum": {
+                  "price": "$2,537.46",
+                  "marketCap": "$309,699,278,132",
+                  "volume24h": "$13,262,098,530",
+                  "detail": "24h: -2.77% | 7d: 3.25%"
+                },
+                "solana": {
+                  "price": "$101.96",
+                  "marketCap": "$59,806,775,348",
+                  "volume24h": "$2,869,273,312",
+                  "detail": "24h: -1.45% | 7d: -0.89%"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "replace",
+              "path": "/elements/btc-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Bitcoin (BTC)",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "btc-stack"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "replace",
+              "path": "/elements/btc-stack",
+              "value": {
+                "type": "Stack",
+                "props": {
+                  "direction": "vertical",
+                  "gap": "sm"
+                },
+                "children": [
+                  "btc-price",
+                  "btc-kpis"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "replace",
+              "path": "/elements/btc-price",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "Current Price",
+                  "value": {
+                    "$state": "/state/priceFormat/bitcoin/price"
+                  },
+                  "detail": {
+                    "$state": "/state/priceFormat/bitcoin/detail"
+                  },
+                  "trend": "down"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "replace",
+              "path": "/elements/btc-metrics",
+              "value": {
+                "type": "Grid",
+                "props": {
+                  "columns": 2,
+                  "gap": "sm"
+                },
+                "children": [
+                  "btc-mcap",
+                  "btc-volume"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "replace",
+              "path": "/elements/btc-mcap",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "Market Cap",
+                  "value": {
+                    "$state": "/state/priceFormat/bitcoin/marketCap"
+                  },
+                  "trend": "neutral"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "replace",
+              "path": "/elements/btc-volume",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "24h Volume",
+                  "value": {
+                    "$state": "/state/priceFormat/bitcoin/volume24h"
+                  },
+                  "trend": "neutral"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "replace",
+              "path": "/elements/eth-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Ethereum (ETH)",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "eth-stack"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "replace",
+              "path": "/elements/eth-stack",
+              "value": {
+                "type": "Stack",
+                "props": {
+                  "direction": "vertical",
+                  "gap": "sm"
+                },
+                "children": [
+                  "eth-price",
+                  "eth-kpis"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "replace",
+              "path": "/elements/eth-price",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "Current Price",
+                  "value": {
+                    "$state": "/state/priceFormat/ethereum/price"
+                  },
+                  "detail": {
+                    "$state": "/state/priceFormat/ethereum/detail"
+                  },
+                  "trend": "down"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "replace",
+              "path": "/elements/eth-metrics",
+              "value": {
+                "type": "Grid",
+                "props": {
+                  "columns": 2,
+                  "gap": "sm"
+                },
+                "children": [
+                  "eth-mcap",
+                  "eth-volume"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "replace",
+              "path": "/elements/eth-mcap",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "Market Cap",
+                  "value": {
+                    "$state": "/state/priceFormat/ethereum/marketCap"
+                  },
+                  "trend": "neutral"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "replace",
+              "path": "/elements/eth-volume",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "24h Volume",
+                  "value": {
+                    "$state": "/state/priceFormat/ethereum/volume24h"
+                  },
+                  "trend": "neutral"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "replace",
+              "path": "/elements/sol-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Solana (SOL)",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "sol-stack"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "replace",
+              "path": "/elements/sol-stack",
+              "value": {
+                "type": "Stack",
+                "props": {
+                  "direction": "vertical",
+                  "gap": "sm"
+                },
+                "children": [
+                  "sol-price",
+                  "sol-kpis"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "replace",
+              "path": "/elements/sol-price",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "Current Price",
+                  "value": {
+                    "$state": "/state/priceFormat/solana/price"
+                  },
+                  "detail": {
+                    "$state": "/state/priceFormat/solana/detail"
+                  },
+                  "trend": "down"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "replace",
+              "path": "/elements/sol-metrics",
+              "value": {
+                "type": "Grid",
+                "props": {
+                  "columns": 2,
+                  "gap": "sm"
+                },
+                "children": [
+                  "sol-mcap",
+                  "sol-volume"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "replace",
+              "path": "/elements/sol-mcap",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "Market Cap",
+                  "value": {
+                    "$state": "/state/priceFormat/solana/marketCap"
+                  },
+                  "trend": "neutral"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "replace",
+              "path": "/elements/sol-volume",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "24h Volume",
+                  "value": {
+                    "$state": "/state/priceFormat/solana/volume24h"
+                  },
+                  "trend": "neutral"
+                },
+                "children": []
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

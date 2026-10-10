@@ -1,0 +1,10 @@
+{
+  "componentName": "Heading",
+  "agentSource": "examples/chat-standalone/lib/agent.ts",
+  "agentWorkflowMentions": [
+    "- NEVER nest a Card inside another Card. If you need sub-sections inside a Card, use Stack, Separator, Heading, or Accordion instead.",
+    "   - A Heading or Text for the question"
+  ],
+  "customRulesMentions": [],
+  "mentionedInAgent": true
+}

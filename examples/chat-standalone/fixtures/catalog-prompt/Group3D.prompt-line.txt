@@ -1,0 +1,1 @@
+- Group3D: { position?: Array<number>, rotation?: Array<number>, scale?: Array<number>, animation?: { rotate?: Array<number> } } - 3D group for positioning, rotating, and animating children together. Use to create orbits: position a planet inside a Group3D and animate the group's rotation. [accepts children]

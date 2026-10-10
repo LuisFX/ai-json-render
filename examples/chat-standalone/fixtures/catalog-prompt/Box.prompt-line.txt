@@ -1,0 +1,1 @@
+- Box: { position?: Array<number>, rotation?: Array<number>, scale?: Array<number>, color?: string, metalness?: number, roughness?: number, emissive?: string, emissiveIntensity?: number, wireframe?: boolean, opacity?: number, args?: Array<number>, animation?: { rotate?: Array<number> } } - 3D box/cube mesh. args: [width, height, depth]. Supports on.press for click interaction.

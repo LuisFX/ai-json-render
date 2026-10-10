@@ -22,6 +22,19 @@ npm view zod version
 
 This ensures we don't install outdated versions that may have incompatible types or missing features.
 
+## TypeSafe / Jev
+
+Coding agents in this repo load the official TypeSafe skill from [`skills/typesafe-ai/SKILL.md`](skills/typesafe-ai/SKILL.md). Live docs at [https://docs.typesafe.ai/llms.txt](https://docs.typesafe.ai/llms.txt) are the source of truth; the skill is direction, not a substitute for those pages.
+
+Discovery is one directory of files plus symlinks, so Cursor, Claude Code, GitHub Copilot, Codex, and OpenCode all see the same copy:
+
+- Canonical: `skills/typesafe-ai/`
+- Symlinks: `.agents/skills/typesafe-ai`, `.claude/skills/typesafe-ai`, `.cursor/skills/typesafe-ai`, `.github/skills/typesafe-ai`, `.opencode/skills/typesafe-ai`
+
+Do **not** also install the Claude Code plugin `typesafe@typesafe-ai` in this repo. One installation method; a second copy is a stale-skill hazard.
+
+When composing json-render Specs with Jev, also read `skills/core/SKILL.md` (`experimental_composeSpec`) and the host under `examples/chat-standalone/lib/jev/`. Jev is a System One decision model: it answers Choice / Noul / Score questions. It does not generate Spec JSON. Host code assembles the tree.
+
 ## Code Style
 
 - Do not use emojis in code or UI

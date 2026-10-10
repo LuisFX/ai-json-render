@@ -1,0 +1,1 @@
+- DirectionalLight: { position?: Array<number>, color?: string, intensity?: number } - Directional light like sunlight. Position sets direction, not location.

@@ -1,0 +1,21 @@
+{
+  "componentName": "Sphere",
+  "agentSource": "examples/chat-standalone/lib/agent.ts",
+  "agentWorkflowMentions": [
+    "- Sphere, Box, Cylinder, Cone, Torus, Plane, Ring — geometry meshes with built-in materials.",
+    "- args vary per geometry: Sphere [radius, wSeg, hSeg], Box [w, h, d], Cylinder [rTop, rBot, h, seg], Ring [inner, outer, seg], etc.",
+    "  Example: Group3D(animation: {rotate: [0, 0.001, 0]}) > Sphere(position: [15, 0, 0]) — the sphere orbits at radius 15.",
+    "- For self-rotation (planet spinning), use animation on the Sphere itself with small values like 0.002-0.005.",
+    "  Sphere(args=[2.5,32,32], color=\"#FDB813\", emissive=\"#FDB813\", emissiveIntensity=1) — Sun",
+    "  Group3D(animation={rotate:[0,0.003,0]}) > Sphere(position=[5,0,0], args=[0.3,16,16], color=\"#8C7853\") — Mercury",
+    "  Group3D(animation={rotate:[0,0.002,0]}) > Sphere(position=[8,0,0], args=[0.7,16,16], color=\"#FFC649\") — Venus",
+    "  Group3D(animation={rotate:[0,0.0015,0]}) > [Sphere(position=[12,0,0], args=[0.8,16,16], color=\"#4B7BE5\"), Group3D(position=[12,0,0], animation={rotate:[0,0.008,0]}) > Sphere(position=[1.5,0,0], args=[0.2,12,12], color=\"#CCC\")] — Earth + Moon",
+    "  Group3D(animation={rotate:[0,0.001,0]}) > Sphere(position=[16,0,0], args=[0.5,16,16], color=\"#E27B58\") — Mars",
+    "  Group3D(animation={rotate:[0,0.0005,0]}) > Sphere(position=[22,0,0], args=[2,20,20], color=\"#C88B3A\") — Jupiter",
+    "  Group3D(animation={rotate:[0,0.0003,0]}) > Sphere(position=[28,0,0], args=[1.7,20,20], color=\"#FAD5A5\") — Saturn",
+    "  Group3D(animation={rotate:[0,0.0002,0]}) > Sphere(position=[34,0,0], args=[1.2,16,16], color=\"#ACE5EE\") — Uranus",
+    "  Group3D(animation={rotate:[0,0.00015,0]}) > Sphere(position=[40,0,0], args=[1.1,16,16], color=\"#5B5EA6\") — Neptune"
+  ],
+  "customRulesMentions": [],
+  "mentionedInAgent": true
+}

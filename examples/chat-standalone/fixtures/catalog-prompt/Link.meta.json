@@ -1,0 +1,14 @@
+{
+  "componentName": "Link",
+  "catalogSource": "examples/chat-standalone/lib/render/catalog.ts",
+  "description": "External link that opens in a new tab",
+  "slots": null,
+  "events": null,
+  "promptLine": "- Link: { text: string, href: string } - External link that opens in a new tab",
+  "promptMentions": [
+    "- Link: { text: string, href: string } - External link that opens in a new tab"
+  ],
+  "promptMode": "standalone",
+  "promptFullLength": 22951,
+  "promptSha256": "b5b59e6c3d103cfed155fe42d8884eac60c7ab629889b200f266c83d5ce765b7"
+}

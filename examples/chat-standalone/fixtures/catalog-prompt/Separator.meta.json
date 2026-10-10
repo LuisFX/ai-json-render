@@ -1,0 +1,14 @@
+{
+  "componentName": "Separator",
+  "catalogSource": "examples/chat-standalone/lib/render/catalog.ts",
+  "description": "Visual separator line",
+  "slots": null,
+  "events": null,
+  "promptLine": "- Separator: { orientation?: \"horizontal\" | \"vertical\" } - Visual separator line",
+  "promptMentions": [
+    "- Separator: { orientation?: \"horizontal\" | \"vertical\" } - Visual separator line"
+  ],
+  "promptMode": "standalone",
+  "promptFullLength": 22951,
+  "promptSha256": "b5b59e6c3d103cfed155fe42d8884eac60c7ab629889b200f266c83d5ce765b7"
+}

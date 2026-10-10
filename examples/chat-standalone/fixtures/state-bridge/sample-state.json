@@ -1,0 +1,13 @@
+{
+  "patient": {
+    "name": "Alex Rivera",
+    "mrn": "P00113159"
+  },
+  "headlineCounts": {
+    "alerts": 3,
+    "conditions": 5
+  },
+  "alerts": [
+    { "id": "a1", "severity": "high", "title": "Hypotension trend" }
+  ]
+}

@@ -1,0 +1,1 @@
+- Callout: { type?: "info" | "tip" | "warning" | "important", title?: string, content: string } - Highlighted callout box for tips, warnings, notes, or key information

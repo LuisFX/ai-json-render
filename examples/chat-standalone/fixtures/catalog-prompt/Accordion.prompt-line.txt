@@ -1,0 +1,1 @@
+- Accordion: { items: Array<{ title: string, content: string }>, type?: "single" | "multiple" } - Collapsible sections. Items as [{title, content}]. Type 'single' (default) or 'multiple'.

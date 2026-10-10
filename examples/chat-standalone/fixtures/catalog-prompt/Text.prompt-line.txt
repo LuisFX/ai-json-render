@@ -1,0 +1,1 @@
+- Text: { content: string, muted?: boolean } - Text content

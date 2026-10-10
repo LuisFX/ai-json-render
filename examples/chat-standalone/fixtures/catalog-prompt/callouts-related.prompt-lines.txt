@@ -1,0 +1,3 @@
+- Callout: { type?: "info" | "tip" | "warning" | "important", title?: string, content: string } - Highlighted callout box for tips, warnings, notes, or key information
+- Timeline: { items: Array<{ title: string, description?: string, date?: string, status?: "completed" | "current" | "upcoming" }> } - Vertical timeline showing ordered events, steps, or historical milestones
+- Accordion: { items: Array<{ title: string, content: string }>, type?: "single" | "multiple" } - Collapsible sections. Items as [{title, content}]. Type 'single' (default) or 'multiple'.

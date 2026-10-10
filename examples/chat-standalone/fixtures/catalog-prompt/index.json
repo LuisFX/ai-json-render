@@ -1,0 +1,252 @@
+{
+  "catalogSource": "examples/chat-standalone/lib/render/catalog.ts",
+  "promptMode": "standalone",
+  "promptSha256": "b5b59e6c3d103cfed155fe42d8884eac60c7ab629889b200f266c83d5ce765b7",
+  "components": [
+    {
+      "name": "Stack",
+      "promptLine": "Stack.prompt-line.txt",
+      "meta": "Stack.meta.json",
+      "agentContext": "Stack.agent-context.json"
+    },
+    {
+      "name": "Card",
+      "promptLine": "Card.prompt-line.txt",
+      "meta": "Card.meta.json",
+      "agentContext": "Card.agent-context.json"
+    },
+    {
+      "name": "Grid",
+      "promptLine": "Grid.prompt-line.txt",
+      "meta": "Grid.meta.json",
+      "agentContext": "Grid.agent-context.json"
+    },
+    {
+      "name": "Heading",
+      "promptLine": "Heading.prompt-line.txt",
+      "meta": "Heading.meta.json",
+      "agentContext": "Heading.agent-context.json"
+    },
+    {
+      "name": "Separator",
+      "promptLine": "Separator.prompt-line.txt",
+      "meta": "Separator.meta.json",
+      "agentContext": "Separator.agent-context.json"
+    },
+    {
+      "name": "Accordion",
+      "promptLine": "Accordion.prompt-line.txt",
+      "meta": "Accordion.meta.json",
+      "agentContext": "Accordion.agent-context.json"
+    },
+    {
+      "name": "Progress",
+      "promptLine": "Progress.prompt-line.txt",
+      "meta": "Progress.meta.json",
+      "agentContext": "Progress.agent-context.json"
+    },
+    {
+      "name": "Skeleton",
+      "promptLine": "Skeleton.prompt-line.txt",
+      "meta": "Skeleton.meta.json",
+      "agentContext": "Skeleton.agent-context.json"
+    },
+    {
+      "name": "Badge",
+      "promptLine": "Badge.prompt-line.txt",
+      "meta": "Badge.meta.json",
+      "agentContext": "Badge.agent-context.json"
+    },
+    {
+      "name": "Alert",
+      "promptLine": "Alert.prompt-line.txt",
+      "meta": "Alert.meta.json",
+      "agentContext": "Alert.agent-context.json"
+    },
+    {
+      "name": "Text",
+      "promptLine": "Text.prompt-line.txt",
+      "meta": "Text.meta.json",
+      "agentContext": "Text.agent-context.json"
+    },
+    {
+      "name": "Metric",
+      "promptLine": "Metric.prompt-line.txt",
+      "meta": "Metric.meta.json",
+      "agentContext": "Metric.agent-context.json"
+    },
+    {
+      "name": "Table",
+      "promptLine": "Table.prompt-line.txt",
+      "meta": "Table.meta.json",
+      "agentContext": "Table.agent-context.json"
+    },
+    {
+      "name": "Link",
+      "promptLine": "Link.prompt-line.txt",
+      "meta": "Link.meta.json",
+      "agentContext": "Link.agent-context.json"
+    },
+    {
+      "name": "BarChart",
+      "promptLine": "BarChart.prompt-line.txt",
+      "meta": "BarChart.meta.json",
+      "agentContext": "BarChart.agent-context.json"
+    },
+    {
+      "name": "LineChart",
+      "promptLine": "LineChart.prompt-line.txt",
+      "meta": "LineChart.meta.json",
+      "agentContext": "LineChart.agent-context.json"
+    },
+    {
+      "name": "Tabs",
+      "promptLine": "Tabs.prompt-line.txt",
+      "meta": "Tabs.meta.json",
+      "agentContext": "Tabs.agent-context.json"
+    },
+    {
+      "name": "TabContent",
+      "promptLine": "TabContent.prompt-line.txt",
+      "meta": "TabContent.meta.json",
+      "agentContext": "TabContent.agent-context.json"
+    },
+    {
+      "name": "Callout",
+      "promptLine": "Callout.prompt-line.txt",
+      "meta": "Callout.meta.json",
+      "agentContext": "Callout.agent-context.json"
+    },
+    {
+      "name": "Timeline",
+      "promptLine": "Timeline.prompt-line.txt",
+      "meta": "Timeline.meta.json",
+      "agentContext": "Timeline.agent-context.json"
+    },
+    {
+      "name": "PieChart",
+      "promptLine": "PieChart.prompt-line.txt",
+      "meta": "PieChart.meta.json",
+      "agentContext": "PieChart.agent-context.json"
+    },
+    {
+      "name": "RadioGroup",
+      "promptLine": "RadioGroup.prompt-line.txt",
+      "meta": "RadioGroup.meta.json",
+      "agentContext": "RadioGroup.agent-context.json"
+    },
+    {
+      "name": "SelectInput",
+      "promptLine": "SelectInput.prompt-line.txt",
+      "meta": "SelectInput.meta.json",
+      "agentContext": "SelectInput.agent-context.json"
+    },
+    {
+      "name": "TextInput",
+      "promptLine": "TextInput.prompt-line.txt",
+      "meta": "TextInput.meta.json",
+      "agentContext": "TextInput.agent-context.json"
+    },
+    {
+      "name": "Button",
+      "promptLine": "Button.prompt-line.txt",
+      "meta": "Button.meta.json",
+      "agentContext": "Button.agent-context.json"
+    },
+    {
+      "name": "Scene3D",
+      "promptLine": "Scene3D.prompt-line.txt",
+      "meta": "Scene3D.meta.json",
+      "agentContext": "Scene3D.agent-context.json"
+    },
+    {
+      "name": "Group3D",
+      "promptLine": "Group3D.prompt-line.txt",
+      "meta": "Group3D.meta.json",
+      "agentContext": "Group3D.agent-context.json"
+    },
+    {
+      "name": "Box",
+      "promptLine": "Box.prompt-line.txt",
+      "meta": "Box.meta.json",
+      "agentContext": "Box.agent-context.json"
+    },
+    {
+      "name": "Sphere",
+      "promptLine": "Sphere.prompt-line.txt",
+      "meta": "Sphere.meta.json",
+      "agentContext": "Sphere.agent-context.json"
+    },
+    {
+      "name": "Cylinder",
+      "promptLine": "Cylinder.prompt-line.txt",
+      "meta": "Cylinder.meta.json",
+      "agentContext": "Cylinder.agent-context.json"
+    },
+    {
+      "name": "Cone",
+      "promptLine": "Cone.prompt-line.txt",
+      "meta": "Cone.meta.json",
+      "agentContext": "Cone.agent-context.json"
+    },
+    {
+      "name": "Torus",
+      "promptLine": "Torus.prompt-line.txt",
+      "meta": "Torus.meta.json",
+      "agentContext": "Torus.agent-context.json"
+    },
+    {
+      "name": "Plane",
+      "promptLine": "Plane.prompt-line.txt",
+      "meta": "Plane.meta.json",
+      "agentContext": "Plane.agent-context.json"
+    },
+    {
+      "name": "Ring",
+      "promptLine": "Ring.prompt-line.txt",
+      "meta": "Ring.meta.json",
+      "agentContext": "Ring.agent-context.json"
+    },
+    {
+      "name": "AmbientLight",
+      "promptLine": "AmbientLight.prompt-line.txt",
+      "meta": "AmbientLight.meta.json",
+      "agentContext": "AmbientLight.agent-context.json"
+    },
+    {
+      "name": "PointLight",
+      "promptLine": "PointLight.prompt-line.txt",
+      "meta": "PointLight.meta.json",
+      "agentContext": "PointLight.agent-context.json"
+    },
+    {
+      "name": "DirectionalLight",
+      "promptLine": "DirectionalLight.prompt-line.txt",
+      "meta": "DirectionalLight.meta.json",
+      "agentContext": "DirectionalLight.agent-context.json"
+    },
+    {
+      "name": "Stars",
+      "promptLine": "Stars.prompt-line.txt",
+      "meta": "Stars.meta.json",
+      "agentContext": "Stars.agent-context.json"
+    },
+    {
+      "name": "Label3D",
+      "promptLine": "Label3D.prompt-line.txt",
+      "meta": "Label3D.meta.json",
+      "agentContext": "Label3D.agent-context.json"
+    }
+  ],
+  "relatedGroups": [
+    "charts-related.prompt-lines.txt",
+    "layout-related.prompt-lines.txt",
+    "tabs-related.prompt-lines.txt",
+    "callouts-related.prompt-lines.txt",
+    "inputs-related.prompt-lines.txt",
+    "scene3d-related.prompt-lines.txt"
+  ],
+  "fullPrompt": "explorerCatalog.prompt.standalone.txt",
+  "fullPromptMeta": "explorerCatalog.prompt.meta.json",
+  "allComponentLines": "AVAILABLE-COMPONENTS.prompt-lines.txt"
+}

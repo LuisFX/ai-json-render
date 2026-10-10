@@ -1,0 +1,9 @@
+{
+  "componentName": "TextInput",
+  "agentSource": "examples/chat-standalone/lib/agent.ts",
+  "agentWorkflowMentions": [
+    "- TextInput: Text input field. Writes entered value to statePath automatically."
+  ],
+  "customRulesMentions": [],
+  "mentionedInAgent": true
+}

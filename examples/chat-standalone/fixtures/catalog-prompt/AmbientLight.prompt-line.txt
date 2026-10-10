@@ -1,0 +1,1 @@
+- AmbientLight: { color?: string, intensity?: number } - Ambient light that illuminates all objects equally. Use for base scene illumination.

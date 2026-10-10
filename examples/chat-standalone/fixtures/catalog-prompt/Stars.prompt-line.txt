@@ -1,0 +1,1 @@
+- Stars: { radius?: number, depth?: number, count?: number, factor?: number, fade?: boolean, speed?: number } - Starfield background for space scenes. Renders thousands of tiny points around the scene.

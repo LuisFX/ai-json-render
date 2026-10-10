@@ -1,0 +1,14 @@
+{
+  "componentName": "Button",
+  "catalogSource": "examples/chat-standalone/lib/render/catalog.ts",
+  "description": "Clickable button. Use with on.press to trigger actions like setState, pushState, etc. Can be used for quiz submissions, form actions, navigation, and more.",
+  "slots": null,
+  "events": null,
+  "promptLine": "- Button: { label: string, variant?: \"default\" | \"secondary\" | \"destructive\" | \"outline\" | \"ghost\", size?: \"default\" | \"sm\" | \"lg\", disabled?: boolean } - Clickable button. Use with on.press to trigger actions like setState, pushState, etc. Can be used for quiz submissions, form actions, navigation, and more.",
+  "promptMentions": [
+    "- Button: { label: string, variant?: \"default\" | \"secondary\" | \"destructive\" | \"outline\" | \"ghost\", size?: \"default\" | \"sm\" | \"lg\", disabled?: boolean } - Clickable button. Use with on.press to trigger actions like setState, pushState, etc. Can be used for quiz submissions, form actions, navigation, and more."
+  ],
+  "promptMode": "standalone",
+  "promptFullLength": 22951,
+  "promptSha256": "b5b59e6c3d103cfed155fe42d8884eac60c7ab629889b200f266c83d5ce765b7"
+}

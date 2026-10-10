@@ -1,0 +1,9 @@
+{
+  "componentName": "Label3D",
+  "agentSource": "examples/chat-standalone/lib/agent.ts",
+  "agentWorkflowMentions": [
+    "- Label3D: text in 3D space that always faces the camera. Use to label objects. fontSize ~0.5-1.0 for readable labels."
+  ],
+  "customRulesMentions": [],
+  "mentionedInAgent": true
+}

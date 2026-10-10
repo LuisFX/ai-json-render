@@ -1,0 +1,10 @@
+{
+  "componentName": "PointLight",
+  "agentSource": "examples/chat-standalone/lib/agent.ts",
+  "agentWorkflowMentions": [
+    "- PointLight: emits from a position in all directions. Use for suns, lamps. Set high intensity (2+) for bright sources.",
+    "  PointLight(position=[0,0,0], intensity=2)"
+  ],
+  "customRulesMentions": [],
+  "mentionedInAgent": true
+}

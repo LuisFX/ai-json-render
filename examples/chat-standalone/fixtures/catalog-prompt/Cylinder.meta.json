@@ -1,0 +1,14 @@
+{
+  "componentName": "Cylinder",
+  "catalogSource": "examples/chat-standalone/lib/render/catalog.ts",
+  "description": "3D cylinder mesh. args: [radiusTop, radiusBottom, height, radialSegments].",
+  "slots": null,
+  "events": null,
+  "promptLine": "- Cylinder: { position?: Array<number>, rotation?: Array<number>, scale?: Array<number>, color?: string, metalness?: number, roughness?: number, emissive?: string, emissiveIntensity?: number, wireframe?: boolean, opacity?: number, args?: Array<number>, animation?: { rotate?: Array<number> } } - 3D cylinder mesh. args: [radiusTop, radiusBottom, height, radialSegments].",
+  "promptMentions": [
+    "- Cylinder: { position?: Array<number>, rotation?: Array<number>, scale?: Array<number>, color?: string, metalness?: number, roughness?: number, emissive?: string, emissiveIntensity?: number, wireframe?: boolean, opacity?: number, args?: Array<number>, animation?: { rotate?: Array<number> } } - 3D cylinder mesh. args: [radiusTop, radiusBottom, height, radialSegments]."
+  ],
+  "promptMode": "standalone",
+  "promptFullLength": 22951,
+  "promptSha256": "b5b59e6c3d103cfed155fe42d8884eac60c7ab629889b200f266c83d5ce765b7"
+}

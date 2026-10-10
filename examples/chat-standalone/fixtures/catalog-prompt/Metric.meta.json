@@ -1,0 +1,14 @@
+{
+  "componentName": "Metric",
+  "catalogSource": "examples/chat-standalone/lib/render/catalog.ts",
+  "description": "Single metric display with label, value, and optional trend indicator",
+  "slots": null,
+  "events": null,
+  "promptLine": "- Metric: { label: string, value: string, detail?: string, trend?: \"up\" | \"down\" | \"neutral\" } - Single metric display with label, value, and optional trend indicator",
+  "promptMentions": [
+    "- Metric: { label: string, value: string, detail?: string, trend?: \"up\" | \"down\" | \"neutral\" } - Single metric display with label, value, and optional trend indicator"
+  ],
+  "promptMode": "standalone",
+  "promptFullLength": 22951,
+  "promptSha256": "b5b59e6c3d103cfed155fe42d8884eac60c7ab629889b200f266c83d5ce765b7"
+}

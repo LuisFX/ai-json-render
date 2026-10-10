@@ -1,0 +1,14 @@
+{
+  "componentName": "Table",
+  "catalogSource": "examples/chat-standalone/lib/render/catalog.ts",
+  "description": "Data table. Use { \"$state\": \"/path\" } to bind read-only data from state.",
+  "slots": null,
+  "events": null,
+  "promptLine": "- Table: { data: Array<Record<string, unknown>>, columns: Array<{ key: string, label: string }>, emptyMessage?: string } - Data table. Use { \"$state\": \"/path\" } to bind read-only data from state.",
+  "promptMentions": [
+    "- Table: { data: Array<Record<string, unknown>>, columns: Array<{ key: string, label: string }>, emptyMessage?: string } - Data table. Use { \"$state\": \"/path\" } to bind read-only data from state."
+  ],
+  "promptMode": "standalone",
+  "promptFullLength": 22951,
+  "promptSha256": "b5b59e6c3d103cfed155fe42d8884eac60c7ab629889b200f266c83d5ce765b7"
+}

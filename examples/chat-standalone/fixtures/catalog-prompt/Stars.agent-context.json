@@ -1,0 +1,10 @@
+{
+  "componentName": "Stars",
+  "agentSource": "examples/chat-standalone/lib/agent.ts",
+  "agentWorkflowMentions": [
+    "- Stars: starfield background. Use for space scenes. count=5000, fade=true is a good default.",
+    "  Stars(count=5000, fade=true)"
+  ],
+  "customRulesMentions": [],
+  "mentionedInAgent": true
+}

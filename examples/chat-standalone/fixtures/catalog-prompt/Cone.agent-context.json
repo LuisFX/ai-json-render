@@ -1,0 +1,9 @@
+{
+  "componentName": "Cone",
+  "agentSource": "examples/chat-standalone/lib/agent.ts",
+  "agentWorkflowMentions": [
+    "- Sphere, Box, Cylinder, Cone, Torus, Plane, Ring — geometry meshes with built-in materials."
+  ],
+  "customRulesMentions": [],
+  "mentionedInAgent": true
+}

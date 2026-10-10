@@ -1,0 +1,18 @@
+{
+  "componentName": "Text",
+  "catalogSource": "examples/chat-standalone/lib/render/catalog.ts",
+  "description": "Text content",
+  "slots": null,
+  "events": null,
+  "promptLine": "- Text: { content: string, muted?: boolean } - Text content",
+  "promptMentions": [
+    "  For scalars: {\"op\":\"add\",\"path\":\"/state/newTodoText\",\"value\":\"\"}",
+    "Example: on: { \"press\": { \"action\": \"pushState\", \"params\": { \"statePath\": \"/todos\", \"value\": { \"id\": \"$id\", \"title\": { \"$state\": \"/newTodoText\" }, \"completed\": false }, \"clearStatePath\": \"/newTodoText\" } } }",
+    "- Text: { content: string, muted?: boolean } - Text content",
+    "- TextInput: { label?: string, value?: string, placeholder?: string, type?: \"text\" | \"email\" | \"number\" | \"password\" | \"url\" } - Text input field. Use { \"$bindState\": \"/path\" } for two-way binding. Use for free-text entry like names, emails, search, etc.",
+    "- Label3D: { text: string, position?: Array<number>, rotation?: Array<number>, color?: string, fontSize?: number, anchorX?: \"left\" | \"center\" | \"right\", anchorY?: \"top\" | \"middle\" | \"bottom\" } - Text label rendered in 3D space. Always faces the camera (billboard). Use for labeling objects in a scene."
+  ],
+  "promptMode": "standalone",
+  "promptFullLength": 22951,
+  "promptSha256": "b5b59e6c3d103cfed155fe42d8884eac60c7ab629889b200f266c83d5ce765b7"
+}

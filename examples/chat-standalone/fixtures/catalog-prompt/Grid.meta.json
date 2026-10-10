@@ -1,0 +1,16 @@
+{
+  "componentName": "Grid",
+  "catalogSource": "examples/chat-standalone/lib/render/catalog.ts",
+  "description": "Grid layout (1-6 columns). columns is the max; it collapses in the artifact pane.",
+  "slots": [
+    "default"
+  ],
+  "events": null,
+  "promptLine": "- Grid: { columns?: number, gap?: \"sm\" | \"md\" | \"lg\" | \"xl\", className?: string } - Grid layout (1-6 columns). columns is the max; it collapses in the artifact pane. [accepts children]",
+  "promptMentions": [
+    "- Grid: { columns?: number, gap?: \"sm\" | \"md\" | \"lg\" | \"xl\", className?: string } - Grid layout (1-6 columns). columns is the max; it collapses in the artifact pane. [accepts children]"
+  ],
+  "promptMode": "standalone",
+  "promptFullLength": 22951,
+  "promptSha256": "b5b59e6c3d103cfed155fe42d8884eac60c7ab629889b200f266c83d5ce765b7"
+}

@@ -1,0 +1,14 @@
+{
+  "componentName": "Accordion",
+  "agentSource": "examples/chat-standalone/lib/agent.ts",
+  "agentWorkflowMentions": [
+    "- NEVER nest a Card inside another Card. If you need sub-sections inside a Card, use Stack, Separator, Heading, or Accordion instead.",
+    "- Use Accordion to organize detailed sections the user can expand for deeper reading.",
+    "- You can combine 3D scenes with regular 2D components in the same spec. For example, use a Stack or Card at the root with a Scene3D plus Text, Callout, Accordion, etc. as siblings. This lets you build a rich educational experience with both an interactive 3D visualization and text content.",
+    "- Array binding: \"items\": { \"$state\": \"/quiz/questions\" } (for Accordion, Timeline, etc.)"
+  ],
+  "customRulesMentions": [
+    "\"For educational prompts ('teach me about', 'explain', 'what is'), use a mix of Callout, Accordion, Timeline, and charts to make the content visually rich.\","
+  ],
+  "mentionedInAgent": true
+}

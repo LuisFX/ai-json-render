@@ -1,0 +1,14 @@
+{
+  "componentName": "Callout",
+  "catalogSource": "examples/chat-standalone/lib/render/catalog.ts",
+  "description": "Highlighted callout box for tips, warnings, notes, or key information",
+  "slots": null,
+  "events": null,
+  "promptLine": "- Callout: { type?: \"info\" | \"tip\" | \"warning\" | \"important\", title?: string, content: string } - Highlighted callout box for tips, warnings, notes, or key information",
+  "promptMentions": [
+    "- Callout: { type?: \"info\" | \"tip\" | \"warning\" | \"important\", title?: string, content: string } - Highlighted callout box for tips, warnings, notes, or key information"
+  ],
+  "promptMode": "standalone",
+  "promptFullLength": 22951,
+  "promptSha256": "b5b59e6c3d103cfed155fe42d8884eac60c7ab629889b200f266c83d5ce765b7"
+}

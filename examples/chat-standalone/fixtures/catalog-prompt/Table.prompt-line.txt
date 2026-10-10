@@ -1,0 +1,1 @@
+- Table: { data: Array<Record<string, unknown>>, columns: Array<{ key: string, label: string }>, emptyMessage?: string } - Data table. Use { "$state": "/path" } to bind read-only data from state.

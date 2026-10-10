@@ -1,0 +1,43 @@
+{
+  "description": "Slimmed data-spec /state patch from high-severity clinical history review envelope",
+  "parts": [
+    {
+      "type": "data-spec",
+      "data": {
+        "type": "patch",
+        "patch": {
+          "op": "add",
+          "path": "/state",
+          "value": {
+            "patient": {
+              "name": "Mock Patient, 68F",
+              "mrn": "MP-10482",
+              "encounterType": "ED booking / admission hold",
+              "status": "High-risk intake"
+            },
+            "headlineCounts": {
+              "activeConditions": 6,
+              "activeAlerts": 4,
+              "highSignalVitals": 9,
+              "highSignalMeds": 5
+            },
+            "severityAreas": [
+              {
+                "area": "Behavioral safety",
+                "score": 98,
+                "weight": 34,
+                "summary": "Active suicidal ideation, recent self-harm, observation precautions."
+              },
+              {
+                "area": "Medical decompensation",
+                "score": 92,
+                "weight": 30,
+                "summary": "Melena/anemia + CKD + anticoagulation creates near-term bleeding risk."
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

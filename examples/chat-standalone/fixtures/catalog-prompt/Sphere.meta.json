@@ -1,0 +1,15 @@
+{
+  "componentName": "Sphere",
+  "catalogSource": "examples/chat-standalone/lib/render/catalog.ts",
+  "description": "3D sphere mesh. args: [radius, widthSegments, heightSegments]. Use higher segment counts (32+) for smooth spheres.",
+  "slots": null,
+  "events": null,
+  "promptLine": "- Sphere: { position?: Array<number>, rotation?: Array<number>, scale?: Array<number>, color?: string, metalness?: number, roughness?: number, emissive?: string, emissiveIntensity?: number, wireframe?: boolean, opacity?: number, args?: Array<number>, animation?: { rotate?: Array<number> } } - 3D sphere mesh. args: [radius, widthSegments, heightSegments]. Use higher segment counts (32+) for smooth spheres.",
+  "promptMentions": [
+    "- Scene3D: { height?: string, background?: string, cameraPosition?: Array<number>, cameraFov?: number, autoRotate?: boolean } - 3D scene container with orbit controls. All 3D components (Sphere, Box, lights, etc.) must be children of a Scene3D. height is a CSS value like '500px'. [accepts children]",
+    "- Sphere: { position?: Array<number>, rotation?: Array<number>, scale?: Array<number>, color?: string, metalness?: number, roughness?: number, emissive?: string, emissiveIntensity?: number, wireframe?: boolean, opacity?: number, args?: Array<number>, animation?: { rotate?: Array<number> } } - 3D sphere mesh. args: [radius, widthSegments, heightSegments]. Use higher segment counts (32+) for smooth spheres."
+  ],
+  "promptMode": "standalone",
+  "promptFullLength": 22951,
+  "promptSha256": "b5b59e6c3d103cfed155fe42d8884eac60c7ab629889b200f266c83d5ce765b7"
+}

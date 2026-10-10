@@ -1,0 +1,11 @@
+{
+  "componentName": "Button",
+  "agentSource": "examples/chat-standalone/lib/agent.ts",
+  "agentWorkflowMentions": [
+    "- Button: Clickable button. Use on.press to trigger actions.",
+    "   - A Button with on.press to set the submitted flag: {\"action\":\"setState\",\"params\":{\"statePath\":\"/q1_submitted\",\"value\":true}}",
+    "   Card > Stack(vertical) > [Text(question), RadioGroup(options), Button(Check Answer), Text(Correct! visible when right), Callout(Wrong, visible when wrong & submitted)]"
+  ],
+  "customRulesMentions": [],
+  "mentionedInAgent": true
+}

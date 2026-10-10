@@ -1,0 +1,22 @@
+{
+  "componentName": "Stack",
+  "catalogSource": "examples/chat-standalone/lib/render/catalog.ts",
+  "description": "Flex container for layouts",
+  "slots": [
+    "default"
+  ],
+  "events": null,
+  "promptLine": "- Stack: { direction?: \"horizontal\" | \"vertical\", gap?: \"none\" | \"sm\" | \"md\" | \"lg\" | \"xl\", align?: \"start\" | \"center\" | \"end\" | \"stretch\", justify?: \"start\" | \"center\" | \"end\" | \"between\" | \"around\", className?: string } - Flex container for layouts [accepts children]",
+  "promptMentions": [
+    "{\"op\":\"add\",\"path\":\"/elements/main\",\"value\":{\"type\":\"Stack\",\"props\":{\"direction\":\"vertical\",\"gap\":\"md\"},\"children\":[\"child-1\",\"list\"]}}",
+    "{\"op\":\"add\",\"path\":\"/elements/list\",\"value\":{\"type\":\"Stack\",\"props\":{\"direction\":\"vertical\",\"gap\":\"md\"},\"repeat\":{\"statePath\":\"/items\",\"key\":\"id\"},\"children\":[\"item\"]}}",
+    "Example: {\"type\":\"Stack\",\"props\":{\"direction\":\"vertical\",\"gap\":\"md\"},\"repeat\":{\"statePath\":\"/todos\",\"key\":\"id\"},\"children\":[\"todo-item\"]}",
+    "- Stack: { direction?: \"horizontal\" | \"vertical\", gap?: \"none\" | \"sm\" | \"md\" | \"lg\" | \"xl\", align?: \"start\" | \"center\" | \"end\" | \"stretch\", justify?: \"start\" | \"center\" | \"end\" | \"between\" | \"around\", className?: string } - Flex container for layouts [accepts children]",
+    "  {\"type\":\"Stack\",\"props\":{\"direction\":\"vertical\",\"gap\":\"md\"},\"on\":{\"press\":{\"action\":\"setState\",\"params\":{\"statePath\":\"/saved\",\"value\":true}}},\"children\":[]}",
+    "Correct: {\"type\":\"Stack\",\"props\":{\"direction\":\"vertical\",\"gap\":\"md\"},\"visible\":{\"$state\":\"/activeTab\",\"eq\":\"home\"},\"children\":[\"...\"]}",
+    "Example: A Stack with on: { \"press\": { \"action\": \"setState\", \"params\": { \"statePath\": \"/activeTab\", \"value\": \"home\" } } } sets state, then a container with visible: { \"$state\": \"/activeTab\", \"eq\": \"home\" } shows only when that tab is active."
+  ],
+  "promptMode": "standalone",
+  "promptFullLength": 22951,
+  "promptSha256": "b5b59e6c3d103cfed155fe42d8884eac60c7ab629889b200f266c83d5ce765b7"
+}

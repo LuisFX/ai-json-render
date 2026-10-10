@@ -1,0 +1,1 @@
+- Progress: { value: number, max?: number, label?: string } - Progress bar (value 0-100)

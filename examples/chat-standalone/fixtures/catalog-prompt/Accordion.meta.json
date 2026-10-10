@@ -1,0 +1,14 @@
+{
+  "componentName": "Accordion",
+  "catalogSource": "examples/chat-standalone/lib/render/catalog.ts",
+  "description": "Collapsible sections. Items as [{title, content}]. Type 'single' (default) or 'multiple'.",
+  "slots": null,
+  "events": null,
+  "promptLine": "- Accordion: { items: Array<{ title: string, content: string }>, type?: \"single\" | \"multiple\" } - Collapsible sections. Items as [{title, content}]. Type 'single' (default) or 'multiple'.",
+  "promptMentions": [
+    "- Accordion: { items: Array<{ title: string, content: string }>, type?: \"single\" | \"multiple\" } - Collapsible sections. Items as [{title, content}]. Type 'single' (default) or 'multiple'."
+  ],
+  "promptMode": "standalone",
+  "promptFullLength": 22951,
+  "promptSha256": "b5b59e6c3d103cfed155fe42d8884eac60c7ab629889b200f266c83d5ce765b7"
+}

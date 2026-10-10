@@ -1,0 +1,15 @@
+{
+  "componentName": "Text",
+  "agentSource": "examples/chat-standalone/lib/agent.ts",
+  "agentWorkflowMentions": [
+    "- You can combine 3D scenes with regular 2D components in the same spec. For example, use a Stack or Card at the root with a Scene3D plus Text, Callout, Accordion, etc. as siblings. This lets you build a rich educational experience with both an interactive 3D visualization and text content.",
+    "- TextInput: Text input field. Writes entered value to statePath automatically.",
+    "   - A Heading or Text for the question",
+    "   - A Text (or Callout) showing feedback, using visible to show only after submission:",
+    "   Card > Stack(vertical) > [Text(question), RadioGroup(options), Button(Check Answer), Text(Correct! visible when right), Callout(Wrong, visible when wrong & submitted)]"
+  ],
+  "customRulesMentions": [
+    "\"Use Metric components for key numbers instead of plain Text.\","
+  ],
+  "mentionedInAgent": true
+}

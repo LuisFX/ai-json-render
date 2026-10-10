@@ -1,0 +1,10 @@
+{
+  "componentName": "Box",
+  "agentSource": "examples/chat-standalone/lib/agent.ts",
+  "agentWorkflowMentions": [
+    "- Sphere, Box, Cylinder, Cone, Torus, Plane, Ring — geometry meshes with built-in materials.",
+    "- args vary per geometry: Sphere [radius, wSeg, hSeg], Box [w, h, d], Cylinder [rTop, rBot, h, seg], Ring [inner, outer, seg], etc."
+  ],
+  "customRulesMentions": [],
+  "mentionedInAgent": true
+}

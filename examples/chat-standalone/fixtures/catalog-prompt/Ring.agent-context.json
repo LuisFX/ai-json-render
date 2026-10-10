@@ -1,0 +1,12 @@
+{
+  "componentName": "Ring",
+  "agentSource": "examples/chat-standalone/lib/agent.ts",
+  "agentWorkflowMentions": [
+    "- Sphere, Box, Cylinder, Cone, Torus, Plane, Ring — geometry meshes with built-in materials.",
+    "- args vary per geometry: Sphere [radius, wSeg, hSeg], Box [w, h, d], Cylinder [rTop, rBot, h, seg], Ring [inner, outer, seg], etc.",
+    "- Ring: great for orbit path indicators. Rotate [-1.5708, 0, 0] (i.e. -PI/2) to lay flat, set low opacity (~0.15-0.3).",
+    "  Ring(rotation=[-1.5708,0,0], args=[inner,outer,64], color=\"#ffffff\", opacity=0.12) for each orbit path"
+  ],
+  "customRulesMentions": [],
+  "mentionedInAgent": true
+}

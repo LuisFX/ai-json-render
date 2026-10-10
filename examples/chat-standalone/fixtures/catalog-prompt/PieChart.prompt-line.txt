@@ -1,0 +1,1 @@
+- PieChart: { title?: string, data: Array<Record<string, unknown>>, nameKey: string, valueKey: string, height?: number } - Pie/donut chart for proportional data. Use { "$state": "/path" } to bind read-only data. nameKey is the label field, valueKey is the numeric value field.

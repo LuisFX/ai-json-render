@@ -1,0 +1,1 @@
+- Button: { label: string, variant?: "default" | "secondary" | "destructive" | "outline" | "ghost", size?: "default" | "sm" | "lg", disabled?: boolean } - Clickable button. Use with on.press to trigger actions like setState, pushState, etc. Can be used for quiz submissions, form actions, navigation, and more.

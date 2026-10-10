@@ -1,0 +1,2873 @@
+{
+  "id": "conv_EzJzwlISt8USFSoL",
+  "title": "we're looking for a protocol that scans the patient's chart history and takes an",
+  "name": null,
+  "forkedFrom": null,
+  "ownerSlug": null,
+  "createdAt": "2026-09-11T18:17:41.366Z",
+  "updatedAt": "2026-09-11T18:21:35.967Z",
+  "pinnedAt": null,
+  "archivedAt": null,
+  "messageCount": 4,
+  "preview": "Here’s a polished json-render dashboard matching the ASCII concept. Because no EHR data source is connected yet, the val",
+  "artifact": null,
+  "messages": [
+    {
+      "parts": [
+        {
+          "type": "text",
+          "text": "we're looking for a protocol that scans the patient's chart history and takes and gives me a summary of the most recent intake screening form, which is the PT051. On top of that, I want to know historical information about the patient, so what conditions the patient has. What medications the patient has taken. I want to know the recent vital signs and the lab values. And I want to know any mental health issues the patient has been experiencing. This ranges from PHQ9s to Columbia suicide risk assessments to CEWAs and other types of forms. I want the data for the conditions, medications to be displayed in tables. I want the lab values also to be displayed in tables. I want the vitals to be displayed in graphs. And I want a very legible summary of your findings on like a card.\n---\nI want to see an ASCII representation of that you're envisioning first. But ask me questions."
+        }
+      ],
+      "id": "HloE9TVN9MDLmoKA",
+      "role": "user"
+    },
+    {
+      "id": "pzp4laUrdnHZi8AM",
+      "role": "assistant",
+      "parts": [
+        {
+          "type": "step-start"
+        },
+        {
+          "type": "reasoning",
+          "text": "",
+          "providerMetadata": {
+            "openai": {
+              "itemId": "rs_07a0eb103110daf5006aa445e522a087d0a8d4fd711a3dd191",
+              "reasoningEncryptedContent": "gAAAAABqpEXnWtWHXCnsix-XFtlB9_amBs1aa691bohe7gYy8D1iL2Vurlujt1BN_xFpbFeaPaEmFH1Wq5H9WJhOU6FQiQ9EdezoZjRicn6vhfu8Egm2hJl61484QtO1ZlY0D1D5l3f5eSpmovEpKgbEU6lvcynImlm8k5uLGrmf113uCv5DFxsQl3_qMNWcmK4zSv8J2-E-3ShGgwAMrdH5TvSoAMaHQMO-jRuyoMIV3Prd57ZwBeFwSzk-oBrKYQoTcl0btRLSpZX-tC5lHZ2gFITuq1F7f_nNK32woLukB-iklQKv_Ah30xxg3Cr78uPbHIAnNJ2ESFSttNtN3Vxr9vy1arP13g0mr2XjYOV0IcWZ6l3o2LWUx_G2UoS4DoF8UnpwZHHNt5WXtlH0QVWzUrDWd7MofTy-xnOmQ1H5Q2AxCEauECKwiYuJbP3QgsM_lOIHpH9xLDs5DB4ZwOi1owMFwPEkoeyI1NGKN8Bg82beQyHT6UWVjv_w8n1QhZLgKrYP-rbD4qQxP_d0qrvvZaPgMAWQ1RFPStRbcq_dVkQ5I2qOq37DkayAJti6vy7mpyfUt-J1UVJcB6bkhj0ruHD4CRHBaEUHqTKzuJgCufAz--LD4k39gdmV54FAp4CBeV_pwtwvgStOqgt02uhT27oRGb1TR3jUXdfkUWf3PDuqUbNS779bKTJDfPjk5AKL7vnoA4wIx0QL0wYPXoW9NUFPO0hYqO4UWZjrthc8q3l8x6rjPyWW2CJZN3ZZlhoOidhDmIC1rZwoQjxPHel838AoukuNU919IkFd41sfzAEKBSN6vB7mOTZcKM-No9TYg6yT66WNXkqscgqPXAX6hkeWf1CSocs3_gVd-41mwoxcYvms_QvLlhH57tGCZILlB2UwP1jaX_MRa0IUpd9KUlIVQpJSsMqhJYP75p3dvgHbsN8LQlDKRlVBFezhJPerdAFblxJyIB2DB87FE9ojwX_HzsXztY_K3hX9KDkJk0RZ-vJ-IX0S4L8rSByowI0nblVDeJ6xWIX-bhwa7lXs1nv4iZXoXWFuunI-8i1sr-zr6L51Iowq-AVWPyZLI1m0hl9cxraXBsD_l9wRkVmfHxuf_kY3IP6IbabXdb85uxlWWyRMYmqVMfCEeB1TO4ECx7Pj6cmt2UIOKrAnAHghS_SHSO5kRa68n_8yPGOm11CcXsSgyyK8bNDELNb2GHdjWMHPnJKqR1H3i0-LW39fuRg1FWqiu-yec0HR2HQN5Vz4Nv2qSQBZb_ZwQTcfVdrvqGLn7GxuM1SHzKIge81KLYWR7P-kg7ruOgvkmqohUxa5HmGTV4HEDxVjgSG_CZmnv4nPetFhuTLz4ivokydmrg6z4GRo_hN3ptYEvGcmczBM_gnIX6Yjx07jIK7h1uuh1-QjEr5T7jiWP-fNv263wqfIfUOZZN_koSAnquV9bcXLl17rP7DLOsvr_-dCktsbpEJaVZIMCvUc2AgYQ20v9S1MwbWugQTuFSkx5ytGo2S-hFZMVFTJx-j89RwaVbQxTga_29_2wFlKujGGJV33npWah4XQphHd3ygrhEZrrPZ9dMIOivLKu5awORxJLviHPxtayjpHuANkVCChmuzM0LykQf37LE0MkNw7ycmUmPscje02T4w1Fk5YaTpMT0oYOuXYe92VTTEp-LJ1XwQYia39sErXxKFMioNJlVZuDHGMB3ES1ro1YOc5oPgbaSTpjhQRZh2_F2l-DwDKSitwP04BEmtitqdy_A5ruPmvWdAL3d9hYIXGMNAdVto8LOB1l0BkEnZsOA-Rn261TjG7lS_-MQekRyBfPqbVXSyQqDfgU5rJdpmwZsQ32ABBnQ52ikKrKCqCgTcXR_BBcWjFcxGz-t0wL13LtOLh1YbJ7kx3LnibWtgWHwvmvY3tNKxvfIxzrKVrhtrTxZBlNgm-LkzJ2wNd-w=="
+            }
+          },
+          "state": "done"
+        },
+        {
+          "type": "text",
+          "text": "Below is the first-pass layout I’m envisioning. It prioritizes the latest PT051, current safety concerns, and clinically relevant changes while keeping source dates and provenance visible.\n\n```text\n┌──────────────────────────────────────────────────────────────────────────────┐\n│ PATIENT CHART SUMMARY                                      Generated: [time] │\n│ [Name / MRN]  [DOB / Age]  [Encounter]  [Allergies]  [Code Status]          │\n│ Data coverage: [earliest date] → [latest date]   Sources: [systems/forms]    │\n└──────────────────────────────────────────────────────────────────────────────┘\n\n┌──────────────────────────────────────────────────────────────────────────────┐\n│ CLINICAL SUMMARY                                                             │\n│ • Most recent PT051: [date/time, status, author]                             │\n│ • Presenting concerns and key intake findings                               │\n│ • Active conditions and relevant history                                    │\n│ • Medication highlights, changes, and adherence concerns                    │\n│ • Recent vital/lab trends and significant abnormalities                     │\n│ • Mental-health findings and current safety considerations                  │\n│                                                                              │\n│ ⚠ Items requiring review: [suicide risk / withdrawal risk / critical labs]  │\n└──────────────────────────────────────────────────────────────────────────────┘\n\n┌──────────────────────────────────────┬───────────────────────────────────────┐\n│ MOST RECENT PT051                    │ MENTAL HEALTH & SAFETY                │\n│ Form date/time: [...]                │ Latest PHQ-9: [score/severity/date]   │\n│ Encounter/location: [...]            │ Columbia: [risk level/date]           │\n│ Reason for intake: [...]             │ CEWA/CIWA: [score/category/date]      │\n│ Symptoms/concerns: [...]             │ Other screens: [...]                  │\n│ Substance-use findings: [...]        │ Ideation/plan/intent: [...]           │\n│ Functional/social findings: [...]    │ Protective factors/actions: [...]     │\n│ Disposition/follow-up: [...]         │ Historical score trend: [...]         │\n└──────────────────────────────────────┴───────────────────────────────────────┘\n\n┌──────────────────────────────────────┬───────────────────────────────────────┐\n│ CONDITIONS                           │ MEDICATION HISTORY                    │\n│ Condition | Status | Onset | Source  │ Medication | Dose | Route | Status   │\n│-----------|--------|-------|---------│------------|------|-------|----------│\n│ [...]     | Active | [...] | [...]   │ [...]      | [...]| [...] | Active   │\n│ [...]     | Hx     | [...] | [...]   │ [...]      | [...]| [...] | Stopped  │\n│                                      │ Start/stop dates | Indication | Source│\n└──────────────────────────────────────┴───────────────────────────────────────┘\n\n┌──────────────────────────────────────────────────────────────────────────────┐\n│ RECENT VITAL-SIGN TRENDS                                                     │\n│                                                                             │\n│ BP       160 ┤       ●                                                      │\n│          120 ┤ ●  ●     ●──●         [graph by collection date/time]        │\n│           80 ┤                                                               │\n│                                                                             │\n│ HR/SpO₂/Temp/RR/Weight ─ separate, legible trend graphs                     │\n│ Latest values and clinically significant changes labeled                    │\n└──────────────────────────────────────────────────────────────────────────────┘\n\n┌──────────────────────────────────────────────────────────────────────────────┐\n│ LAB RESULTS                                                                  │\n│ Test | Result | Units | Reference Range | Flag | Collected | Prior/Trend    │\n│------|--------|-------|-----------------|------|-----------|----------------│\n│ [...]| [...]  | [...] | [...]           | H/L  | [...]     | ↑ / ↓ / stable │\n│                                                                              │\n│ Tabs/sections: CBC | CMP | Toxicology | Endocrine | Other                   │\n└──────────────────────────────────────────────────────────────────────────────┘\n\n┌──────────────────────────────────────────────────────────────────────────────┐\n│ PROVENANCE & REVIEW                                                          │\n│ Every finding links to its source form, note, result, or medication record. │\n│ Conflicts, missing data, preliminary results, and uncertain extraction are  │\n│ clearly marked. Summary supports—not replaces—clinician review.             │\n└──────────────────────────────────────────────────────────────────────────────┘\n```\n\n### Questions\n\n1. **What is PT051 in your organization?** Please provide a blank/sample form, field list, or screenshot with all protected health information removed.\n2. Is “CEWA” the correct instrument name, or do you mean **CIWA/CIWA-Ar**? What other screening forms must be recognized?\n3. What chart system and interfaces are available—Epic, Oracle/Cerner, Meditech, FHIR, HL7, database access, document APIs, or exported PDFs?\n4. Are these data primarily **structured fields**, scanned documents, free-text notes, or a mixture?\n5. Does “most recent PT051” mean the latest **completed/signed** form, or should drafts, amendments, and corrected forms be considered?\n6. What historical window should be used for:\n   - conditions and medications,\n   - labs and vitals,\n   - mental-health assessments?\n7. Should conditions include only coded diagnoses, or also problems inferred from notes? I recommend clearly separating **documented** from **possible/inferred** conditions.\n8. For medications, should the table include home medications, inpatient administrations, prescriptions, discontinued drugs, patient-reported use, and adherence?\n9. How should duplicate or conflicting medication and condition records be reconciled?\n10. Which lab panels matter most, and should abnormality flags come strictly from the laboratory’s encounter-specific reference ranges?\n11. Which vitals should be graphed, and over what interval—last 24 hours, 7 days, 30 days, or encounter-specific?\n12. For mental-health and suicide-risk findings, should the summary display individual sensitive responses, only scores/risk categories, or both based on user role?\n13. What should happen when current suicidal intent, a critical lab, severe withdrawal risk, or another urgent finding is detected—highlight only, or trigger an existing clinical escalation workflow?\n14. Who will use this: physicians, nurses, behavioral-health staff, intake staff, or multiple roles? Are role-based redaction rules required?\n15. Where should the result appear: chart sidebar, encounter summary, printable report, API response, or a standalone dashboard?\n16. Must clinicians approve the generated summary before it is saved back to the chart? What audit, retention, and source-linking requirements apply?",
+          "providerMetadata": {
+            "openai": {
+              "itemId": "msg_07a0eb103110daf5006aa445e7403087d0847ecbcd53584353",
+              "phase": "final_answer"
+            }
+          },
+          "state": "done"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "type": "text",
+          "text": "Great, now show me the beautiful views that match that ASCII, but using json-render"
+        }
+      ],
+      "id": "NJDKOc3pF1gH5irX",
+      "role": "user"
+    },
+    {
+      "id": "j5zI9OtiHdccu2N5",
+      "role": "assistant",
+      "parts": [
+        {
+          "type": "step-start"
+        },
+        {
+          "type": "reasoning",
+          "text": "",
+          "providerMetadata": {
+            "openai": {
+              "itemId": "rs_07a0eb103110daf5006aa4466c006c87d084af86cf566b6c5e",
+              "reasoningEncryptedContent": "gAAAAABqpEZ10uaPOkADFuIJYHfwtJupxIlJmaY4G4SZE9t0F9I0r6jdcAYHLfNz-awKbwCWYF4zoPB70wrHiQXd8BI4RHt8K1JkhWimEsOJmmuQH6CQs76jsbDDMEu2Zodqq0NieiAekiCRmyGtiI-nxWJ7loAmBxPMj-eVORGoxr9tODisbB1WMyta2i-t7Xbcs5NHOfeQu23MXgY4vUb8VsN2phJtGGbgkMV_eBtH6NPOW45hyGZufkNHpACzMZz6k0_3gVVKNhiA-BBDTMZIMgMYyk33n4B27C-ZH1amJZ-88w1sJd34yj3cWjOVxYYuQreG1YMN07EbIQaLWHG9hy-A0bi-HU3C4A3IkrMnU9nC53NrDSRmbGVJhdnxZtXj0WxKWV2xb-jzKfQsGcVzKpumENfGuqnkihMHCao0hj9xYDvfKNEYpsBOfiYfQ8LKE8131LP1T0fPHYxzq5ChGAtrwaT6v9_f6YVcJYJ-hNj-5BKHm7IGlxkZV5YGSvZp4nUwdZY9K90FA9VyC4swq7yOP6_od3yagLtSqRnbqyUPLsFsTJKays3cf2rCHoJRF_LTmzKFpwYLhT4MKHI3DN5EWHM8EnvWitmRQhVoOQTTD7BsDEiUPqlf0K9yqRJpVSoZyrsHjdBJlMBnOefB9s5YzhuxXB8OR_yuIvSzq7cMxirI1HBcLhiWLZDG1SXu-XqpGBxiA6ClSGSRtFJVFjX895I7jKfo23WJB5TNXm5Qu4GsFI4ntC1lPoQjLkMNmUkxuULZ-yy6gUn_1SRETRATwlloSiUt-Lfmntb1wwQg5aVAdMkaojMc1cpe52AXZk868fTXnE9oIJYmfT0keB1MLBjg0nRKh3EXfC-vZw8CR7xD9ewcBwj-S6-risXJmZCyf8oMJR8SFeuEzdsoPG72Lec8h_yAT_nEMKv7Mjf2ux4Jx9bLE9yaJgArypKI-Z5SRg3J2VRmg0r4r8jaOjoG6caQF27aYx8ES8zUysfMO0m4TVZEY7kPhdg-_ySOmVmOEx6aI9-Scyc4eBZyEQ5yOz_gFOB33C2NjS2xWC252GJTk0ioBRXpC6pHkKXEzsIE4aHp3vTrQ5M-FAFEv4t6ceVNXJc9Ii5vgmXMChGue69i3t0pP4DbdIl6Zq2rzUEoixQf5pNCVQqoWY64RY9zhrTDfVQqWTfp_QHKrgoM5kGmz0fBONPn4SluTm_A_GLf3-pKQ-DU_bCIcyimsYoA23RwNwJjI4QcrubSc1EOyGrxAnxCWhy6wQ6DLqWkdlVc6WG5T7pPokIGJAoi_q8wyG29z-C6s9o9KotY3-3Wf0trNscQ5d0xX8DEQwl3UF7BVw-_dy7faV-4s7q-m0y3dNWsdh_uW2eBY3iPw7J1Fm_VEwNEnoefOo_d4sZCAytTNC9mgUfMmnX4YyeIhm-rWXPQQnbjc-uS2Bz48cNLSQM2JMcdiO6uMn1JOQ2i_TvKeuf5bZv9Lc4Zsmpgg5cP8VPxGu-zFPD7JeVPq477wKAtsP3R6vYHoQ72O0W2RgbgXa6SOXoNUk0UC29bgXqnFfk6hm1OoatdMr36iA8HC_6EIPxUB-R94efBJY4HU-d12dFf53_AuKQk5LPyTa2hU4fV9tjJjZA1xQxivzGpmB2b7blCENi_PPkadmriTlJU9yihhsOp5cKH1gOOOnIXv_59ejDPFlbpiswdlIg-nuDjE6FFwkmAnReU_7c2nja9aM7FNvNH8IKOh5xUUMw8BEMXUBYE3W_WHP_Ty4f4zQzjQ1GMRgQSNyOWcXHKEmCXJ3q7QVEGDipuz2Bo1PyEVSteEaFr7-Q_EBqx-YrkIExqcBsapMHp6jAzBynALz0VKs6K8A1iLbxGfjmO-9_E14fdqsjQMa7Z2v9IT8HGPPO0n8j2u58inPisanUmplWSTm341tE07SRuml7ozDJa9qaIjq_eXvdcPuIh8qNaiWbhR8NIVVqecdi17zUxx72nfmnfpxDza4WOWbf93y0_7yVQmlAU9Zhjh6NrXZ2Jbw7v111p6XsVSUa9REJZ-fQtzT9h1RV3bblJALpfGbUhxpD9SO8O3riMDPZfRyU_Yq_EnicLCiAhKQzwXGjh775QF_QGjnQDOZEMKrd7JLhFOBsR9uoups_21YK3Lqh4IQAeq85sNjboJ4pldJKITckKzkbkdUnkbfDX8tfZhO7mr7J8tWNOB2vCsosnw4sMqbouQgYoIhVsPhES1w3iFmCQfqrkijsJbU-31xA8vplK6CZPcCdnf_OR1kHjYeucFtTo_kNPjyU2pUkfLm2AA_klY1SEgV7zXq8pS2I7MOBuUS1m3jYQ8xpj_cmTFL1dE9HkHZHae00zW4PX3cTaHdOhTgnld2Lh1Dcg4DQ7kGDQpOfRx85fonp6fNq20dwsrNvRDWcKGOXfaIEvqZjjrdqPqa7wiRPxH7p_p-tQzaN-vRzTFcZ5oK1rZfbWKFH0j7aHu2gaSYC6c1QABvrz-rtGdZ42OdwWwXeiWC6LeSPjXIm78ct46Y9uzik1iMc7yPVh8qO1WvEzN602DGxlVSxuU8L1121uxwDqcRiwKaS2Ak6fFXTYkZg1rwup4sk76PMwtjMYiBQNXzfieTUVi0AgMmaF94oCSxhTwJuGvfErhCpjBFCJEH6dwcXTEQzyYIyEAc9_WnxiQhyLbHSje83Dq3p2Bked4yPzy4w4JT9PveimQcQ6teyNfq2aBl1tPRvqdlNyCZ6uFOEoh7Uy3JlseENTTKpeakgF9tTmVhGa-ZNGhqdA8CbB6EhLEGOPfwYtVoOmnbfiDXZ0nwzVj3ItqFs9M7lzZbaEh0vdPQJemiR0zhG3k4QnGggkqSYtemAzAAyqHjMdnbvwwfio84-hlD8X057L6ls1tcKoiK1W7q0ib3AV_oCPGJMl3FJzdLknO3NzZO26G9FE2X0PzRuQQxB0gkGvSAoIFp9giL1qiPGaAIwVvRMgcasYkmM-u7dfgkQczWpbBJRBWT48dLqLzFzJPRn3JSV-9iJquFz5EJ49T4AL4mWcutFI7uMju38HB9KJjqzLwn8MKaINaxxFOKBRwpVQzDdMJEltkeGtLfUUkb3Eo9vQtuOgyWQYMkCC19CxIQzOJGVgt2rmEYuzXUeZ4L_H6VOUae85Tu7ZUDJXf2iIsKfDFzgrCyaNc6PxS8FMrbnN7i2KW9C9dxh--LUu3ZKtr4ox_goZIuz-4p1dWxTNFBkv8xeTURX0MtnxcaFiti4dQ-WgcEF5s0lURr4GSY-ytJrg7et6-f4utfVVgPnrcADVmzJWCfo-uPBSNu8q2WMj8JXvUKYyv_axsLg_f3KTY9pvT9bioakPsPkWurfnedXibp4FeZJ8Eaid1nhkVoJ2hAApxR95DS-IJgTxluBddZHNmJUMP6tLdfyCZ8sSKmzZLEVknueHRMzUDQpEzWoc3qsxFi2MsYBcq6wVh73qDwfxK3Pv_TV-vzJxr7ABiB1gv1uwGjS_m2Y5SjUp4OzoGae1BaDWxMxnpjeqVNq00w2KHYVCqqKUNjdbD0oHI0COkyqFtkrtFIUwLZT9uFp2G-oSn4Uf8WCL7AxOxaC6BFZdTh0lqcirBhO66EaCDpwxDu706wSWAdfYsHIA4byLLacpDyJE7t9SCKa5OivrePIqW0NcKTI63lqKdlHlnDLWCnrp1SA6GK_EO9J3A6PztNrPcf2jB3E4b-rCwUm9qfa4odLbpnAq-fekKzs-6tUwxSwMHXguFh2OHpymH0J-PO8N8j1d5AARWdefnfqW158h8_uvjy-awf5iT3fcosPK4Pmv0gVJd9eWF528HMLrpYw5ny1h3Fq1rZBI-A3kZFt10mIka2eq8OJ_z6zu4Rk807rNCX2UpuSfdWt-NagM0Bd8iDKiJSQq8D0QpQULf-U5BNQSyygS07ZBq5QBJO71rPUjRyWlzx5T4qrgRAK_pa59ykWBPdktLho081Gbn0SPK9BaJJwHx3rg7FBcKy9skcQ4TmWSxQPJPKTwW6DM5JycxaiM2m4oij4gawmhDh5OZJZTpBoFkhRfIoebUnszywTw7M73x6FR4oaG6tHMAb4steLp6hzwmZM8zxI2nmC8zcUywXfaz6rpmCSTlHdgQLPY0rVXL8UdhP-ENI2YcmQrQ3vtMksjTMhIebcsIl0Gd44OfK4lc4w6QS2f_BB1MAlL61RUudGtN1hhtKa7dAPrE0AjcWAbJN53YnAjkUw2zpu04TRavwxDk_apYCDDOth3FI0ok-cotGNWnKKJ83kn20gj8aVGHIO36p6Zs_4RhfG7eIstJVejz4-xDxv3vYicsla0W-mI7XOJMh7Vr3QbEVY3R8Zemy4u8gE0pg_h_EhYv7Y2ja4Y2jafCx7QaR8SqNcVcoA9p4HnUbeDh_btbKiT3PaTMifsyV2yJrX4WYdE7UuXcEBmmgRUoVGJtRbG2OwzOIfBbiJ0jHkjLuSsRbuQOlRkbn8HomPL3-Ltv29aWoB4gUPd4uO-eheE1BnMBcb9DMX8GI10pzu_NrsgBGa4PaZg2ZxvTBlPfZpicfJUR-LA-4FKSA=="
+            }
+          },
+          "state": "done"
+        },
+        {
+          "type": "text",
+          "text": "Here’s a polished json-render dashboard matching the ASCII concept. Because no EHR data source is connected yet, the values below are clearly labeled **synthetic demonstration data**; the bindings can later be populated by your chart-scanning protocol.\n\n",
+          "providerMetadata": {
+            "openai": {
+              "itemId": "msg_07a0eb103110daf5006aa44675750487d08cedf9e6140572f4",
+              "phase": "final_answer"
+            }
+          },
+          "state": "done"
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/root",
+              "value": "patient-dashboard"
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/patient",
+              "value": {
+                "name": "Demo Patient",
+                "mrn": "SYN-10482",
+                "dobAge": "1986-04-12 · 39 years",
+                "encounter": "Behavioral Health Intake · ENC-20491",
+                "allergies": "Penicillin",
+                "codeStatus": "Full code",
+                "coverage": "Jan 2023 – Feb 2026",
+                "generated": "2026-02-20 14:32"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/summary",
+              "value": {
+                "narrative": "The latest signed PT051 documents worsening depressive symptoms, disrupted sleep, reduced appetite, and recent alcohol use. The patient has active major depressive disorder, generalized anxiety disorder, hypertension, and alcohol use disorder. PHQ-9 is elevated at 17, while the latest Columbia assessment documents passive suicidal ideation without a reported plan or intent. Blood pressure remains above goal, and potassium is mildly low. Medication reconciliation and clinician review of the safety plan are recommended.",
+                "priority": "Review passive suicidal ideation, PHQ-9 severity, elevated blood pressure, mild hypokalemia, and recent alcohol withdrawal symptoms before disposition."
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/pt051",
+              "value": {
+                "date": "Feb 20, 2026 · 13:45",
+                "status": "Signed",
+                "author": "Jordan Lee, RN",
+                "location": "Behavioral Health Intake",
+                "reason": "Depressed mood, anxiety, insomnia, and increased alcohol consumption",
+                "symptoms": "Low mood, anhedonia, fatigue, reduced appetite, impaired concentration, and fragmented sleep",
+                "substanceUse": "Reports 4–6 alcoholic drinks daily; last use approximately 18 hours before intake",
+                "social": "Lives with partner; employed; reports recent relationship and financial stress",
+                "disposition": "Behavioral-health evaluation, withdrawal monitoring, medication reconciliation, and safety-plan review"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/mentalSummary",
+              "value": {
+                "phq9": "17 · Moderately severe",
+                "columbia": "Moderate risk",
+                "withdrawal": "CEWA 8 · Mild",
+                "latestAction": "Safety plan documented; reassessment recommended"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/conditions",
+              "value": [
+                {
+                  "condition": "Major depressive disorder",
+                  "status": "Active",
+                  "onset": "2023-01-18",
+                  "lastDocumented": "2026-02-20",
+                  "source": "Problem list / PT051"
+                },
+                {
+                  "condition": "Generalized anxiety disorder",
+                  "status": "Active",
+                  "onset": "2023-03-04",
+                  "lastDocumented": "2026-02-20",
+                  "source": "Problem list / intake"
+                },
+                {
+                  "condition": "Alcohol use disorder",
+                  "status": "Active",
+                  "onset": "2024-06-11",
+                  "lastDocumented": "2026-02-20",
+                  "source": "Problem list / PT051"
+                },
+                {
+                  "condition": "Essential hypertension",
+                  "status": "Active",
+                  "onset": "2022-09-02",
+                  "lastDocumented": "2026-02-20",
+                  "source": "Problem list / vitals"
+                },
+                {
+                  "condition": "Migraine without aura",
+                  "status": "Historical",
+                  "onset": "2019-05-20",
+                  "lastDocumented": "2024-12-08",
+                  "source": "Problem list"
+                },
+                {
+                  "condition": "Major depressive disorder",
+                  "status": "Active",
+                  "onset": "2023-01-18",
+                  "lastDocumented": "2026-02-20",
+                  "source": "Problem list / PT051"
+                },
+                {
+                  "condition": "Generalized anxiety disorder",
+                  "status": "Active",
+                  "onset": "2023-03-04",
+                  "lastDocumented": "2026-02-20",
+                  "source": "Problem list / intake"
+                },
+                {
+                  "condition": "Alcohol use disorder",
+                  "status": "Active",
+                  "onset": "2024-06-11",
+                  "lastDocumented": "2026-02-20",
+                  "source": "Problem list / PT051"
+                },
+                {
+                  "condition": "Essential hypertension",
+                  "status": "Active",
+                  "onset": "2022-09-02",
+                  "lastDocumented": "2026-02-20",
+                  "source": "Problem list / vitals"
+                },
+                {
+                  "condition": "Migraine without aura",
+                  "status": "Historical",
+                  "onset": "2019-05-20",
+                  "lastDocumented": "2024-12-08",
+                  "source": "Problem list"
+                },
+                {
+                  "condition": "Major depressive disorder",
+                  "status": "Active",
+                  "onset": "2023-01-18",
+                  "lastDocumented": "2026-02-20",
+                  "source": "Problem list / PT051"
+                },
+                {
+                  "condition": "Generalized anxiety disorder",
+                  "status": "Active",
+                  "onset": "2023-03-04",
+                  "lastDocumented": "2026-02-20",
+                  "source": "Problem list / intake"
+                },
+                {
+                  "condition": "Alcohol use disorder",
+                  "status": "Active",
+                  "onset": "2024-06-11",
+                  "lastDocumented": "2026-02-20",
+                  "source": "Problem list / PT051"
+                },
+                {
+                  "condition": "Essential hypertension",
+                  "status": "Active",
+                  "onset": "2022-09-02",
+                  "lastDocumented": "2026-02-20",
+                  "source": "Problem list / vitals"
+                },
+                {
+                  "condition": "Migraine without aura",
+                  "status": "Historical",
+                  "onset": "2019-05-20",
+                  "lastDocumented": "2024-12-08",
+                  "source": "Problem list"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/conditions/0",
+              "value": {
+                "condition": "Major depressive disorder",
+                "status": "Active",
+                "onset": "2023-01-18",
+                "lastDocumented": "2026-02-20",
+                "source": "Problem list / PT051"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/conditions/1",
+              "value": {
+                "condition": "Generalized anxiety disorder",
+                "status": "Active",
+                "onset": "2023-03-04",
+                "lastDocumented": "2026-02-20",
+                "source": "Problem list / intake"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/conditions/2",
+              "value": {
+                "condition": "Alcohol use disorder",
+                "status": "Active",
+                "onset": "2024-06-11",
+                "lastDocumented": "2026-02-20",
+                "source": "Problem list / PT051"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/conditions/3",
+              "value": {
+                "condition": "Essential hypertension",
+                "status": "Active",
+                "onset": "2022-09-02",
+                "lastDocumented": "2026-02-20",
+                "source": "Problem list / vitals"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/conditions/4",
+              "value": {
+                "condition": "Migraine without aura",
+                "status": "Historical",
+                "onset": "2019-05-20",
+                "lastDocumented": "2024-12-08",
+                "source": "Problem list"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/medications",
+              "value": [
+                {
+                  "medication": "Sertraline",
+                  "dose": "100 mg",
+                  "route": "Oral",
+                  "frequency": "Daily",
+                  "status": "Active",
+                  "indication": "Depression / anxiety",
+                  "dates": "2024-08-12 – present"
+                },
+                {
+                  "medication": "Amlodipine",
+                  "dose": "5 mg",
+                  "route": "Oral",
+                  "frequency": "Daily",
+                  "status": "Active",
+                  "indication": "Hypertension",
+                  "dates": "2023-02-06 – present"
+                },
+                {
+                  "medication": "Hydroxyzine",
+                  "dose": "25 mg",
+                  "route": "Oral",
+                  "frequency": "As needed",
+                  "status": "Active",
+                  "indication": "Anxiety / insomnia",
+                  "dates": "2025-11-19 – present"
+                },
+                {
+                  "medication": "Naltrexone",
+                  "dose": "50 mg",
+                  "route": "Oral",
+                  "frequency": "Daily",
+                  "status": "Patient reports stopped",
+                  "indication": "Alcohol use disorder",
+                  "dates": "2025-05-02 – 2026-01"
+                },
+                {
+                  "medication": "Escitalopram",
+                  "dose": "10 mg",
+                  "route": "Oral",
+                  "frequency": "Daily",
+                  "status": "Discontinued",
+                  "indication": "Depression",
+                  "dates": "2023-03-04 – 2024-08-11"
+                },
+                {
+                  "medication": "Sertraline",
+                  "dose": "100 mg",
+                  "route": "Oral",
+                  "frequency": "Daily",
+                  "status": "Active",
+                  "indication": "Depression / anxiety",
+                  "dates": "2024-08-12 – present"
+                },
+                {
+                  "medication": "Amlodipine",
+                  "dose": "5 mg",
+                  "route": "Oral",
+                  "frequency": "Daily",
+                  "status": "Active",
+                  "indication": "Hypertension",
+                  "dates": "2023-02-06 – present"
+                },
+                {
+                  "medication": "Hydroxyzine",
+                  "dose": "25 mg",
+                  "route": "Oral",
+                  "frequency": "As needed",
+                  "status": "Active",
+                  "indication": "Anxiety / insomnia",
+                  "dates": "2025-11-19 – present"
+                },
+                {
+                  "medication": "Naltrexone",
+                  "dose": "50 mg",
+                  "route": "Oral",
+                  "frequency": "Daily",
+                  "status": "Patient reports stopped",
+                  "indication": "Alcohol use disorder",
+                  "dates": "2025-05-02 – 2026-01"
+                },
+                {
+                  "medication": "Escitalopram",
+                  "dose": "10 mg",
+                  "route": "Oral",
+                  "frequency": "Daily",
+                  "status": "Discontinued",
+                  "indication": "Depression",
+                  "dates": "2023-03-04 – 2024-08-11"
+                },
+                {
+                  "medication": "Sertraline",
+                  "dose": "100 mg",
+                  "route": "Oral",
+                  "frequency": "Daily",
+                  "status": "Active",
+                  "indication": "Depression / anxiety",
+                  "dates": "2024-08-12 – present"
+                },
+                {
+                  "medication": "Amlodipine",
+                  "dose": "5 mg",
+                  "route": "Oral",
+                  "frequency": "Daily",
+                  "status": "Active",
+                  "indication": "Hypertension",
+                  "dates": "2023-02-06 – present"
+                },
+                {
+                  "medication": "Hydroxyzine",
+                  "dose": "25 mg",
+                  "route": "Oral",
+                  "frequency": "As needed",
+                  "status": "Active",
+                  "indication": "Anxiety / insomnia",
+                  "dates": "2025-11-19 – present"
+                },
+                {
+                  "medication": "Naltrexone",
+                  "dose": "50 mg",
+                  "route": "Oral",
+                  "frequency": "Daily",
+                  "status": "Patient reports stopped",
+                  "indication": "Alcohol use disorder",
+                  "dates": "2025-05-02 – 2026-01"
+                },
+                {
+                  "medication": "Escitalopram",
+                  "dose": "10 mg",
+                  "route": "Oral",
+                  "frequency": "Daily",
+                  "status": "Discontinued",
+                  "indication": "Depression",
+                  "dates": "2023-03-04 – 2024-08-11"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/medications/0",
+              "value": {
+                "medication": "Sertraline",
+                "dose": "100 mg",
+                "route": "Oral",
+                "frequency": "Daily",
+                "status": "Active",
+                "indication": "Depression / anxiety",
+                "dates": "2024-08-12 – present"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/medications/1",
+              "value": {
+                "medication": "Amlodipine",
+                "dose": "5 mg",
+                "route": "Oral",
+                "frequency": "Daily",
+                "status": "Active",
+                "indication": "Hypertension",
+                "dates": "2023-02-06 – present"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/medications/2",
+              "value": {
+                "medication": "Hydroxyzine",
+                "dose": "25 mg",
+                "route": "Oral",
+                "frequency": "As needed",
+                "status": "Active",
+                "indication": "Anxiety / insomnia",
+                "dates": "2025-11-19 – present"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/medications/3",
+              "value": {
+                "medication": "Naltrexone",
+                "dose": "50 mg",
+                "route": "Oral",
+                "frequency": "Daily",
+                "status": "Patient reports stopped",
+                "indication": "Alcohol use disorder",
+                "dates": "2025-05-02 – 2026-01"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/medications/4",
+              "value": {
+                "medication": "Escitalopram",
+                "dose": "10 mg",
+                "route": "Oral",
+                "frequency": "Daily",
+                "status": "Discontinued",
+                "indication": "Depression",
+                "dates": "2023-03-04 – 2024-08-11"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/vitals",
+              "value": [
+                {
+                  "date": "Feb 06",
+                  "systolic": 142,
+                  "diastolic": 88,
+                  "heartRate": 86,
+                  "spo2": 98,
+                  "temperature": 98.4,
+                  "weight": 186
+                },
+                {
+                  "date": "Feb 10",
+                  "systolic": 148,
+                  "diastolic": 92,
+                  "heartRate": 91,
+                  "spo2": 97,
+                  "temperature": 98.6,
+                  "weight": 185
+                },
+                {
+                  "date": "Feb 14",
+                  "systolic": 151,
+                  "diastolic": 94,
+                  "heartRate": 96,
+                  "spo2": 98,
+                  "temperature": 98.2,
+                  "weight": 183
+                },
+                {
+                  "date": "Feb 18",
+                  "systolic": 145,
+                  "diastolic": 90,
+                  "heartRate": 93,
+                  "spo2": 97,
+                  "temperature": 98.8,
+                  "weight": 182
+                },
+                {
+                  "date": "Feb 20",
+                  "systolic": 154,
+                  "diastolic": 96,
+                  "heartRate": 101,
+                  "spo2": 98,
+                  "temperature": 98.7,
+                  "weight": 181
+                },
+                {
+                  "date": "Feb 06",
+                  "systolic": 142,
+                  "diastolic": 88,
+                  "heartRate": 86,
+                  "spo2": 98,
+                  "temperature": 98.4,
+                  "weight": 186
+                },
+                {
+                  "date": "Feb 10",
+                  "systolic": 148,
+                  "diastolic": 92,
+                  "heartRate": 91,
+                  "spo2": 97,
+                  "temperature": 98.6,
+                  "weight": 185
+                },
+                {
+                  "date": "Feb 14",
+                  "systolic": 151,
+                  "diastolic": 94,
+                  "heartRate": 96,
+                  "spo2": 98,
+                  "temperature": 98.2,
+                  "weight": 183
+                },
+                {
+                  "date": "Feb 18",
+                  "systolic": 145,
+                  "diastolic": 90,
+                  "heartRate": 93,
+                  "spo2": 97,
+                  "temperature": 98.8,
+                  "weight": 182
+                },
+                {
+                  "date": "Feb 20",
+                  "systolic": 154,
+                  "diastolic": 96,
+                  "heartRate": 101,
+                  "spo2": 98,
+                  "temperature": 98.7,
+                  "weight": 181
+                },
+                {
+                  "date": "Feb 06",
+                  "systolic": 142,
+                  "diastolic": 88,
+                  "heartRate": 86,
+                  "spo2": 98,
+                  "temperature": 98.4,
+                  "weight": 186
+                },
+                {
+                  "date": "Feb 10",
+                  "systolic": 148,
+                  "diastolic": 92,
+                  "heartRate": 91,
+                  "spo2": 97,
+                  "temperature": 98.6,
+                  "weight": 185
+                },
+                {
+                  "date": "Feb 14",
+                  "systolic": 151,
+                  "diastolic": 94,
+                  "heartRate": 96,
+                  "spo2": 98,
+                  "temperature": 98.2,
+                  "weight": 183
+                },
+                {
+                  "date": "Feb 18",
+                  "systolic": 145,
+                  "diastolic": 90,
+                  "heartRate": 93,
+                  "spo2": 97,
+                  "temperature": 98.8,
+                  "weight": 182
+                },
+                {
+                  "date": "Feb 20",
+                  "systolic": 154,
+                  "diastolic": 96,
+                  "heartRate": 101,
+                  "spo2": 98,
+                  "temperature": 98.7,
+                  "weight": 181
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/vitals/0",
+              "value": {
+                "date": "Feb 06",
+                "systolic": 142,
+                "diastolic": 88,
+                "heartRate": 86,
+                "spo2": 98,
+                "temperature": 98.4,
+                "weight": 186
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/vitals/1",
+              "value": {
+                "date": "Feb 10",
+                "systolic": 148,
+                "diastolic": 92,
+                "heartRate": 91,
+                "spo2": 97,
+                "temperature": 98.6,
+                "weight": 185
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/vitals/2",
+              "value": {
+                "date": "Feb 14",
+                "systolic": 151,
+                "diastolic": 94,
+                "heartRate": 96,
+                "spo2": 98,
+                "temperature": 98.2,
+                "weight": 183
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/vitals/3",
+              "value": {
+                "date": "Feb 18",
+                "systolic": 145,
+                "diastolic": 90,
+                "heartRate": 93,
+                "spo2": 97,
+                "temperature": 98.8,
+                "weight": 182
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/vitals/4",
+              "value": {
+                "date": "Feb 20",
+                "systolic": 154,
+                "diastolic": 96,
+                "heartRate": 101,
+                "spo2": 98,
+                "temperature": 98.7,
+                "weight": 181
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/latestVitals",
+              "value": {
+                "bp": "154/96 mmHg",
+                "hr": "101 bpm",
+                "spo2": "98%",
+                "temp": "98.7 °F",
+                "weight": "181 lb"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/labs",
+              "value": [
+                {
+                  "panel": "CBC",
+                  "test": "WBC",
+                  "result": "7.8",
+                  "units": "10³/µL",
+                  "reference": "4.0–11.0",
+                  "flag": "Normal",
+                  "collected": "2026-02-20 12:52",
+                  "trend": "Stable"
+                },
+                {
+                  "panel": "CBC",
+                  "test": "Hemoglobin",
+                  "result": "13.6",
+                  "units": "g/dL",
+                  "reference": "12.0–16.0",
+                  "flag": "Normal",
+                  "collected": "2026-02-20 12:52",
+                  "trend": "Stable"
+                },
+                {
+                  "panel": "CMP",
+                  "test": "Potassium",
+                  "result": "3.3",
+                  "units": "mmol/L",
+                  "reference": "3.5–5.1",
+                  "flag": "Low",
+                  "collected": "2026-02-20 12:52",
+                  "trend": "Down"
+                },
+                {
+                  "panel": "CMP",
+                  "test": "Creatinine",
+                  "result": "0.9",
+                  "units": "mg/dL",
+                  "reference": "0.6–1.2",
+                  "flag": "Normal",
+                  "collected": "2026-02-20 12:52",
+                  "trend": "Stable"
+                },
+                {
+                  "panel": "CMP",
+                  "test": "AST",
+                  "result": "48",
+                  "units": "U/L",
+                  "reference": "10–40",
+                  "flag": "High",
+                  "collected": "2026-02-20 12:52",
+                  "trend": "Up"
+                },
+                {
+                  "panel": "CMP",
+                  "test": "ALT",
+                  "result": "44",
+                  "units": "U/L",
+                  "reference": "7–56",
+                  "flag": "Normal",
+                  "collected": "2026-02-20 12:52",
+                  "trend": "Up"
+                },
+                {
+                  "panel": "Toxicology",
+                  "test": "Ethanol",
+                  "result": "22",
+                  "units": "mg/dL",
+                  "reference": "<10",
+                  "flag": "High",
+                  "collected": "2026-02-20 12:52",
+                  "trend": "New"
+                },
+                {
+                  "panel": "Endocrine",
+                  "test": "TSH",
+                  "result": "2.1",
+                  "units": "mIU/L",
+                  "reference": "0.4–4.5",
+                  "flag": "Normal",
+                  "collected": "2026-02-20 12:52",
+                  "trend": "Stable"
+                },
+                {
+                  "panel": "CBC",
+                  "test": "WBC",
+                  "result": "7.8",
+                  "units": "10³/µL",
+                  "reference": "4.0–11.0",
+                  "flag": "Normal",
+                  "collected": "2026-02-20 12:52",
+                  "trend": "Stable"
+                },
+                {
+                  "panel": "CBC",
+                  "test": "Hemoglobin",
+                  "result": "13.6",
+                  "units": "g/dL",
+                  "reference": "12.0–16.0",
+                  "flag": "Normal",
+                  "collected": "2026-02-20 12:52",
+                  "trend": "Stable"
+                },
+                {
+                  "panel": "CMP",
+                  "test": "Potassium",
+                  "result": "3.3",
+                  "units": "mmol/L",
+                  "reference": "3.5–5.1",
+                  "flag": "Low",
+                  "collected": "2026-02-20 12:52",
+                  "trend": "Down"
+                },
+                {
+                  "panel": "CMP",
+                  "test": "Creatinine",
+                  "result": "0.9",
+                  "units": "mg/dL",
+                  "reference": "0.6–1.2",
+                  "flag": "Normal",
+                  "collected": "2026-02-20 12:52",
+                  "trend": "Stable"
+                },
+                {
+                  "panel": "CMP",
+                  "test": "AST",
+                  "result": "48",
+                  "units": "U/L",
+                  "reference": "10–40",
+                  "flag": "High",
+                  "collected": "2026-02-20 12:52",
+                  "trend": "Up"
+                },
+                {
+                  "panel": "CMP",
+                  "test": "ALT",
+                  "result": "44",
+                  "units": "U/L",
+                  "reference": "7–56",
+                  "flag": "Normal",
+                  "collected": "2026-02-20 12:52",
+                  "trend": "Up"
+                },
+                {
+                  "panel": "Toxicology",
+                  "test": "Ethanol",
+                  "result": "22",
+                  "units": "mg/dL",
+                  "reference": "<10",
+                  "flag": "High",
+                  "collected": "2026-02-20 12:52",
+                  "trend": "New"
+                },
+                {
+                  "panel": "Endocrine",
+                  "test": "TSH",
+                  "result": "2.1",
+                  "units": "mIU/L",
+                  "reference": "0.4–4.5",
+                  "flag": "Normal",
+                  "collected": "2026-02-20 12:52",
+                  "trend": "Stable"
+                },
+                {
+                  "panel": "CBC",
+                  "test": "WBC",
+                  "result": "7.8",
+                  "units": "10³/µL",
+                  "reference": "4.0–11.0",
+                  "flag": "Normal",
+                  "collected": "2026-02-20 12:52",
+                  "trend": "Stable"
+                },
+                {
+                  "panel": "CBC",
+                  "test": "Hemoglobin",
+                  "result": "13.6",
+                  "units": "g/dL",
+                  "reference": "12.0–16.0",
+                  "flag": "Normal",
+                  "collected": "2026-02-20 12:52",
+                  "trend": "Stable"
+                },
+                {
+                  "panel": "CMP",
+                  "test": "Potassium",
+                  "result": "3.3",
+                  "units": "mmol/L",
+                  "reference": "3.5–5.1",
+                  "flag": "Low",
+                  "collected": "2026-02-20 12:52",
+                  "trend": "Down"
+                },
+                {
+                  "panel": "CMP",
+                  "test": "Creatinine",
+                  "result": "0.9",
+                  "units": "mg/dL",
+                  "reference": "0.6–1.2",
+                  "flag": "Normal",
+                  "collected": "2026-02-20 12:52",
+                  "trend": "Stable"
+                },
+                {
+                  "panel": "CMP",
+                  "test": "AST",
+                  "result": "48",
+                  "units": "U/L",
+                  "reference": "10–40",
+                  "flag": "High",
+                  "collected": "2026-02-20 12:52",
+                  "trend": "Up"
+                },
+                {
+                  "panel": "CMP",
+                  "test": "ALT",
+                  "result": "44",
+                  "units": "U/L",
+                  "reference": "7–56",
+                  "flag": "Normal",
+                  "collected": "2026-02-20 12:52",
+                  "trend": "Up"
+                },
+                {
+                  "panel": "Toxicology",
+                  "test": "Ethanol",
+                  "result": "22",
+                  "units": "mg/dL",
+                  "reference": "<10",
+                  "flag": "High",
+                  "collected": "2026-02-20 12:52",
+                  "trend": "New"
+                },
+                {
+                  "panel": "Endocrine",
+                  "test": "TSH",
+                  "result": "2.1",
+                  "units": "mIU/L",
+                  "reference": "0.4–4.5",
+                  "flag": "Normal",
+                  "collected": "2026-02-20 12:52",
+                  "trend": "Stable"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/labs/0",
+              "value": {
+                "panel": "CBC",
+                "test": "WBC",
+                "result": "7.8",
+                "units": "10³/µL",
+                "reference": "4.0–11.0",
+                "flag": "Normal",
+                "collected": "2026-02-20 12:52",
+                "trend": "Stable"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/labs/1",
+              "value": {
+                "panel": "CBC",
+                "test": "Hemoglobin",
+                "result": "13.6",
+                "units": "g/dL",
+                "reference": "12.0–16.0",
+                "flag": "Normal",
+                "collected": "2026-02-20 12:52",
+                "trend": "Stable"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/labs/2",
+              "value": {
+                "panel": "CMP",
+                "test": "Potassium",
+                "result": "3.3",
+                "units": "mmol/L",
+                "reference": "3.5–5.1",
+                "flag": "Low",
+                "collected": "2026-02-20 12:52",
+                "trend": "Down"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/labs/3",
+              "value": {
+                "panel": "CMP",
+                "test": "Creatinine",
+                "result": "0.9",
+                "units": "mg/dL",
+                "reference": "0.6–1.2",
+                "flag": "Normal",
+                "collected": "2026-02-20 12:52",
+                "trend": "Stable"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/labs/4",
+              "value": {
+                "panel": "CMP",
+                "test": "AST",
+                "result": "48",
+                "units": "U/L",
+                "reference": "10–40",
+                "flag": "High",
+                "collected": "2026-02-20 12:52",
+                "trend": "Up"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/labs/5",
+              "value": {
+                "panel": "CMP",
+                "test": "ALT",
+                "result": "44",
+                "units": "U/L",
+                "reference": "7–56",
+                "flag": "Normal",
+                "collected": "2026-02-20 12:52",
+                "trend": "Up"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/labs/6",
+              "value": {
+                "panel": "Toxicology",
+                "test": "Ethanol",
+                "result": "22",
+                "units": "mg/dL",
+                "reference": "<10",
+                "flag": "High",
+                "collected": "2026-02-20 12:52",
+                "trend": "New"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/labs/7",
+              "value": {
+                "panel": "Endocrine",
+                "test": "TSH",
+                "result": "2.1",
+                "units": "mIU/L",
+                "reference": "0.4–4.5",
+                "flag": "Normal",
+                "collected": "2026-02-20 12:52",
+                "trend": "Stable"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/screenings",
+              "value": [
+                {
+                  "assessment": "PHQ-9",
+                  "date": "2026-02-20",
+                  "score": "17",
+                  "interpretation": "Moderately severe depression",
+                  "source": "PT051-linked form"
+                },
+                {
+                  "assessment": "Columbia Suicide Severity Rating Scale",
+                  "date": "2026-02-20",
+                  "score": "Moderate risk",
+                  "interpretation": "Passive ideation; no documented plan or intent",
+                  "source": "Behavioral-health intake"
+                },
+                {
+                  "assessment": "CEWA",
+                  "date": "2026-02-20",
+                  "score": "8",
+                  "interpretation": "Mild withdrawal symptoms",
+                  "source": "Withdrawal assessment"
+                },
+                {
+                  "assessment": "GAD-7",
+                  "date": "2026-02-19",
+                  "score": "14",
+                  "interpretation": "Moderate anxiety",
+                  "source": "Patient questionnaire"
+                },
+                {
+                  "assessment": "PHQ-9",
+                  "date": "2026-02-20",
+                  "score": "17",
+                  "interpretation": "Moderately severe depression",
+                  "source": "PT051-linked form"
+                },
+                {
+                  "assessment": "Columbia Suicide Severity Rating Scale",
+                  "date": "2026-02-20",
+                  "score": "Moderate risk",
+                  "interpretation": "Passive ideation; no documented plan or intent",
+                  "source": "Behavioral-health intake"
+                },
+                {
+                  "assessment": "CEWA",
+                  "date": "2026-02-20",
+                  "score": "8",
+                  "interpretation": "Mild withdrawal symptoms",
+                  "source": "Withdrawal assessment"
+                },
+                {
+                  "assessment": "GAD-7",
+                  "date": "2026-02-19",
+                  "score": "14",
+                  "interpretation": "Moderate anxiety",
+                  "source": "Patient questionnaire"
+                },
+                {
+                  "assessment": "PHQ-9",
+                  "date": "2026-02-20",
+                  "score": "17",
+                  "interpretation": "Moderately severe depression",
+                  "source": "PT051-linked form"
+                },
+                {
+                  "assessment": "Columbia Suicide Severity Rating Scale",
+                  "date": "2026-02-20",
+                  "score": "Moderate risk",
+                  "interpretation": "Passive ideation; no documented plan or intent",
+                  "source": "Behavioral-health intake"
+                },
+                {
+                  "assessment": "CEWA",
+                  "date": "2026-02-20",
+                  "score": "8",
+                  "interpretation": "Mild withdrawal symptoms",
+                  "source": "Withdrawal assessment"
+                },
+                {
+                  "assessment": "GAD-7",
+                  "date": "2026-02-19",
+                  "score": "14",
+                  "interpretation": "Moderate anxiety",
+                  "source": "Patient questionnaire"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/screenings/0",
+              "value": {
+                "assessment": "PHQ-9",
+                "date": "2026-02-20",
+                "score": "17",
+                "interpretation": "Moderately severe depression",
+                "source": "PT051-linked form"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/screenings/1",
+              "value": {
+                "assessment": "Columbia Suicide Severity Rating Scale",
+                "date": "2026-02-20",
+                "score": "Moderate risk",
+                "interpretation": "Passive ideation; no documented plan or intent",
+                "source": "Behavioral-health intake"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/screenings/2",
+              "value": {
+                "assessment": "CEWA",
+                "date": "2026-02-20",
+                "score": "8",
+                "interpretation": "Mild withdrawal symptoms",
+                "source": "Withdrawal assessment"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/screenings/3",
+              "value": {
+                "assessment": "GAD-7",
+                "date": "2026-02-19",
+                "score": "14",
+                "interpretation": "Moderate anxiety",
+                "source": "Patient questionnaire"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/mentalTimeline",
+              "value": [
+                {
+                  "title": "PHQ-9 increased to 17",
+                  "description": "Moderately severe depressive symptoms; prior score was 11.",
+                  "date": "Feb 20, 2026",
+                  "status": "current"
+                },
+                {
+                  "title": "Columbia assessment completed",
+                  "description": "Passive suicidal ideation documented without a reported plan or intent; safety plan recorded.",
+                  "date": "Feb 20, 2026",
+                  "status": "completed"
+                },
+                {
+                  "title": "Withdrawal monitoring initiated",
+                  "description": "CEWA score of 8 with mild tremor, anxiety, and nausea documented.",
+                  "date": "Feb 20, 2026",
+                  "status": "current"
+                },
+                {
+                  "title": "PHQ-9 increased to 17",
+                  "description": "Moderately severe depressive symptoms; prior score was 11.",
+                  "date": "Feb 20, 2026",
+                  "status": "current"
+                },
+                {
+                  "title": "Columbia assessment completed",
+                  "description": "Passive suicidal ideation documented without a reported plan or intent; safety plan recorded.",
+                  "date": "Feb 20, 2026",
+                  "status": "completed"
+                },
+                {
+                  "title": "Withdrawal monitoring initiated",
+                  "description": "CEWA score of 8 with mild tremor, anxiety, and nausea documented.",
+                  "date": "Feb 20, 2026",
+                  "status": "current"
+                },
+                {
+                  "title": "PHQ-9 increased to 17",
+                  "description": "Moderately severe depressive symptoms; prior score was 11.",
+                  "date": "Feb 20, 2026",
+                  "status": "current"
+                },
+                {
+                  "title": "Columbia assessment completed",
+                  "description": "Passive suicidal ideation documented without a reported plan or intent; safety plan recorded.",
+                  "date": "Feb 20, 2026",
+                  "status": "completed"
+                },
+                {
+                  "title": "Withdrawal monitoring initiated",
+                  "description": "CEWA score of 8 with mild tremor, anxiety, and nausea documented.",
+                  "date": "Feb 20, 2026",
+                  "status": "current"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/mentalTimeline/0",
+              "value": {
+                "title": "PHQ-9 increased to 17",
+                "description": "Moderately severe depressive symptoms; prior score was 11.",
+                "date": "Feb 20, 2026",
+                "status": "current"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/mentalTimeline/1",
+              "value": {
+                "title": "Columbia assessment completed",
+                "description": "Passive suicidal ideation documented without a reported plan or intent; safety plan recorded.",
+                "date": "Feb 20, 2026",
+                "status": "completed"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/mentalTimeline/2",
+              "value": {
+                "title": "Withdrawal monitoring initiated",
+                "description": "CEWA score of 8 with mild tremor, anxiety, and nausea documented.",
+                "date": "Feb 20, 2026",
+                "status": "current"
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state/provenance",
+              "value": {
+                "message": "Every displayed finding should retain a link to its originating form, note, flowsheet, medication record, or laboratory result. Draft forms, conflicting entries, inferred conditions, and preliminary results should be labeled rather than silently reconciled."
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/patient-dashboard",
+              "value": {
+                "type": "Stack",
+                "props": {
+                  "direction": "vertical",
+                  "gap": "lg",
+                  "className": "p-4"
+                },
+                "children": [
+                  "dashboard-header",
+                  "demo-alert",
+                  "summary-card",
+                  "priority-grid",
+                  "history-grid",
+                  "vitals-card",
+                  "labs-card",
+                  "provenance-card"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/dashboard-header",
+              "value": {
+                "type": "Stack",
+                "props": {
+                  "direction": "vertical",
+                  "gap": "sm"
+                },
+                "children": [
+                  "header-title-row",
+                  "header-subtitle",
+                  "header-separator"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/header-title-row",
+              "value": {
+                "type": "Stack",
+                "props": {
+                  "direction": "horizontal",
+                  "gap": "md",
+                  "align": "center",
+                  "justify": "between"
+                },
+                "children": [
+                  "dashboard-title",
+                  "generated-badge"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/dashboard-title",
+              "value": {
+                "type": "Heading",
+                "props": {
+                  "text": "Patient Chart Intelligence",
+                  "level": "h1"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/generated-badge",
+              "value": {
+                "type": "Badge",
+                "props": {
+                  "text": {
+                    "$template": "Generated ${/patient/generated}"
+                  },
+                  "variant": "outline"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/header-subtitle",
+              "value": {
+                "type": "Text",
+                "props": {
+                  "content": {
+                    "$template": "${/patient/name} · MRN ${/patient/mrn} · ${/patient/dobAge} · ${/patient/encounter} · Data coverage: ${/patient/coverage}"
+                  },
+                  "muted": true
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/header-separator",
+              "value": {
+                "type": "Separator",
+                "props": {
+                  "orientation": "horizontal"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/demo-alert",
+              "value": {
+                "type": "Alert",
+                "props": {
+                  "title": "Synthetic demonstration record",
+                  "message": "This dashboard contains illustrative data only. Production output must come from authenticated chart sources and undergo clinician review.",
+                  "type": "info"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/summary-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Clinical Summary",
+                  "description": "Concise synthesis of the latest intake and longitudinal chart history",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "summary-text",
+                  "summary-callout"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/summary-text",
+              "value": {
+                "type": "Text",
+                "props": {
+                  "content": {
+                    "$state": "/summary/narrative"
+                  }
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/summary-callout",
+              "value": {
+                "type": "Callout",
+                "props": {
+                  "type": "important",
+                  "title": "Items requiring clinical review",
+                  "content": {
+                    "$state": "/summary/priority"
+                  }
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/priority-grid",
+              "value": {
+                "type": "Grid",
+                "props": {
+                  "columns": 2,
+                  "gap": "lg"
+                },
+                "children": [
+                  "pt051-card",
+                  "mental-card"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/pt051-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Most Recent PT051",
+                  "description": {
+                    "$template": "${/pt051/date} · ${/pt051/status} · ${/pt051/author}"
+                  },
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "pt051-status-row",
+                  "pt051-reason",
+                  "pt051-symptoms",
+                  "pt051-substance",
+                  "pt051-social",
+                  "pt051-disposition"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/pt051-status-row",
+              "value": {
+                "type": "Stack",
+                "props": {
+                  "direction": "horizontal",
+                  "gap": "sm",
+                  "align": "center"
+                },
+                "children": [
+                  "pt051-signed-badge",
+                  "pt051-location-badge"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/pt051-signed-badge",
+              "value": {
+                "type": "Badge",
+                "props": {
+                  "text": {
+                    "$state": "/pt051/status"
+                  },
+                  "variant": "default"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/pt051-location-badge",
+              "value": {
+                "type": "Badge",
+                "props": {
+                  "text": {
+                    "$state": "/pt051/location"
+                  },
+                  "variant": "secondary"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/pt051-reason",
+              "value": {
+                "type": "Callout",
+                "props": {
+                  "type": "info",
+                  "title": "Reason for intake",
+                  "content": {
+                    "$state": "/pt051/reason"
+                  }
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/pt051-symptoms",
+              "value": {
+                "type": "Text",
+                "props": {
+                  "content": {
+                    "$template": "Symptoms: ${/pt051/symptoms}"
+                  }
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/pt051-substance",
+              "value": {
+                "type": "Text",
+                "props": {
+                  "content": {
+                    "$template": "Substance use: ${/pt051/substanceUse}"
+                  }
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/pt051-social",
+              "value": {
+                "type": "Text",
+                "props": {
+                  "content": {
+                    "$template": "Social and functional context: ${/pt051/social}"
+                  }
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/pt051-disposition",
+              "value": {
+                "type": "Callout",
+                "props": {
+                  "type": "tip",
+                  "title": "Documented disposition",
+                  "content": {
+                    "$state": "/pt051/disposition"
+                  }
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/mental-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Mental Health & Safety",
+                  "description": "Latest screening results and longitudinal safety context",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "mental-metrics",
+                  "mental-action",
+                  "mental-timeline"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/mental-metrics",
+              "value": {
+                "type": "Grid",
+                "props": {
+                  "columns": 3,
+                  "gap": "sm"
+                },
+                "children": [
+                  "phq-metric",
+                  "columbia-metric",
+                  "withdrawal-metric"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/phq-metric",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "PHQ-9",
+                  "value": {
+                    "$state": "/mentalSummary/phq9"
+                  },
+                  "detail": "Latest completed screen",
+                  "trend": "up"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/columbia-metric",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "Columbia",
+                  "value": {
+                    "$state": "/mentalSummary/columbia"
+                  },
+                  "detail": "Latest suicide-risk assessment",
+                  "trend": "neutral"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/withdrawal-metric",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "Withdrawal Screen",
+                  "value": {
+                    "$state": "/mentalSummary/withdrawal"
+                  },
+                  "detail": "Latest documented score",
+                  "trend": "up"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/mental-action",
+              "value": {
+                "type": "Callout",
+                "props": {
+                  "type": "warning",
+                  "title": "Latest documented action",
+                  "content": {
+                    "$state": "/mentalSummary/latestAction"
+                  }
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/mental-timeline",
+              "value": {
+                "type": "Timeline",
+                "props": {
+                  "items": {
+                    "$state": "/mentalTimeline"
+                  }
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/history-grid",
+              "value": {
+                "type": "Grid",
+                "props": {
+                  "columns": 2,
+                  "gap": "lg"
+                },
+                "children": [
+                  "conditions-card",
+                  "medications-card"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/conditions-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Conditions",
+                  "description": "Active and historically relevant documented conditions",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "conditions-table"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/conditions-table",
+              "value": {
+                "type": "Table",
+                "props": {
+                  "data": {
+                    "$state": "/conditions"
+                  },
+                  "columns": [
+                    {
+                      "key": "condition",
+                      "label": "Condition"
+                    },
+                    {
+                      "key": "status",
+                      "label": "Status"
+                    },
+                    {
+                      "key": "onset",
+                      "label": "Onset"
+                    },
+                    {
+                      "key": "lastDocumented",
+                      "label": "Last Documented"
+                    },
+                    {
+                      "key": "source",
+                      "label": "Source"
+                    }
+                  ],
+                  "emptyMessage": "No documented conditions found."
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/medications-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Medication History",
+                  "description": "Active, discontinued, and patient-reported medication records",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "medications-table"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/medications-table",
+              "value": {
+                "type": "Table",
+                "props": {
+                  "data": {
+                    "$state": "/medications"
+                  },
+                  "columns": [
+                    {
+                      "key": "medication",
+                      "label": "Medication"
+                    },
+                    {
+                      "key": "dose",
+                      "label": "Dose"
+                    },
+                    {
+                      "key": "route",
+                      "label": "Route"
+                    },
+                    {
+                      "key": "frequency",
+                      "label": "Frequency"
+                    },
+                    {
+                      "key": "status",
+                      "label": "Status"
+                    },
+                    {
+                      "key": "indication",
+                      "label": "Indication"
+                    },
+                    {
+                      "key": "dates",
+                      "label": "Dates"
+                    }
+                  ],
+                  "emptyMessage": "No medication records found."
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/vitals-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Recent Vital-Sign Trends",
+                  "description": "Most recent documented observations with longitudinal context",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "latest-vitals-grid",
+                  "vitals-separator",
+                  "vitals-chart-grid"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/latest-vitals-grid",
+              "value": {
+                "type": "Grid",
+                "props": {
+                  "columns": 5,
+                  "gap": "sm"
+                },
+                "children": [
+                  "bp-metric",
+                  "hr-metric",
+                  "spo2-metric",
+                  "temp-metric",
+                  "weight-metric"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/bp-metric",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "Blood Pressure",
+                  "value": {
+                    "$state": "/latestVitals/bp"
+                  },
+                  "detail": "Latest",
+                  "trend": "up"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/hr-metric",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "Heart Rate",
+                  "value": {
+                    "$state": "/latestVitals/hr"
+                  },
+                  "detail": "Latest",
+                  "trend": "up"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/spo2-metric",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "SpO₂",
+                  "value": {
+                    "$state": "/latestVitals/spo2"
+                  },
+                  "detail": "Latest",
+                  "trend": "neutral"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/temp-metric",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "Temperature",
+                  "value": {
+                    "$state": "/latestVitals/temp"
+                  },
+                  "detail": "Latest",
+                  "trend": "neutral"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/weight-metric",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "Weight",
+                  "value": {
+                    "$state": "/latestVitals/weight"
+                  },
+                  "detail": "Latest",
+                  "trend": "down"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/vitals-separator",
+              "value": {
+                "type": "Separator",
+                "props": {
+                  "orientation": "horizontal"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/vitals-chart-grid",
+              "value": {
+                "type": "Grid",
+                "props": {
+                  "columns": 2,
+                  "gap": "md"
+                },
+                "children": [
+                  "systolic-chart",
+                  "diastolic-chart",
+                  "heart-rate-chart",
+                  "weight-chart"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/systolic-chart",
+              "value": {
+                "type": "LineChart",
+                "props": {
+                  "title": "Systolic Blood Pressure (mmHg)",
+                  "data": {
+                    "$state": "/vitals"
+                  },
+                  "xKey": "date",
+                  "yKey": "systolic",
+                  "color": "#dc2626",
+                  "height": 240
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/diastolic-chart",
+              "value": {
+                "type": "LineChart",
+                "props": {
+                  "title": "Diastolic Blood Pressure (mmHg)",
+                  "data": {
+                    "$state": "/vitals"
+                  },
+                  "xKey": "date",
+                  "yKey": "diastolic",
+                  "color": "#f97316",
+                  "height": 240
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/heart-rate-chart",
+              "value": {
+                "type": "LineChart",
+                "props": {
+                  "title": "Heart Rate (bpm)",
+                  "data": {
+                    "$state": "/vitals"
+                  },
+                  "xKey": "date",
+                  "yKey": "heartRate",
+                  "color": "#7c3aed",
+                  "height": 240
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/weight-chart",
+              "value": {
+                "type": "LineChart",
+                "props": {
+                  "title": "Weight (lb)",
+                  "data": {
+                    "$state": "/vitals"
+                  },
+                  "xKey": "date",
+                  "yKey": "weight",
+                  "color": "#2563eb",
+                  "height": 240
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/labs-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Laboratory Results",
+                  "description": "Latest results with encounter-specific reference ranges and trend indicators",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "lab-warning",
+                  "labs-table",
+                  "screening-separator",
+                  "screening-heading",
+                  "screenings-table"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/lab-warning",
+              "value": {
+                "type": "Callout",
+                "props": {
+                  "type": "warning",
+                  "title": "Abnormal results",
+                  "content": "Potassium is mildly low, AST is elevated, and ethanol is above the listed reference threshold. Interpret results in clinical context and verify against the source laboratory record."
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/labs-table",
+              "value": {
+                "type": "Table",
+                "props": {
+                  "data": {
+                    "$state": "/labs"
+                  },
+                  "columns": [
+                    {
+                      "key": "panel",
+                      "label": "Panel"
+                    },
+                    {
+                      "key": "test",
+                      "label": "Test"
+                    },
+                    {
+                      "key": "result",
+                      "label": "Result"
+                    },
+                    {
+                      "key": "units",
+                      "label": "Units"
+                    },
+                    {
+                      "key": "reference",
+                      "label": "Reference Range"
+                    },
+                    {
+                      "key": "flag",
+                      "label": "Flag"
+                    },
+                    {
+                      "key": "collected",
+                      "label": "Collected"
+                    },
+                    {
+                      "key": "trend",
+                      "label": "Trend"
+                    }
+                  ],
+                  "emptyMessage": "No recent laboratory results found."
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/screening-separator",
+              "value": {
+                "type": "Separator",
+                "props": {
+                  "orientation": "horizontal"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/screening-heading",
+              "value": {
+                "type": "Heading",
+                "props": {
+                  "text": "Behavioral-Health Screening History",
+                  "level": "h3"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/screenings-table",
+              "value": {
+                "type": "Table",
+                "props": {
+                  "data": {
+                    "$state": "/screenings"
+                  },
+                  "columns": [
+                    {
+                      "key": "assessment",
+                      "label": "Assessment"
+                    },
+                    {
+                      "key": "date",
+                      "label": "Date"
+                    },
+                    {
+                      "key": "score",
+                      "label": "Score / Risk"
+                    },
+                    {
+                      "key": "interpretation",
+                      "label": "Interpretation"
+                    },
+                    {
+                      "key": "source",
+                      "label": "Source"
+                    }
+                  ],
+                  "emptyMessage": "No behavioral-health screening forms found."
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/provenance-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Provenance, Uncertainty & Clinical Review",
+                  "description": "Traceability requirements for safe use",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "provenance-callout",
+                  "source-accordion"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/provenance-callout",
+              "value": {
+                "type": "Callout",
+                "props": {
+                  "type": "important",
+                  "title": "Source-linked output",
+                  "content": {
+                    "$state": "/provenance/message"
+                  }
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/source-accordion",
+              "value": {
+                "type": "Accordion",
+                "props": {
+                  "type": "multiple",
+                  "items": [
+                    {
+                      "title": "How conflicting records should be handled",
+                      "content": "Show conflicts explicitly with dates and sources. Do not silently choose one medication, diagnosis, score, or result as authoritative."
+                    },
+                    {
+                      "title": "How inferred findings should be displayed",
+                      "content": "Keep chart-documented diagnoses separate from possible conditions inferred from narrative notes. Inferences should include confidence and supporting citations."
+                    },
+                    {
+                      "title": "Required clinician safeguards",
+                      "content": "The summary should support—not replace—clinical review. Urgent findings should follow organization-approved escalation workflows rather than relying on the generated summary alone."
+                    }
+                  ]
+                },
+                "children": []
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

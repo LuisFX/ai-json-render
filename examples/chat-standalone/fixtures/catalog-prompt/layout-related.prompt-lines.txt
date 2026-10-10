@@ -1,0 +1,7 @@
+- Stack: { direction?: "horizontal" | "vertical", gap?: "none" | "sm" | "md" | "lg" | "xl", align?: "start" | "center" | "end" | "stretch", justify?: "start" | "center" | "end" | "between" | "around", className?: string } - Flex container for layouts [accepts children]
+- Grid: { columns?: number, gap?: "sm" | "md" | "lg" | "xl", className?: string } - Grid layout (1-6 columns). columns is the max; it collapses in the artifact pane. [accepts children]
+- Card: { title?: string, description?: string, maxWidth?: "sm" | "md" | "lg" | "full", centered?: boolean, className?: string } - Container card for content sections. Use for forms/content boxes, NOT for page headers. [accepts children]
+- Separator: { orientation?: "horizontal" | "vertical" } - Visual separator line
+- Heading: { text: string, level?: "h1" | "h2" | "h3" | "h4" } - Heading text (h1-h4)
+- Text: { content: string, muted?: boolean } - Text content
+- Badge: { text: string, variant?: "default" | "secondary" | "destructive" | "outline" } - Status badge

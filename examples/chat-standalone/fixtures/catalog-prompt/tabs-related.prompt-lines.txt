@@ -1,0 +1,2 @@
+- Tabs: { defaultValue?: string, tabs: Array<{ value: string, label: string }> } - Tabbed content container [accepts children]
+- TabContent: { value: string } - Content for a specific tab [accepts children]

@@ -1,0 +1,9 @@
+{
+  "componentName": "Badge",
+  "agentSource": "examples/chat-standalone/lib/agent.ts",
+  "agentWorkflowMentions": [
+    "- Use Badge for status indicators."
+  ],
+  "customRulesMentions": [],
+  "mentionedInAgent": true
+}

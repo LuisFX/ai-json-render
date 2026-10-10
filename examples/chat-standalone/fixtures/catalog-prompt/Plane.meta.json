@@ -1,0 +1,14 @@
+{
+  "componentName": "Plane",
+  "catalogSource": "examples/chat-standalone/lib/render/catalog.ts",
+  "description": "3D flat plane mesh. args: [width, height]. Useful for ground planes or flat surfaces.",
+  "slots": null,
+  "events": null,
+  "promptLine": "- Plane: { position?: Array<number>, rotation?: Array<number>, scale?: Array<number>, color?: string, metalness?: number, roughness?: number, emissive?: string, emissiveIntensity?: number, wireframe?: boolean, opacity?: number, args?: Array<number>, animation?: { rotate?: Array<number> } } - 3D flat plane mesh. args: [width, height]. Useful for ground planes or flat surfaces.",
+  "promptMentions": [
+    "- Plane: { position?: Array<number>, rotation?: Array<number>, scale?: Array<number>, color?: string, metalness?: number, roughness?: number, emissive?: string, emissiveIntensity?: number, wireframe?: boolean, opacity?: number, args?: Array<number>, animation?: { rotate?: Array<number> } } - 3D flat plane mesh. args: [width, height]. Useful for ground planes or flat surfaces."
+  ],
+  "promptMode": "standalone",
+  "promptFullLength": 22951,
+  "promptSha256": "b5b59e6c3d103cfed155fe42d8884eac60c7ab629889b200f266c83d5ce765b7"
+}

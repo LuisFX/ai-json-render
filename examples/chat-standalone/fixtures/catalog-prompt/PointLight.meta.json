@@ -1,0 +1,14 @@
+{
+  "componentName": "PointLight",
+  "catalogSource": "examples/chat-standalone/lib/render/catalog.ts",
+  "description": "Point light that emits from a position in all directions. Use for suns, lamps, etc.",
+  "slots": null,
+  "events": null,
+  "promptLine": "- PointLight: { position?: Array<number>, color?: string, intensity?: number, distance?: number } - Point light that emits from a position in all directions. Use for suns, lamps, etc.",
+  "promptMentions": [
+    "- PointLight: { position?: Array<number>, color?: string, intensity?: number, distance?: number } - Point light that emits from a position in all directions. Use for suns, lamps, etc."
+  ],
+  "promptMode": "standalone",
+  "promptFullLength": 22951,
+  "promptSha256": "b5b59e6c3d103cfed155fe42d8884eac60c7ab629889b200f266c83d5ce765b7"
+}

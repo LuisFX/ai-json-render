@@ -1,0 +1,1 @@
+- Grid: { columns?: number, gap?: "sm" | "md" | "lg" | "xl", className?: string } - Grid layout (1-6 columns). columns is the max; it collapses in the artifact pane. [accepts children]

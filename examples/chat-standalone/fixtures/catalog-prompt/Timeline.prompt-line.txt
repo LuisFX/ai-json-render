@@ -1,0 +1,1 @@
+- Timeline: { items: Array<{ title: string, description?: string, date?: string, status?: "completed" | "current" | "upcoming" }> } - Vertical timeline showing ordered events, steps, or historical milestones

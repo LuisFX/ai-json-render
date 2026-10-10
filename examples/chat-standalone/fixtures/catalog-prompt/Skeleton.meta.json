@@ -1,0 +1,14 @@
+{
+  "componentName": "Skeleton",
+  "catalogSource": "examples/chat-standalone/lib/render/catalog.ts",
+  "description": "Loading placeholder skeleton",
+  "slots": null,
+  "events": null,
+  "promptLine": "- Skeleton: { width?: string, height?: string, rounded?: boolean } - Loading placeholder skeleton",
+  "promptMentions": [
+    "- Skeleton: { width?: string, height?: string, rounded?: boolean } - Loading placeholder skeleton"
+  ],
+  "promptMode": "standalone",
+  "promptFullLength": 22951,
+  "promptSha256": "b5b59e6c3d103cfed155fe42d8884eac60c7ab629889b200f266c83d5ce765b7"
+}

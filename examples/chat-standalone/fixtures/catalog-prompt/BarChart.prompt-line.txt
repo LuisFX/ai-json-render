@@ -1,0 +1,1 @@
+- BarChart: { title?: string, data: Array<Record<string, unknown>>, xKey: string, yKey: string, aggregate?: "sum" | "count" | "avg", color?: string, height?: number } - Bar chart visualization. Use { "$state": "/path" } to bind read-only data. xKey is the category field, yKey is the numeric value field.

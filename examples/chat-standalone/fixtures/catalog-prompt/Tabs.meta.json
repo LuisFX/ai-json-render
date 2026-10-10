@@ -1,0 +1,16 @@
+{
+  "componentName": "Tabs",
+  "catalogSource": "examples/chat-standalone/lib/render/catalog.ts",
+  "description": "Tabbed content container",
+  "slots": [
+    "default"
+  ],
+  "events": null,
+  "promptLine": "- Tabs: { defaultValue?: string, tabs: Array<{ value: string, label: string }> } - Tabbed content container [accepts children]",
+  "promptMentions": [
+    "- Tabs: { defaultValue?: string, tabs: Array<{ value: string, label: string }> } - Tabbed content container [accepts children]"
+  ],
+  "promptMode": "standalone",
+  "promptFullLength": 22951,
+  "promptSha256": "b5b59e6c3d103cfed155fe42d8884eac60c7ab629889b200f266c83d5ce765b7"
+}

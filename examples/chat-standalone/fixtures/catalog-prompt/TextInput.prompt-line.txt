@@ -1,0 +1,1 @@
+- TextInput: { label?: string, value?: string, placeholder?: string, type?: "text" | "email" | "number" | "password" | "url" } - Text input field. Use { "$bindState": "/path" } for two-way binding. Use for free-text entry like names, emails, search, etc.

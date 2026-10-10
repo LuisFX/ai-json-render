@@ -1,0 +1,5 @@
+# Runtime / tool output from serve — do not commit
+*
+!.gitignore
+!opencode.json
+!README.md

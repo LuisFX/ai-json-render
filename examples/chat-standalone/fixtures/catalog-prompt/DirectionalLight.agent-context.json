@@ -1,0 +1,9 @@
+{
+  "componentName": "DirectionalLight",
+  "agentSource": "examples/chat-standalone/lib/agent.ts",
+  "agentWorkflowMentions": [
+    "- DirectionalLight: parallel rays like sunlight. Position sets direction."
+  ],
+  "customRulesMentions": [],
+  "mentionedInAgent": true
+}

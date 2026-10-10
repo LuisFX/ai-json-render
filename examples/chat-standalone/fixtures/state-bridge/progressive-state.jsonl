@@ -1,0 +1,7 @@
+{"op":"add","path":"/state/items","value":[]}
+{"op":"add","path":"/state/items/0","value":{"id":"item-0","label":"first"}}
+{"op":"add","path":"/state/items/1","value":{"id":"item-1","label":"second"}}
+{"op":"replace","path":"/root","value":"main"}
+{"op":"add","path":"/elements/main","value":{"type":"Card","props":{},"children":[]}}
+{"op":"replace","path":"/state/headline","value":"Ready"}
+{"op":"remove","path":"/state/headline"}

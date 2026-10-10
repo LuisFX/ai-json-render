@@ -1,0 +1,11 @@
+{
+  "componentName": "AmbientLight",
+  "agentSource": "examples/chat-standalone/lib/agent.ts",
+  "agentWorkflowMentions": [
+    "- AmbientLight: base illumination for the whole scene (intensity ~0.2-0.5).",
+    "- Always include at least an AmbientLight so objects are visible.",
+    "  AmbientLight(intensity=0.2)"
+  ],
+  "customRulesMentions": [],
+  "mentionedInAgent": true
+}

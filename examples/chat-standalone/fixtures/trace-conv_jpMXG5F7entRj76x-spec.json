@@ -1,0 +1,170 @@
+{
+  "root": "",
+  "elements": {
+    "vital-lines": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "vital-overlay-note",
+        "vital-overlay-chart",
+        "vital-overlay-legend"
+      ]
+    },
+    "vital-overlay-note": {
+      "type": "Text",
+      "props": {
+        "content": "All four vital types are overlaid using a normalized 0–10 severity score so trends can be compared despite different units. Actual values remain available in the table below."
+      },
+      "children": []
+    },
+    "vital-overlay-chart": {
+      "type": "LineChart",
+      "props": {
+        "title": "Overlay: normalized vital-severity trends over one year",
+        "data": {
+          "$state": "/vitalOverlay"
+        },
+        "xKey": "when",
+        "yKey": "bloodPressure",
+        "height": 340
+      },
+      "children": []
+    },
+    "vital-overlay-legend": {
+      "type": "Grid",
+      "props": {
+        "columns": 4,
+        "gap": "sm"
+      },
+      "children": [
+        "legend-bp",
+        "legend-temp",
+        "legend-hr",
+        "legend-rr"
+      ]
+    },
+    "legend-bp": {
+      "type": "Badge",
+      "props": {
+        "text": "● Blood pressure",
+        "variant": "destructive"
+      },
+      "children": []
+    },
+    "legend-temp": {
+      "type": "Badge",
+      "props": {
+        "text": "● Temperature",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "legend-hr": {
+      "type": "Badge",
+      "props": {
+        "text": "● Heart rate",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "legend-rr": {
+      "type": "Badge",
+      "props": {
+        "text": "● Respiratory rate",
+        "variant": "outline"
+      },
+      "children": []
+    }
+  },
+  "state": {
+    "vitalOverlay": [
+      {
+        "when": "2024-03-15",
+        "bloodPressure": 5,
+        "temperature": 3,
+        "heartRate": 4,
+        "respiratoryRate": 2
+      },
+      {
+        "when": "2024-04-20",
+        "bloodPressure": 6,
+        "temperature": 4,
+        "heartRate": 5,
+        "respiratoryRate": 3
+      },
+      {
+        "when": "2024-05-18",
+        "bloodPressure": 7,
+        "temperature": 3,
+        "heartRate": 6,
+        "respiratoryRate": 4
+      },
+      {
+        "when": "2024-06-22",
+        "bloodPressure": 7,
+        "temperature": 5,
+        "heartRate": 5,
+        "respiratoryRate": 4
+      },
+      {
+        "when": "2024-07-19",
+        "bloodPressure": 9,
+        "temperature": 6,
+        "heartRate": 7,
+        "respiratoryRate": 6
+      },
+      {
+        "when": "2024-08-24",
+        "bloodPressure": 8,
+        "temperature": 4,
+        "heartRate": 6,
+        "respiratoryRate": 5
+      },
+      {
+        "when": "2024-09-21",
+        "bloodPressure": 10,
+        "temperature": 5,
+        "heartRate": 8,
+        "respiratoryRate": 7
+      },
+      {
+        "when": "2024-10-17",
+        "bloodPressure": 9,
+        "temperature": 6,
+        "heartRate": 7,
+        "respiratoryRate": 6
+      },
+      {
+        "when": "2024-11-23",
+        "bloodPressure": 10,
+        "temperature": 5,
+        "heartRate": 9,
+        "respiratoryRate": 8
+      },
+      {
+        "when": "2024-12-20",
+        "bloodPressure": 10,
+        "temperature": 7,
+        "heartRate": 7,
+        "respiratoryRate": 8
+      },
+      {
+        "when": "2025-01-18",
+        "bloodPressure": 10,
+        "temperature": 5,
+        "heartRate": 9,
+        "respiratoryRate": 9
+      },
+      {
+        "when": "2025-02-14",
+        "bloodPressure": 10,
+        "temperature": 7,
+        "heartRate": 7,
+        "respiratoryRate": 5
+      }
+    ]
+  }
+}

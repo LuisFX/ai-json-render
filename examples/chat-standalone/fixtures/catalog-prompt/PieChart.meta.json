@@ -1,0 +1,14 @@
+{
+  "componentName": "PieChart",
+  "catalogSource": "examples/chat-standalone/lib/render/catalog.ts",
+  "description": "Pie/donut chart for proportional data. Use { \"$state\": \"/path\" } to bind read-only data. nameKey is the label field, valueKey is the numeric value field.",
+  "slots": null,
+  "events": null,
+  "promptLine": "- PieChart: { title?: string, data: Array<Record<string, unknown>>, nameKey: string, valueKey: string, height?: number } - Pie/donut chart for proportional data. Use { \"$state\": \"/path\" } to bind read-only data. nameKey is the label field, valueKey is the numeric value field.",
+  "promptMentions": [
+    "- PieChart: { title?: string, data: Array<Record<string, unknown>>, nameKey: string, valueKey: string, height?: number } - Pie/donut chart for proportional data. Use { \"$state\": \"/path\" } to bind read-only data. nameKey is the label field, valueKey is the numeric value field."
+  ],
+  "promptMode": "standalone",
+  "promptFullLength": 22951,
+  "promptSha256": "b5b59e6c3d103cfed155fe42d8884eac60c7ab629889b200f266c83d5ce765b7"
+}

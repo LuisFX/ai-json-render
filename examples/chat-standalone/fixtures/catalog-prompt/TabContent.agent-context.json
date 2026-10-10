@@ -1,0 +1,7 @@
+{
+  "componentName": "TabContent",
+  "agentSource": "examples/chat-standalone/lib/agent.ts",
+  "agentWorkflowMentions": [],
+  "customRulesMentions": [],
+  "mentionedInAgent": false
+}

@@ -1,0 +1,11 @@
+{
+  "componentName": "Grid",
+  "agentSource": "examples/chat-standalone/lib/agent.ts",
+  "agentWorkflowMentions": [
+    "- Use Grid for multi-column layouts."
+  ],
+  "customRulesMentions": [
+    "\"Prefer Grid with columns 2 or 3 for card rows. columns is a max that collapses in the artifact pane — do not fake multi-column with a Callout or Stack.\","
+  ],
+  "mentionedInAgent": true
+}

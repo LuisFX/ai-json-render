@@ -1,0 +1,11 @@
+{
+  "componentName": "Metric",
+  "agentSource": "examples/chat-standalone/lib/agent.ts",
+  "agentWorkflowMentions": [
+    "- Use Metric for key numeric values (temperature, stars, price, etc.)."
+  ],
+  "customRulesMentions": [
+    "\"Use Metric components for key numbers instead of plain Text.\","
+  ],
+  "mentionedInAgent": true
+}

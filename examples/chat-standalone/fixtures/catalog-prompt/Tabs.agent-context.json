@@ -1,0 +1,9 @@
+{
+  "componentName": "Tabs",
+  "agentSource": "examples/chat-standalone/lib/agent.ts",
+  "agentWorkflowMentions": [
+    "- Use Tabs when showing multiple categories of data side by side."
+  ],
+  "customRulesMentions": [],
+  "mentionedInAgent": true
+}

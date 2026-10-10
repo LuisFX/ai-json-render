@@ -1,0 +1,14 @@
+{
+  "componentName": "RadioGroup",
+  "catalogSource": "examples/chat-standalone/lib/render/catalog.ts",
+  "description": "Radio button group for single selection. Use { \"$bindState\": \"/path\" } for two-way binding. Use for multiple-choice questions, settings, or any single-select input.",
+  "slots": null,
+  "events": null,
+  "promptLine": "- RadioGroup: { label?: string, value?: string, options: Array<{ value: string, label: string }> } - Radio button group for single selection. Use { \"$bindState\": \"/path\" } for two-way binding. Use for multiple-choice questions, settings, or any single-select input.",
+  "promptMentions": [
+    "- RadioGroup: { label?: string, value?: string, options: Array<{ value: string, label: string }> } - Radio button group for single selection. Use { \"$bindState\": \"/path\" } for two-way binding. Use for multiple-choice questions, settings, or any single-select input."
+  ],
+  "promptMode": "standalone",
+  "promptFullLength": 22951,
+  "promptSha256": "b5b59e6c3d103cfed155fe42d8884eac60c7ab629889b200f266c83d5ce765b7"
+}

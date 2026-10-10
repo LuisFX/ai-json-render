@@ -1,0 +1,1 @@
+- PointLight: { position?: Array<number>, color?: string, intensity?: number, distance?: number } - Point light that emits from a position in all directions. Use for suns, lamps, etc.

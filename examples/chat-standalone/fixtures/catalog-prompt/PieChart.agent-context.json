@@ -1,0 +1,10 @@
+{
+  "componentName": "PieChart",
+  "agentSource": "examples/chat-standalone/lib/agent.ts",
+  "agentWorkflowMentions": [
+    "- Use PieChart for compositional/proportional data (market share, breakdowns, distributions).",
+    "- For Table, BarChart, LineChart, and PieChart, use { \"$state\": \"/path\" } on the data prop to bind read-only data from state."
+  ],
+  "customRulesMentions": [],
+  "mentionedInAgent": true
+}

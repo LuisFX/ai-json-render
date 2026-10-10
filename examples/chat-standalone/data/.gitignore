@@ -1,0 +1,2 @@
+# Local JSONL conversation store (lab). Do not commit runtime envelopes.
+*.jsonl

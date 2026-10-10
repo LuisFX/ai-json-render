@@ -1,0 +1,15 @@
+{
+  "componentName": "Callout",
+  "agentSource": "examples/chat-standalone/lib/agent.ts",
+  "agentWorkflowMentions": [
+    "- Use Callout for key facts, tips, warnings, or important takeaways.",
+    "- You can combine 3D scenes with regular 2D components in the same spec. For example, use a Stack or Card at the root with a Scene3D plus Text, Callout, Accordion, etc. as siblings. This lets you build a rich educational experience with both an interactive 3D visualization and text content.",
+    "   - A Text (or Callout) showing feedback, using visible to show only after submission:",
+    "   Card > Stack(vertical) > [Text(question), RadioGroup(options), Button(Check Answer), Text(Correct! visible when right), Callout(Wrong, visible when wrong & submitted)]"
+  ],
+  "customRulesMentions": [
+    "\"Prefer Grid with columns 2 or 3 for card rows. columns is a max that collapses in the artifact pane — do not fake multi-column with a Callout or Stack.\",",
+    "\"For educational prompts ('teach me about', 'explain', 'what is'), use a mix of Callout, Accordion, Timeline, and charts to make the content visually rich.\","
+  ],
+  "mentionedInAgent": true
+}

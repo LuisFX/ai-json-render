@@ -1,0 +1,9 @@
+{
+  "componentName": "SelectInput",
+  "agentSource": "examples/chat-standalone/lib/agent.ts",
+  "agentWorkflowMentions": [
+    "- SelectInput: Dropdown select. Writes selected value to statePath automatically."
+  ],
+  "customRulesMentions": [],
+  "mentionedInAgent": true
+}

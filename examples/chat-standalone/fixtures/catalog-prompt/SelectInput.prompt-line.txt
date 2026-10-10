@@ -1,0 +1,1 @@
+- SelectInput: { label?: string, value?: string, placeholder?: string, options: Array<{ value: string, label: string }> } - Dropdown select input. Use { "$bindState": "/path" } for two-way binding. Use when there are many options and a dropdown is more compact than radio buttons.

@@ -1,0 +1,1 @@
+- Skeleton: { width?: string, height?: string, rounded?: boolean } - Loading placeholder skeleton

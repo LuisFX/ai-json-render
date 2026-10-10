@@ -1,0 +1,18 @@
+{
+  "componentName": "Card",
+  "catalogSource": "examples/chat-standalone/lib/render/catalog.ts",
+  "description": "Container card for content sections. Use for forms/content boxes, NOT for page headers.",
+  "slots": [
+    "default"
+  ],
+  "events": null,
+  "promptLine": "- Card: { title?: string, description?: string, maxWidth?: \"sm\" | \"md\" | \"lg\" | \"full\", centered?: boolean, className?: string } - Container card for content sections. Use for forms/content boxes, NOT for page headers. [accepts children]",
+  "promptMentions": [
+    "{\"op\":\"add\",\"path\":\"/elements/child-1\",\"value\":{\"type\":\"Card\",\"props\":{\"title\":\"Overview\",\"description\":\"Your account summary\"},\"children\":[]}}",
+    "{\"op\":\"add\",\"path\":\"/elements/item\",\"value\":{\"type\":\"Card\",\"props\":{\"title\":\"Overview\",\"description\":\"Your account summary\"},\"children\":[]}}",
+    "- Card: { title?: string, description?: string, maxWidth?: \"sm\" | \"md\" | \"lg\" | \"full\", centered?: boolean, className?: string } - Container card for content sections. Use for forms/content boxes, NOT for page headers. [accepts children]"
+  ],
+  "promptMode": "standalone",
+  "promptFullLength": 22951,
+  "promptSha256": "b5b59e6c3d103cfed155fe42d8884eac60c7ab629889b200f266c83d5ce765b7"
+}

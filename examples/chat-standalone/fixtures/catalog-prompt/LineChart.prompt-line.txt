@@ -1,0 +1,1 @@
+- LineChart: { title?: string, data: Array<Record<string, unknown>>, xKey: string, yKey: string, aggregate?: "sum" | "count" | "avg", color?: string, height?: number } - Line chart visualization. Use { "$state": "/path" } to bind read-only data. xKey is the x-axis field, yKey is the numeric value field.

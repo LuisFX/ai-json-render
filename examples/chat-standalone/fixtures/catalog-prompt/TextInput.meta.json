@@ -1,0 +1,14 @@
+{
+  "componentName": "TextInput",
+  "catalogSource": "examples/chat-standalone/lib/render/catalog.ts",
+  "description": "Text input field. Use { \"$bindState\": \"/path\" } for two-way binding. Use for free-text entry like names, emails, search, etc.",
+  "slots": null,
+  "events": null,
+  "promptLine": "- TextInput: { label?: string, value?: string, placeholder?: string, type?: \"text\" | \"email\" | \"number\" | \"password\" | \"url\" } - Text input field. Use { \"$bindState\": \"/path\" } for two-way binding. Use for free-text entry like names, emails, search, etc.",
+  "promptMentions": [
+    "- TextInput: { label?: string, value?: string, placeholder?: string, type?: \"text\" | \"email\" | \"number\" | \"password\" | \"url\" } - Text input field. Use { \"$bindState\": \"/path\" } for two-way binding. Use for free-text entry like names, emails, search, etc."
+  ],
+  "promptMode": "standalone",
+  "promptFullLength": 22951,
+  "promptSha256": "b5b59e6c3d103cfed155fe42d8884eac60c7ab629889b200f266c83d5ce765b7"
+}

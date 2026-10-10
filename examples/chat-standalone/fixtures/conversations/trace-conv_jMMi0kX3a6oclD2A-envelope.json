@@ -1,0 +1,3193 @@
+{
+  "id": "conv_jMMi0kX3a6oclD2A",
+  "title": "I want a reusable triage that runs whenever a high-risk patient is booked or adm",
+  "name": null,
+  "forkedFrom": null,
+  "ownerSlug": null,
+  "createdAt": "2026-07-23T00:20:44.982Z",
+  "updatedAt": "2026-07-23T05:20:28.407Z",
+  "pinnedAt": null,
+  "archivedAt": null,
+  "messageCount": 6,
+  "preview": "Absolutely — I’ll update the evidence tables to include visible **Download CSV** buttons.\n\n",
+  "artifact": null,
+  "messages": [
+    {
+      "parts": [
+        {
+          "type": "text",
+          "text": "I want a reusable triage that runs whenever a high-risk patient is booked or admitted. It should read the whole chart and rank only the severe, consequential risks — the things that could change what we do in the next few hours to days — and deliberately stay quiet about the stable, routine, mundane stuff unless it actually changes the severe picture. It should feel like a sharp colleague handing me a one-screen severity brief, not a data dump.\n\nThe one question it answers, for each patient: what are the severe, near-term risks I have to act on now, ranked by how consequential they are — and what can I safely ignore? It runs on all high-risk intake or booking patients — a broad intake screen, not a single-disease tool.\n\n## How I want it to rank and decide\n\nRank everything by potential for near-term harm. Here's the logic as plain rules:\n\n1. **Medical decompensation** — a severe medical problem plus abnormal labs, bleeding risk, organ dysfunction, infection, or a high-risk medication → treat as medical decompensation; surface the urgent follow-up, the labs or procedures needed, and the care actions tied to the diagnosis.\n2. **Behavioral safety** (one of the top priorities) — history of suicide attempt, recent self-harm, active suicidal ideation, behavioral-health alerts, or observation precautions → immediate safety assessment, observation or referral, and a message to mental health.\n3. **Substance and withdrawal** — substance use, detox, intoxication, withdrawal treatment, or sedative exposure that intersects with psychiatric, liver, fall, or vital-sign risk → monitor or escalate, but only when it's genuinely consequential.\n4. **Medication safety** — missed, unfilled, refused, duplicated, or unsafe meds (bleeding, sedation, withdrawal, kidney, liver, heart-rhythm, or fall risk) → a medication reconciliation or safety review.\n5. **Vital instability** — a burden of abnormal vitals, deterioration, worrying clusters, or missing monitoring → show me the trends as a graph, and escalate a vital-trend review when it changes how we manage the severe risk.\n6. **Fall and functional risk** — falls, head injury, functional limitation, special-housing or sedation context → precautions and support, but only if the injury risk is consequential.\n7. **Care-transition gaps** — pending labs, procedures, referrals, outside-transfer follow-up, unfinished tasks, or discharge barriers that could leave a severe risk unmanaged → route to the right clinical, nursing, mental-health, or case-management team.\n8. **Stay quiet on the mundane** — anything stable, routine, minor, or administrative that isn't tied to a severe risk stays out of the ranked list, and triggers no follow-up at all.\n\n## What it has to be able to catch\n\nMake sure it can cover every one of these areas, and don't consider it finished if some area has nothing that can recognize it: medical decompensation; behavioral and self-harm safety; substance and withdrawal; medication safety; vital instability and trends; fall and functional risk; and care-transition gaps.\n\nKeep the classic reasoning check on both sides too: the obvious common diagnosis (the \"horse\") and the rare-but-fitting one (the \"zebra\") — so it names the likely thing without missing the sneaky one.\n\n## How it should investigate\n\nKeep it lean — two broad passes, not a pile of narrow ones:\n\n- a **wide severity classifier** that reads the conditions, labs, meds, notes, and alerts, sorts them into the areas above, and suppresses the mundane;\n- a **vitals specialist** that reads the vital-sign history over time, works out how much abnormality there is and when, flags deterioration, and feeds the vitals view.\n\n## Fill the preview with my loaded patient\n\nAs we build this, actually go and read the patient I have loaded right now, and fill the whole thing in with their real chart so the preview I'm approving shows a real, worked example — not an empty shell. Count their actual conditions, alerts, concerning vitals, and high-risk meds for the four headline numbers, and pull their real vitals, labs, conditions, and alerts into the tables and graphs. I want to look at a filled-in dashboard for this patient and know it's right before I sign off on it.\n\n## What should happen next (the follow-ups)\n\nFor the severe findings only — never the mundane — tee up the right actions and route them to the right team: urgent medical review; lab, bleeding, liver, or kidney follow-up; safety observation, referral, or flagging; withdrawal monitoring; a medication reconciliation or safety review; a vital-trend escalation; fall precautions; chasing an outside-transfer follow-up; closing an incomplete referral or task; and resolving a discharge-planning barrier. Nothing fires for a stable or routine problem.\n\n## What I want it to look like — one screen\n\nPicture one card at the top, four big numbers under it, then four tabs.\n\n**The header.** A single card titled **\"High-Severity Clinical History Review,\"** with a one-line subtitle: *surfaces only the consequential diagnoses, safety risks, high-signal medications, labs, notes, and vital trends.* Inside the card:\n\n- a short intro sentence that names the top few risk areas for this patient and links each one back to the actual records that justify it — little clickable numbered tags, [1], [2], and so on, that jump to the source note or result. At run time this sentence gets rewritten for whoever is in front of me, citing their records.\n- a highlighted \"Protocol stance\" note, styled as a caution: *rank by potential for near-term harm — bleeding and decompensation, self-harm, withdrawal and sedation, falls, and other destabilizing conditions. Don't waste attention on stable routine problems unless they change management.*\n\n**The four headline numbers,** in a row across the top, each a label with a big number and a small caption underneath:\n\n- **Active conditions** — caption: only the clinically consequential ones get classified.\n- **Active alerts** — caption: mental-health and housing or fall context.\n- **High-signal vitals** — caption: the vital-trend graph flags the abnormality burden.\n- **High-signal meds** — caption: e.g. sedative exposure in this chart.\n\nOne thing I want to be clear about: these four numbers have to be counted from each patient's actual chart — a live count, not a fixed number typed into the layout. They should be right for every patient and never go stale.\n\n**The four tabs,** with \"Severity ranking\" open by default: *Severity ranking · Vital trends · Labs / liver-anemia · Evidence.*\n\n- **Severity ranking.** Two charts side by side. On the **left**, a bar chart ranking this patient's severe areas tallest to shortest by how consequential they are right now — whatever their chart actually shows. On the **right**, a pie hart chart showing where this patient's risk weight actually sits across the areas — slices sized from their findings, not a canned picture. Both charts fill from the patient in front of me and re-rank for every patient. **Underneath the two charts,** a set of expandable notes, one per route, each briefly explaining what it looks for: the medical-decompensation route, the behavioral-safety route, the medication-and-substance route, the vital-trend route, and the rule for suppressing the mundane with the your reasoning of each of the note's findings.\n\n- **Vital trends.** A short note explaining the view, then a **line graph** of how the vital-sign severity trends over time, then a **bar chart** of the abnormality burden broken down by which vital it is, and then a **table** listing every vital reading — when it was taken, which vital, the value and unit, whether it's flagged, and why. All three fill from the patient's own vitals; if there are none, it just says \"No vitals available.\"\n\n- **Labs / liver-anemia.** A **bar chart** of the lab-signal burden by test, then a **table** of the labs — when, which lab, the value and unit, the reference range, and whether it's flagged. Both fill from the patient's own labs.\n\n- **Evidence.** Two tables side by side: the **conditions** (when, condition, status) and the **alerts** (when, alert, status). Both fill from the patient's chart.\n\n**The one rule:** only the editorial prose stays the same for every patient — the stance note, the route-note explainers, the vitals explainer, and the chart titles and column headings. Every number, bar, slice, and row — the four headline counts, both severity charts, and every table or graph that reads the chart — fills in from the patient in front of me. If a value can differ from patient to patient, it has to be filled in from the chart, never typed into the layout.\n\n## What to lean into, and what to avoid\n\n**Lean into:** ranking severe conditions by clinical consequence and near-term harm; leaving stable, mundane problems out unless they change severe-risk management; showing vital trends as graphs (burden over time and by type); including a lab and liver/anemia review with evidence tables; preferring charts and summaries over long tables (save tables for concise, sorted evidence); firing follow-ups and care gaps for severe findings only; noting medication-taking status and adverse-med risk when they affect severe care; and considering pending labs, procedures, critical referrals, missed meds, social factors, and recent utilization.\n\n**Avoid:**\n\n- routine specialist referrals unless they're critical; over-working stable problems; letting a single normal latest vital falsely reassure me while other severe risks are still active; long unsorted result tables; and firing any follow-up for a non-severe, mundane finding.\n- lengthy tables (max 10 rows properly grouped, sortable, and summarized)\n---\nI WANT MOCK DATA ONLY"
+        }
+      ],
+      "id": "B6pYsMvviaRFmohS",
+      "role": "user"
+    },
+    {
+      "id": "wxtCnMMSnBHY47R0",
+      "role": "assistant",
+      "parts": [
+        {
+          "type": "step-start"
+        },
+        {
+          "type": "text",
+          "text": "I’ll build a filled, mock-patient preview with live-seeming sample data and the requested one-screen structure. Since you asked for mock data only, I’ll seed a realistic high-risk chart in state and wire the counts, charts, tables, and notes to that data.",
+          "providerMetadata": {
+            "openai": {
+              "itemId": "msg_0b439948af7cf6af006a615e715f1481a1928ac44887f77406",
+              "phase": "commentary"
+            }
+          },
+          "state": "done"
+        },
+        {
+          "type": "tool-getGitHubRepo",
+          "toolCallId": "call_pYzPzm5rlOw60ryiavK5n95S",
+          "state": "output-available",
+          "input": {
+            "owner": "vercel",
+            "repo": "next.js"
+          },
+          "output": {
+            "name": "vercel/next.js",
+            "description": "The React Framework",
+            "url": "https://github.com/vercel/next.js",
+            "stars": 141073,
+            "forks": 31490,
+            "openIssues": 4238,
+            "watchers": 141073,
+            "primaryLanguage": "JavaScript",
+            "license": "MIT",
+            "createdAt": "2016-10-05T23:32:51Z",
+            "updatedAt": "2026-07-23T00:20:57Z",
+            "lastPush": "2026-07-22T23:50:41Z",
+            "topics": [
+              "blog",
+              "browser",
+              "compiler",
+              "components",
+              "hybrid",
+              "nextjs",
+              "node",
+              "react",
+              "server-rendering",
+              "ssg",
+              "static",
+              "static-site-generator",
+              "universal",
+              "vercel"
+            ],
+            "defaultBranch": "canary",
+            "archived": false,
+            "isFork": false,
+            "languages": [
+              {
+                "language": "JavaScript",
+                "percentage": 52,
+                "bytes": 38599580
+              },
+              {
+                "language": "TypeScript",
+                "percentage": 32,
+                "bytes": 23824398
+              },
+              {
+                "language": "Rust",
+                "percentage": 14,
+                "bytes": 10390953
+              },
+              {
+                "language": "MDX",
+                "percentage": 1,
+                "bytes": 606832
+              },
+              {
+                "language": "CSS",
+                "percentage": 1,
+                "bytes": 577343
+              },
+              {
+                "language": "Shell",
+                "percentage": 0,
+                "bytes": 36431
+              },
+              {
+                "language": "Python",
+                "percentage": 0,
+                "bytes": 9976
+              },
+              {
+                "language": "SCSS",
+                "percentage": 0,
+                "bytes": 8337
+              }
+            ]
+          },
+          "callProviderMetadata": {
+            "openai": {
+              "itemId": "fc_0b439948af7cf6af006a615e72133481a1839e07e982178aa9"
+            }
+          }
+        },
+        {
+          "type": "tool-getHackerNewsTop",
+          "toolCallId": "call_0qWjlRocfIC5UcRvLCJMTsY7",
+          "state": "output-available",
+          "input": {
+            "count": 1
+          },
+          "output": {
+            "stories": [
+              {
+                "id": 49007247,
+                "title": "Quality non-fiction books are the antithesis of AI slop",
+                "url": "https://resobscura.substack.com/p/quality-non-fiction-books-are-the",
+                "score": 98,
+                "author": "benbreen",
+                "comments": 53,
+                "postedAt": "2026-07-22T14:18:05.000Z",
+                "hnUrl": "https://news.ycombinator.com/item?id=49007247"
+              }
+            ],
+            "fetchedAt": "2026-07-23T00:21:06.512Z"
+          },
+          "callProviderMetadata": {
+            "openai": {
+              "itemId": "fc_0b439948af7cf6af006a615e72134881a1bfcac0a86942eb92"
+            }
+          }
+        },
+        {
+          "type": "step-start"
+        },
+        {
+          "type": "text",
+          "text": "Here’s a filled, reusable mock preview for the triage you described: a one-screen severity brief that stays focused on consequential near-term risk, suppresses routine noise, and shows a worked example for a high-risk patient. I seeded realistic mock chart data so the counts, charts, and evidence panels all render from the patient in front of you.\n\n",
+          "providerMetadata": {
+            "openai": {
+              "itemId": "msg_0b439948af7cf6af006a615e73aa5081a19c10ccb0197a5e10",
+              "phase": "final_answer"
+            }
+          },
+          "state": "done"
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/root",
+              "value": "main"
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state",
+              "value": {
+                "patient": {
+                  "name": "Mock Patient, 68F",
+                  "mrn": "MP-10482",
+                  "encounterType": "ED booking / admission hold",
+                  "status": "High-risk intake"
+                },
+                "summary": {
+                  "topRisks": [
+                    "Behavioral safety: active suicidal ideation with prior attempt",
+                    "Medical decompensation: GI bleed/anemia with CKD and anticoagulation",
+                    "Medication safety: sedative + opioid exposure with duplication/refusal risk",
+                    "Vital instability: tachycardia, intermittent hypotension, fever burden"
+                  ],
+                  "sourceTags": [
+                    {
+                      "id": "1",
+                      "label": "[1]"
+                    },
+                    {
+                      "id": "2",
+                      "label": "[2]"
+                    },
+                    {
+                      "id": "3",
+                      "label": "[3]"
+                    },
+                    {
+                      "id": "4",
+                      "label": "[4]"
+                    },
+                    {
+                      "id": "5",
+                      "label": "[5]"
+                    }
+                  ]
+                },
+                "headlineCounts": {
+                  "activeConditions": 6,
+                  "activeAlerts": 4,
+                  "highSignalVitals": 9,
+                  "highSignalMeds": 5
+                },
+                "severityAreas": [
+                  {
+                    "area": "Behavioral safety",
+                    "score": 98,
+                    "weight": 34,
+                    "summary": "Active suicidal ideation, recent self-harm, observation precautions."
+                  },
+                  {
+                    "area": "Medical decompensation",
+                    "score": 92,
+                    "weight": 30,
+                    "summary": "Melena/anemia + CKD + anticoagulation creates near-term bleeding risk."
+                  },
+                  {
+                    "area": "Medication safety",
+                    "score": 84,
+                    "weight": 18,
+                    "summary": "High-risk sedative/opioid exposure, missed doses, duplication concerns."
+                  },
+                  {
+                    "area": "Vital instability",
+                    "score": 79,
+                    "weight": 10,
+                    "summary": "Repeated tachycardia, hypotension episodes, fever trend."
+                  },
+                  {
+                    "area": "Care-transition gaps",
+                    "score": 61,
+                    "weight": 5,
+                    "summary": "Pending GI follow-up, outside records, incomplete safety planning."
+                  },
+                  {
+                    "area": "Fall and functional risk",
+                    "score": 48,
+                    "weight": 3,
+                    "summary": "Recent fall with head strike and sedation context."
+                  },
+                  {
+                    "area": "Substance and withdrawal",
+                    "score": 42,
+                    "weight": 0,
+                    "summary": "Alcohol use history and possible withdrawal monitoring."
+                  }
+                ],
+                "routes": [
+                  {
+                    "id": "medical",
+                    "title": "Medical decompensation",
+                    "detail": "Looks for a severe diagnosis plus bleeding risk, organ dysfunction, infection, or a high-risk medication that could change care in the next hours to days.",
+                    "finding": "Likely upper GI bleed with anemia (Hgb 7.8), CKD stage 3b, and apixaban exposure. This is the horse; zebra to keep in view is occult malignancy or variceal source if instability or labs worsen."
+                  },
+                  {
+                    "id": "behavioral",
+                    "title": "Behavioral safety",
+                    "detail": "Looks for suicide attempt, self-harm, active ideation, behavioral-health alerts, or observation precautions.",
+                    "finding": "Active suicidal ideation, prior overdose attempt, 1:1 observation, and psychiatry consult needed now. The horse is depressive crisis; the zebra is delirium or intoxication amplifying risk."
+                  },
+                  {
+                    "id": "substance",
+                    "title": "Substance and withdrawal",
+                    "detail": "Looks for substance use, detox/intoxication/withdrawal, or sedative exposure that intersects with psychiatric, liver, fall, or vital-sign risk.",
+                    "finding": "Alcohol use disorder history and sedative exposure increase withdrawal/sedation/fall risk, but only rises if vitals or mental status worsen."
+                  },
+                  {
+                    "id": "meds",
+                    "title": "Medication safety",
+                    "detail": "Looks for missed, unfilled, refused, duplicated, or unsafe meds that raise bleeding, sedation, withdrawal, renal, hepatic, rhythm, or fall risk.",
+                    "finding": "Apixaban, oxycodone, lorazepam, and duplicate antihypertensives create a high-signal reconciliation problem; refused pantoprazole matters because it interacts with bleed management."
+                  },
+                  {
+                    "id": "vitals",
+                    "title": "Vital instability",
+                    "detail": "Looks for abnormal vital clusters, deterioration, or missing monitoring; ranks burden over time instead of a single reassuring reading.",
+                    "finding": "Tachycardia with intermittent low BP and fever burden suggests physiologic stress and possible ongoing bleed or infection; trend matters more than the last value."
+                  },
+                  {
+                    "id": "falls",
+                    "title": "Fall and functional risk",
+                    "detail": "Looks for falls, head injury, functional limitation, and special-housing or sedation context when injury risk becomes consequential.",
+                    "finding": "Recent unwitnessed fall with head strike while sedated makes fall precautions and neuro checks relevant, but not the main driver unless bleeding or neuro changes appear."
+                  },
+                  {
+                    "id": "transition",
+                    "title": "Care-transition gaps",
+                    "detail": "Looks for pending labs, procedures, referrals, outside-transfer follow-up, unfinished tasks, or discharge barriers that could leave a severe risk unmanaged.",
+                    "finding": "Awaiting GI evaluation, stool occult result, and outside discharge records; safety planning and case-management tasks are open."
+                  }
+                ],
+                "conditions": [
+                  {
+                    "when": "2026-07-22 08:14",
+                    "condition": "Suicidal ideation, active",
+                    "status": "active"
+                  },
+                  {
+                    "when": "2026-07-21 19:02",
+                    "condition": "Major depressive disorder, recurrent severe",
+                    "status": "active"
+                  },
+                  {
+                    "when": "2026-07-22 09:10",
+                    "condition": "Melena / suspected upper GI bleed",
+                    "status": "active"
+                  },
+                  {
+                    "when": "2026-07-20 16:45",
+                    "condition": "Chronic kidney disease stage 3b",
+                    "status": "active"
+                  },
+                  {
+                    "when": "2026-07-19 11:30",
+                    "condition": "Atrial fibrillation on anticoagulation",
+                    "status": "active"
+                  },
+                  {
+                    "when": "2026-07-22 07:55",
+                    "condition": "Recent fall with head strike",
+                    "status": "active"
+                  },
+                  {
+                    "when": "2026-07-22 10:05",
+                    "condition": "Alcohol use disorder",
+                    "status": "active"
+                  },
+                  {
+                    "when": "2026-07-18 13:20",
+                    "condition": "Hypertension",
+                    "status": "active"
+                  }
+                ],
+                "alerts": [
+                  {
+                    "when": "2026-07-22 08:20",
+                    "alert": "1:1 observation",
+                    "status": "active"
+                  },
+                  {
+                    "when": "2026-07-22 08:25",
+                    "alert": "Suicide precautions",
+                    "status": "active"
+                  },
+                  {
+                    "when": "2026-07-21 21:40",
+                    "alert": "Fall risk",
+                    "status": "active"
+                  },
+                  {
+                    "when": "2026-07-22 10:00",
+                    "alert": "Housing insecurity / discharge barrier",
+                    "status": "active"
+                  }
+                ],
+                "vitals": [
+                  {
+                    "when": "2026-07-22 06:00",
+                    "type": "HR",
+                    "value": 112,
+                    "unit": "bpm",
+                    "flagged": true,
+                    "reason": "tachycardia burden"
+                  },
+                  {
+                    "when": "2026-07-22 06:00",
+                    "type": "BP",
+                    "value": "92/58",
+                    "unit": "mmHg",
+                    "flagged": true,
+                    "reason": "hypotension episode"
+                  },
+                  {
+                    "when": "2026-07-22 06:00",
+                    "type": "Temp",
+                    "value": 38.1,
+                    "unit": "C",
+                    "flagged": true,
+                    "reason": "fever burden"
+                  },
+                  {
+                    "when": "2026-07-22 10:00",
+                    "type": "HR",
+                    "value": 118,
+                    "unit": "bpm",
+                    "flagged": true,
+                    "reason": "worsening tachycardia"
+                  },
+                  {
+                    "when": "2026-07-22 10:00",
+                    "type": "BP",
+                    "value": "88/54",
+                    "unit": "mmHg",
+                    "flagged": true,
+                    "reason": "persistent low pressure"
+                  },
+                  {
+                    "when": "2026-07-22 10:00",
+                    "type": "SpO2",
+                    "value": 94,
+                    "unit": "%",
+                    "flagged": false,
+                    "reason": "borderline but not dominant"
+                  },
+                  {
+                    "when": "2026-07-22 14:00",
+                    "type": "HR",
+                    "value": 106,
+                    "unit": "bpm",
+                    "flagged": true,
+                    "reason": "ongoing abnormality"
+                  },
+                  {
+                    "when": "2026-07-22 14:00",
+                    "type": "Temp",
+                    "value": 37.9,
+                    "unit": "C",
+                    "flagged": true,
+                    "reason": "ongoing fever burden"
+                  },
+                  {
+                    "when": "2026-07-22 18:00",
+                    "type": "BP",
+                    "value": "98/62",
+                    "unit": "mmHg",
+                    "flagged": true,
+                    "reason": "improved but still fragile"
+                  }
+                ],
+                "labs": [
+                  {
+                    "when": "2026-07-22 06:30",
+                    "lab": "Hemoglobin",
+                    "value": 7.8,
+                    "unit": "g/dL",
+                    "range": "12.0-16.0",
+                    "flagged": true
+                  },
+                  {
+                    "when": "2026-07-22 06:30",
+                    "lab": "Hematocrit",
+                    "value": 24.1,
+                    "unit": "%",
+                    "range": "36-46",
+                    "flagged": true
+                  },
+                  {
+                    "when": "2026-07-22 06:30",
+                    "lab": "BUN",
+                    "value": 38,
+                    "unit": "mg/dL",
+                    "range": "7-20",
+                    "flagged": true
+                  },
+                  {
+                    "when": "2026-07-22 06:30",
+                    "lab": "Creatinine",
+                    "value": 1.9,
+                    "unit": "mg/dL",
+                    "range": "0.6-1.2",
+                    "flagged": true
+                  },
+                  {
+                    "when": "2026-07-22 06:30",
+                    "lab": "INR",
+                    "value": 1.6,
+                    "unit": "",
+                    "range": "0.9-1.1",
+                    "flagged": true
+                  },
+                  {
+                    "when": "2026-07-22 06:30",
+                    "lab": "WBC",
+                    "value": 13.2,
+                    "unit": "K/uL",
+                    "range": "4.0-10.5",
+                    "flagged": true
+                  },
+                  {
+                    "when": "2026-07-22 06:30",
+                    "lab": "Platelets",
+                    "value": 128,
+                    "unit": "K/uL",
+                    "range": "150-400",
+                    "flagged": true
+                  }
+                ],
+                "meds": [
+                  {
+                    "name": "Apixaban",
+                    "signal": "high-risk",
+                    "status": "home med; exposure relevant to bleeding risk"
+                  },
+                  {
+                    "name": "Oxycodone",
+                    "signal": "sedating",
+                    "status": "recent PRN use"
+                  },
+                  {
+                    "name": "Lorazepam",
+                    "signal": "sedating",
+                    "status": "active; fall/sedation risk"
+                  },
+                  {
+                    "name": "Pantoprazole",
+                    "signal": "high-signal",
+                    "status": "refused once"
+                  },
+                  {
+                    "name": "Lisinopril",
+                    "signal": "high-risk",
+                    "status": "duplicate entry noted"
+                  }
+                ],
+                "evidenceNotes": [
+                  {
+                    "when": "2026-07-22 08:18",
+                    "note": "Patient reports wanting to die; states plan was overdose if discharged."
+                  },
+                  {
+                    "when": "2026-07-22 09:05",
+                    "note": "Black stool overnight; orthostatics borderline; GI consult requested."
+                  },
+                  {
+                    "when": "2026-07-22 10:02",
+                    "note": "1:1 sitter continued; psychiatry notified."
+                  },
+                  {
+                    "when": "2026-07-22 10:40",
+                    "note": "Medication history incomplete; family unable to verify last apixaban dose."
+                  }
+                ],
+                "labSignals": [
+                  {
+                    "test": "Hemoglobin",
+                    "burden": 4
+                  },
+                  {
+                    "test": "Creatinine",
+                    "burden": 3
+                  },
+                  {
+                    "test": "INR",
+                    "burden": 3
+                  },
+                  {
+                    "test": "WBC",
+                    "burden": 2
+                  },
+                  {
+                    "test": "Platelets",
+                    "burden": 2
+                  },
+                  {
+                    "test": "BUN",
+                    "burden": 2
+                  },
+                  {
+                    "test": "Hematocrit",
+                    "burden": 3
+                  }
+                ],
+                "vitalBurden": [
+                  {
+                    "type": "HR",
+                    "burden": 4
+                  },
+                  {
+                    "type": "BP",
+                    "burden": 4
+                  },
+                  {
+                    "type": "Temp",
+                    "burden": 3
+                  },
+                  {
+                    "type": "SpO2",
+                    "burden": 1
+                  }
+                ],
+                "severityBarData": [
+                  {
+                    "area": "Behavioral safety",
+                    "score": 98
+                  },
+                  {
+                    "area": "Medical decompensation",
+                    "score": 92
+                  },
+                  {
+                    "area": "Medication safety",
+                    "score": 84
+                  },
+                  {
+                    "area": "Vital instability",
+                    "score": 79
+                  },
+                  {
+                    "area": "Care-transition gaps",
+                    "score": 61
+                  },
+                  {
+                    "area": "Fall and functional risk",
+                    "score": 48
+                  },
+                  {
+                    "area": "Substance and withdrawal",
+                    "score": 42
+                  }
+                ],
+                "severityPieData": [
+                  {
+                    "name": "Behavioral safety",
+                    "value": 34
+                  },
+                  {
+                    "name": "Medical decompensation",
+                    "value": 30
+                  },
+                  {
+                    "name": "Medication safety",
+                    "value": 18
+                  },
+                  {
+                    "name": "Vital instability",
+                    "value": 10
+                  },
+                  {
+                    "name": "Care-transition gaps",
+                    "value": 5
+                  },
+                  {
+                    "name": "Fall risk",
+                    "value": 3
+                  }
+                ],
+                "vitalTrend": [
+                  {
+                    "time": "06:00",
+                    "severity": 78
+                  },
+                  {
+                    "time": "10:00",
+                    "severity": 89
+                  },
+                  {
+                    "time": "14:00",
+                    "severity": 81
+                  },
+                  {
+                    "time": "18:00",
+                    "severity": 63
+                  }
+                ],
+                "vitalByType": [
+                  {
+                    "type": "HR",
+                    "burden": 4
+                  },
+                  {
+                    "type": "BP",
+                    "burden": 4
+                  },
+                  {
+                    "type": "Temp",
+                    "burden": 3
+                  },
+                  {
+                    "type": "SpO2",
+                    "burden": 1
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/main",
+              "value": {
+                "type": "Stack",
+                "props": {
+                  "direction": "vertical",
+                  "gap": "lg"
+                },
+                "children": [
+                  "header-card",
+                  "metrics-grid",
+                  "tabs"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/header-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "High-Severity Clinical History Review",
+                  "description": "Surfaces only the consequential diagnoses, safety risks, high-signal medications, labs, notes, and vital trends.",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "header-stack"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/header-stack",
+              "value": {
+                "type": "Stack",
+                "props": {
+                  "direction": "vertical",
+                  "gap": "sm"
+                },
+                "children": [
+                  "intro-text",
+                  "protocol-callout",
+                  "separator-1"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/intro-text",
+              "value": {
+                "type": "Text",
+                "props": {
+                  "content": "Top risks for this patient: behavioral safety, medical decompensation, medication safety, and vital instability, supported by the chart evidence in [1]–[5].",
+                  "muted": false
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/protocol-callout",
+              "value": {
+                "type": "Callout",
+                "props": {
+                  "type": "warning",
+                  "title": "Protocol stance",
+                  "content": "Rank by potential for near-term harm — bleeding and decompensation, self-harm, withdrawal and sedation, falls, and other destabilizing conditions. Don't waste attention on stable routine problems unless they change management."
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/separator-1",
+              "value": {
+                "type": "Separator",
+                "props": {
+                  "orientation": "horizontal"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/metrics-grid",
+              "value": {
+                "type": "Grid",
+                "props": {
+                  "columns": 4,
+                  "gap": "md"
+                },
+                "children": [
+                  "metric-conditions",
+                  "metric-alerts",
+                  "metric-vitals",
+                  "metric-meds"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/metric-conditions",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "Active conditions",
+                  "value": {
+                    "$state": "/headlineCounts/activeConditions"
+                  },
+                  "detail": "only the clinically consequential ones get classified",
+                  "trend": "neutral"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/metric-alerts",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "Active alerts",
+                  "value": {
+                    "$state": "/headlineCounts/activeAlerts"
+                  },
+                  "detail": "mental-health and housing or fall context",
+                  "trend": "up"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/metric-vitals",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "High-signal vitals",
+                  "value": {
+                    "$state": "/headlineCounts/highSignalVitals"
+                  },
+                  "detail": "the vital-trend graph flags the abnormality burden",
+                  "trend": "up"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/metric-meds",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "High-signal meds",
+                  "value": {
+                    "$state": "/headlineCounts/highSignalMeds"
+                  },
+                  "detail": "e.g. sedative exposure in this chart",
+                  "trend": "up"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/tabs",
+              "value": {
+                "type": "Tabs",
+                "props": {
+                  "defaultValue": "severity",
+                  "tabs": [
+                    {
+                      "value": "severity",
+                      "label": "Severity ranking"
+                    },
+                    {
+                      "value": "vitals",
+                      "label": "Vital trends"
+                    },
+                    {
+                      "value": "labs",
+                      "label": "Labs / liver-anemia"
+                    },
+                    {
+                      "value": "evidence",
+                      "label": "Evidence"
+                    }
+                  ]
+                },
+                "children": [
+                  "tab-severity",
+                  "tab-vitals",
+                  "tab-labs",
+                  "tab-evidence"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/tab-severity",
+              "value": {
+                "type": "TabContent",
+                "props": {
+                  "value": "severity"
+                },
+                "children": [
+                  "severity-grid",
+                  "routes-accordion"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/severity-grid",
+              "value": {
+                "type": "Grid",
+                "props": {
+                  "columns": 2,
+                  "gap": "md"
+                },
+                "children": [
+                  "severity-bar-card",
+                  "severity-pie-card"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/severity-bar-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Severity ranking",
+                  "description": "Higher means more consequential in the next hours to days.",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "severity-bar-chart"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/severity-bar-chart",
+              "value": {
+                "type": "BarChart",
+                "props": {
+                  "data": {
+                    "$state": "/severityBarData"
+                  },
+                  "xKey": "area",
+                  "yKey": "score",
+                  "color": "#c2410c",
+                  "height": 280
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/severity-pie-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Risk weight split",
+                  "description": "Where this patient's near-term risk sits across the severe domains.",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "severity-pie-chart"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/severity-pie-chart",
+              "value": {
+                "type": "PieChart",
+                "props": {
+                  "data": {
+                    "$state": "/severityPieData"
+                  },
+                  "nameKey": "name",
+                  "valueKey": "value",
+                  "height": 280
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/routes-accordion",
+              "value": {
+                "type": "Accordion",
+                "props": {
+                  "type": "multiple",
+                  "items": [
+                    {
+                      "title": "Medical decompensation route",
+                      "content": "Looks for a severe diagnosis plus bleeding risk, organ dysfunction, infection, or a high-risk medication that could change care in the next hours to days. Horse: upper GI bleed with anemia and anticoagulation. Zebra: occult malignancy or variceal source if instability worsens."
+                    },
+                    {
+                      "title": "Behavioral safety route",
+                      "content": "Looks for suicide attempt, self-harm, active ideation, behavioral-health alerts, or observation precautions. Horse: depressive crisis with active suicidal ideation. Zebra: delirium or intoxication amplifying risk."
+                    },
+                    {
+                      "title": "Medication and substance route",
+                      "content": "Looks for substance use, detox/intoxication/withdrawal, or sedative exposure that intersects with psychiatric, liver, fall, or vital-sign risk. Keep it quiet unless it changes the severe picture."
+                    },
+                    {
+                      "title": "Vital-trend route",
+                      "content": "Looks for abnormal vital clusters, deterioration, or missing monitoring; it should rank the burden over time, not overreact to a single normal value."
+                    },
+                    {
+                      "title": "Mundane suppression rule",
+                      "content": "Stable, routine, minor, or administrative problems stay out of the ranked list and do not trigger follow-up unless they change severe-risk management."
+                    }
+                  ]
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/tab-vitals",
+              "value": {
+                "type": "TabContent",
+                "props": {
+                  "value": "vitals"
+                },
+                "children": [
+                  "vitals-callout",
+                  "vitals-line-card",
+                  "vitals-bar-card",
+                  "vitals-table-card"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/vitals-callout",
+              "value": {
+                "type": "Callout",
+                "props": {
+                  "type": "info",
+                  "title": "Vital trends",
+                  "content": "This view summarizes the burden and direction of abnormal vitals over time. A single reassuring recent value does not cancel a broader instability trend."
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/vitals-line-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Vital severity over time",
+                  "description": "Trend of the abnormality burden across the charted vitals.",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "vitals-line-chart"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/vitals-line-chart",
+              "value": {
+                "type": "LineChart",
+                "props": {
+                  "data": {
+                    "$state": "/vitalTrend"
+                  },
+                  "xKey": "time",
+                  "yKey": "severity",
+                  "color": "#2563eb",
+                  "height": 240
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/vitals-bar-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Abnormality burden by vital",
+                  "description": "Which vital signs are contributing most to the severity picture.",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "vitals-bar-chart"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/vitals-bar-chart",
+              "value": {
+                "type": "BarChart",
+                "props": {
+                  "data": {
+                    "$state": "/vitalByType"
+                  },
+                  "xKey": "type",
+                  "yKey": "burden",
+                  "color": "#dc2626",
+                  "height": 220
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/vitals-table-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Vital readings",
+                  "description": "When it was taken, which vital, the value and unit, whether it is flagged, and why.",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "vitals-table"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/vitals-table",
+              "value": {
+                "type": "Table",
+                "props": {
+                  "data": {
+                    "$state": "/vitals"
+                  },
+                  "columns": [
+                    {
+                      "key": "when",
+                      "label": "When"
+                    },
+                    {
+                      "key": "type",
+                      "label": "Vital"
+                    },
+                    {
+                      "key": "value",
+                      "label": "Value"
+                    },
+                    {
+                      "key": "unit",
+                      "label": "Unit"
+                    },
+                    {
+                      "key": "flagged",
+                      "label": "Flagged"
+                    },
+                    {
+                      "key": "reason",
+                      "label": "Why"
+                    }
+                  ],
+                  "emptyMessage": "No vitals available"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/tab-labs",
+              "value": {
+                "type": "TabContent",
+                "props": {
+                  "value": "labs"
+                },
+                "children": [
+                  "labs-bar-card",
+                  "labs-table-card"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/labs-bar-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Lab-signal burden",
+                  "description": "Burden by test, emphasizing labs that alter near-term management.",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "labs-bar-chart"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/labs-bar-chart",
+              "value": {
+                "type": "BarChart",
+                "props": {
+                  "data": {
+                    "$state": "/labSignals"
+                  },
+                  "xKey": "test",
+                  "yKey": "burden",
+                  "color": "#7c3aed",
+                  "height": 240
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/labs-table-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Labs / liver-anemia",
+                  "description": "When, which lab, the value and unit, the reference range, and whether it is flagged.",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "labs-table"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/labs-table",
+              "value": {
+                "type": "Table",
+                "props": {
+                  "data": {
+                    "$state": "/labs"
+                  },
+                  "columns": [
+                    {
+                      "key": "when",
+                      "label": "When"
+                    },
+                    {
+                      "key": "lab",
+                      "label": "Lab"
+                    },
+                    {
+                      "key": "value",
+                      "label": "Value"
+                    },
+                    {
+                      "key": "unit",
+                      "label": "Unit"
+                    },
+                    {
+                      "key": "range",
+                      "label": "Reference range"
+                    },
+                    {
+                      "key": "flagged",
+                      "label": "Flagged"
+                    }
+                  ],
+                  "emptyMessage": "No labs available"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/tab-evidence",
+              "value": {
+                "type": "TabContent",
+                "props": {
+                  "value": "evidence"
+                },
+                "children": [
+                  "evidence-grid"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/evidence-grid",
+              "value": {
+                "type": "Grid",
+                "props": {
+                  "columns": 2,
+                  "gap": "md"
+                },
+                "children": [
+                  "conditions-card",
+                  "alerts-card"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/conditions-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Conditions",
+                  "description": "Clinical evidence pulled from the chart.",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "conditions-table"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/conditions-table",
+              "value": {
+                "type": "Table",
+                "props": {
+                  "data": {
+                    "$state": "/conditions"
+                  },
+                  "columns": [
+                    {
+                      "key": "when",
+                      "label": "When"
+                    },
+                    {
+                      "key": "condition",
+                      "label": "Condition"
+                    },
+                    {
+                      "key": "status",
+                      "label": "Status"
+                    }
+                  ],
+                  "emptyMessage": "No conditions available"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/alerts-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Alerts",
+                  "description": "Operational and safety context pulled from the chart.",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "alerts-table"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/alerts-table",
+              "value": {
+                "type": "Table",
+                "props": {
+                  "data": {
+                    "$state": "/alerts"
+                  },
+                  "columns": [
+                    {
+                      "key": "when",
+                      "label": "When"
+                    },
+                    {
+                      "key": "alert",
+                      "label": "Alert"
+                    },
+                    {
+                      "key": "status",
+                      "label": "Status"
+                    }
+                  ],
+                  "emptyMessage": "No alerts available"
+                },
+                "children": []
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "type": "text",
+          "text": "render those as downloadable tables"
+        }
+      ],
+      "id": "bi9mdBCIqrXItHVI",
+      "role": "user"
+    },
+    {
+      "id": "8Ox1sCTuTuK2Yiqm",
+      "role": "assistant",
+      "parts": [
+        {
+          "type": "step-start"
+        },
+        {
+          "type": "text",
+          "text": "I can do that, but I need to be careful: the current spec only uses the table component as a visual display, and I can’t invent a real download mechanism unless I rebuild the UI to include export actions.  \n\nIf you want, I can render the evidence sections as “downloadable table” cards with:\n- a visible **Download CSV** button for each table,\n- the underlying table still shown on screen,\n- and mock export actions wired to the loaded chart state.\n\nIf that works, I’ll output an updated spec.",
+          "providerMetadata": {
+            "openai": {
+              "itemId": "msg_0b439948af7cf6af006a6181fa582c81a1852b23f1c4189727",
+              "phase": "final_answer"
+            }
+          },
+          "state": "done"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "type": "text",
+          "text": "yes, visible download csv button"
+        }
+      ],
+      "id": "UwUREBadpDxpF3hL",
+      "role": "user"
+    },
+    {
+      "id": "WDxcu5xwrDoY0ZfR",
+      "role": "assistant",
+      "parts": [
+        {
+          "type": "step-start"
+        },
+        {
+          "type": "text",
+          "text": "Absolutely — I’ll update the evidence tables to include visible **Download CSV** buttons.\n\n",
+          "providerMetadata": {
+            "openai": {
+              "itemId": "msg_0b439948af7cf6af006a618213a61081a1baed60d37e3ee56e",
+              "phase": "final_answer"
+            }
+          },
+          "state": "done"
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/root",
+              "value": "main"
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/state",
+              "value": {
+                "patient": {
+                  "name": "Mock Patient, 68F",
+                  "mrn": "MP-10482",
+                  "encounterType": "ED booking / admission hold",
+                  "status": "High-risk intake"
+                },
+                "summary": {
+                  "topRisks": [
+                    "Behavioral safety: active suicidal ideation with prior attempt",
+                    "Medical decompensation: GI bleed/anemia with CKD and anticoagulation",
+                    "Medication safety: sedative + opioid exposure with duplication/refusal risk",
+                    "Vital instability: tachycardia, intermittent hypotension, fever burden"
+                  ],
+                  "sourceTags": [
+                    {
+                      "id": "1",
+                      "label": "[1]"
+                    },
+                    {
+                      "id": "2",
+                      "label": "[2]"
+                    },
+                    {
+                      "id": "3",
+                      "label": "[3]"
+                    },
+                    {
+                      "id": "4",
+                      "label": "[4]"
+                    },
+                    {
+                      "id": "5",
+                      "label": "[5]"
+                    }
+                  ]
+                },
+                "headlineCounts": {
+                  "activeConditions": 6,
+                  "activeAlerts": 4,
+                  "highSignalVitals": 9,
+                  "highSignalMeds": 5
+                },
+                "severityAreas": [
+                  {
+                    "area": "Behavioral safety",
+                    "score": 98,
+                    "weight": 34,
+                    "summary": "Active suicidal ideation, recent self-harm, observation precautions."
+                  },
+                  {
+                    "area": "Medical decompensation",
+                    "score": 92,
+                    "weight": 30,
+                    "summary": "Melena/anemia + CKD + anticoagulation creates near-term bleeding risk."
+                  },
+                  {
+                    "area": "Medication safety",
+                    "score": 84,
+                    "weight": 18,
+                    "summary": "High-risk sedative/opioid exposure, missed doses, duplication concerns."
+                  },
+                  {
+                    "area": "Vital instability",
+                    "score": 79,
+                    "weight": 10,
+                    "summary": "Repeated tachycardia, intermittent hypotension, fever trend."
+                  },
+                  {
+                    "area": "Care-transition gaps",
+                    "score": 61,
+                    "weight": 5,
+                    "summary": "Pending GI follow-up, outside records, incomplete safety planning."
+                  },
+                  {
+                    "area": "Fall and functional risk",
+                    "score": 48,
+                    "weight": 3,
+                    "summary": "Recent fall with head strike and sedation context."
+                  },
+                  {
+                    "area": "Substance and withdrawal",
+                    "score": 42,
+                    "weight": 0,
+                    "summary": "Alcohol use history and possible withdrawal monitoring."
+                  }
+                ],
+                "routes": [
+                  {
+                    "id": "medical",
+                    "title": "Medical decompensation",
+                    "detail": "Looks for a severe diagnosis plus bleeding risk, organ dysfunction, infection, or a high-risk medication that could change care in the next hours to days.",
+                    "finding": "Likely upper GI bleed with anemia (Hgb 7.8), CKD stage 3b, and apixaban exposure. This is the horse; zebra to keep in view is occult malignancy or variceal source if instability or labs worsen."
+                  },
+                  {
+                    "id": "behavioral",
+                    "title": "Behavioral safety",
+                    "detail": "Looks for suicide attempt, self-harm, active ideation, behavioral-health alerts, or observation precautions.",
+                    "finding": "Active suicidal ideation, prior overdose attempt, 1:1 observation, and psychiatry consult needed now. The horse is depressive crisis; the zebra is delirium or intoxication amplifying risk."
+                  },
+                  {
+                    "id": "substance",
+                    "title": "Substance and withdrawal",
+                    "detail": "Looks for substance use, detox/intoxication/withdrawal, or sedative exposure that intersects with psychiatric, liver, fall, or vital-sign risk.",
+                    "finding": "Alcohol use disorder history and sedative exposure increase withdrawal/sedation/fall risk, but only rises if vitals or mental status worsen."
+                  },
+                  {
+                    "id": "meds",
+                    "title": "Medication safety",
+                    "detail": "Looks for missed, unfilled, refused, duplicated, or unsafe meds that raise bleeding, sedation, withdrawal, renal, hepatic, rhythm, or fall risk.",
+                    "finding": "Apixaban, oxycodone, lorazepam, and duplicate antihypertensives create a high-signal reconciliation problem; refused pantoprazole matters because it interacts with bleed management."
+                  },
+                  {
+                    "id": "vitals",
+                    "title": "Vital instability",
+                    "detail": "Looks for abnormal vital clusters, deterioration, or missing monitoring; ranks burden over time instead of a single reassuring reading.",
+                    "finding": "Tachycardia with intermittent low BP and fever burden suggests physiologic stress and possible ongoing bleed or infection; trend matters more than the last value."
+                  },
+                  {
+                    "id": "falls",
+                    "title": "Fall and functional risk",
+                    "detail": "Looks for falls, head injury, functional limitation, and special-housing or sedation context when injury risk becomes consequential.",
+                    "finding": "Recent unwitnessed fall with head strike while sedated makes fall precautions and neuro checks relevant, but not the main driver unless bleeding or neuro changes appear."
+                  },
+                  {
+                    "id": "transition",
+                    "title": "Care-transition gaps",
+                    "detail": "Looks for pending labs, procedures, referrals, outside-transfer follow-up, unfinished tasks, or discharge barriers that could leave a severe risk unmanaged.",
+                    "finding": "Awaiting GI evaluation, stool occult result, and outside discharge records; safety planning and case-management tasks are open."
+                  }
+                ],
+                "conditions": [
+                  {
+                    "when": "2026-07-22 08:14",
+                    "condition": "Suicidal ideation, active",
+                    "status": "active"
+                  },
+                  {
+                    "when": "2026-07-21 19:02",
+                    "condition": "Major depressive disorder, recurrent severe",
+                    "status": "active"
+                  },
+                  {
+                    "when": "2026-07-22 09:10",
+                    "condition": "Melena / suspected upper GI bleed",
+                    "status": "active"
+                  },
+                  {
+                    "when": "2026-07-20 16:45",
+                    "condition": "Chronic kidney disease stage 3b",
+                    "status": "active"
+                  },
+                  {
+                    "when": "2026-07-19 11:30",
+                    "condition": "Atrial fibrillation on anticoagulation",
+                    "status": "active"
+                  },
+                  {
+                    "when": "2026-07-22 07:55",
+                    "condition": "Recent fall with head strike",
+                    "status": "active"
+                  },
+                  {
+                    "when": "2026-07-22 10:05",
+                    "condition": "Alcohol use disorder",
+                    "status": "active"
+                  },
+                  {
+                    "when": "2026-07-18 13:20",
+                    "condition": "Hypertension",
+                    "status": "active"
+                  }
+                ],
+                "alerts": [
+                  {
+                    "when": "2026-07-22 08:20",
+                    "alert": "1:1 observation",
+                    "status": "active"
+                  },
+                  {
+                    "when": "2026-07-22 08:25",
+                    "alert": "Suicide precautions",
+                    "status": "active"
+                  },
+                  {
+                    "when": "2026-07-21 21:40",
+                    "alert": "Fall risk",
+                    "status": "active"
+                  },
+                  {
+                    "when": "2026-07-22 10:00",
+                    "alert": "Housing insecurity / discharge barrier",
+                    "status": "active"
+                  }
+                ],
+                "vitals": [
+                  {
+                    "when": "2026-07-22 06:00",
+                    "type": "HR",
+                    "value": 112,
+                    "unit": "bpm",
+                    "flagged": true,
+                    "reason": "tachycardia burden"
+                  },
+                  {
+                    "when": "2026-07-22 06:00",
+                    "type": "BP",
+                    "value": "92/58",
+                    "unit": "mmHg",
+                    "flagged": true,
+                    "reason": "hypotension episode"
+                  },
+                  {
+                    "when": "2026-07-22 06:00",
+                    "type": "Temp",
+                    "value": 38.1,
+                    "unit": "C",
+                    "flagged": true,
+                    "reason": "fever burden"
+                  },
+                  {
+                    "when": "2026-07-22 10:00",
+                    "type": "HR",
+                    "value": 118,
+                    "unit": "bpm",
+                    "flagged": true,
+                    "reason": "worsening tachycardia"
+                  },
+                  {
+                    "when": "2026-07-22 10:00",
+                    "type": "BP",
+                    "value": "88/54",
+                    "unit": "mmHg",
+                    "flagged": true,
+                    "reason": "persistent low pressure"
+                  },
+                  {
+                    "when": "2026-07-22 10:00",
+                    "type": "SpO2",
+                    "value": 94,
+                    "unit": "%",
+                    "flagged": false,
+                    "reason": "borderline but not dominant"
+                  },
+                  {
+                    "when": "2026-07-22 14:00",
+                    "type": "HR",
+                    "value": 106,
+                    "unit": "bpm",
+                    "flagged": true,
+                    "reason": "ongoing abnormality"
+                  },
+                  {
+                    "when": "2026-07-22 14:00",
+                    "type": "Temp",
+                    "value": 37.9,
+                    "unit": "C",
+                    "flagged": true,
+                    "reason": "ongoing fever burden"
+                  },
+                  {
+                    "when": "2026-07-22 18:00",
+                    "type": "BP",
+                    "value": "98/62",
+                    "unit": "mmHg",
+                    "flagged": true,
+                    "reason": "improved but still fragile"
+                  }
+                ],
+                "labs": [
+                  {
+                    "when": "2026-07-22 06:30",
+                    "lab": "Hemoglobin",
+                    "value": 7.8,
+                    "unit": "g/dL",
+                    "range": "12.0-16.0",
+                    "flagged": true
+                  },
+                  {
+                    "when": "2026-07-22 06:30",
+                    "lab": "Hematocrit",
+                    "value": 24.1,
+                    "unit": "%",
+                    "range": "36-46",
+                    "flagged": true
+                  },
+                  {
+                    "when": "2026-07-22 06:30",
+                    "lab": "BUN",
+                    "value": 38,
+                    "unit": "mg/dL",
+                    "range": "7-20",
+                    "flagged": true
+                  },
+                  {
+                    "when": "2026-07-22 06:30",
+                    "lab": "Creatinine",
+                    "value": 1.9,
+                    "unit": "mg/dL",
+                    "range": "0.6-1.2",
+                    "flagged": true
+                  },
+                  {
+                    "when": "2026-07-22 06:30",
+                    "lab": "INR",
+                    "value": 1.6,
+                    "unit": "",
+                    "range": "0.9-1.1",
+                    "flagged": true
+                  },
+                  {
+                    "when": "2026-07-22 06:30",
+                    "lab": "WBC",
+                    "value": 13.2,
+                    "unit": "K/uL",
+                    "range": "4.0-10.5",
+                    "flagged": true
+                  },
+                  {
+                    "when": "2026-07-22 06:30",
+                    "lab": "Platelets",
+                    "value": 128,
+                    "unit": "K/uL",
+                    "range": "150-400",
+                    "flagged": true
+                  }
+                ],
+                "meds": [
+                  {
+                    "name": "Apixaban",
+                    "signal": "high-risk",
+                    "status": "home med; exposure relevant to bleeding risk"
+                  },
+                  {
+                    "name": "Oxycodone",
+                    "signal": "sedating",
+                    "status": "recent PRN use"
+                  },
+                  {
+                    "name": "Lorazepam",
+                    "signal": "sedating",
+                    "status": "active; fall/sedation risk"
+                  },
+                  {
+                    "name": "Pantoprazole",
+                    "signal": "high-signal",
+                    "status": "refused once"
+                  },
+                  {
+                    "name": "Lisinopril",
+                    "signal": "high-risk",
+                    "status": "duplicate entry noted"
+                  }
+                ],
+                "evidenceNotes": [
+                  {
+                    "when": "2026-07-22 08:18",
+                    "note": "Patient reports wanting to die; states plan was overdose if discharged."
+                  },
+                  {
+                    "when": "2026-07-22 09:05",
+                    "note": "Black stool overnight; orthostatics borderline; GI consult requested."
+                  },
+                  {
+                    "when": "2026-07-22 10:02",
+                    "note": "1:1 sitter continued; psychiatry notified."
+                  },
+                  {
+                    "when": "2026-07-22 10:40",
+                    "note": "Medication history incomplete; family unable to verify last apixaban dose."
+                  }
+                ],
+                "labSignals": [
+                  {
+                    "test": "Hemoglobin",
+                    "burden": 4
+                  },
+                  {
+                    "test": "Creatinine",
+                    "burden": 3
+                  },
+                  {
+                    "test": "INR",
+                    "burden": 3
+                  },
+                  {
+                    "test": "WBC",
+                    "burden": 2
+                  },
+                  {
+                    "test": "Platelets",
+                    "burden": 2
+                  },
+                  {
+                    "test": "BUN",
+                    "burden": 2
+                  },
+                  {
+                    "test": "Hematocrit",
+                    "burden": 3
+                  }
+                ],
+                "vitalBurden": [
+                  {
+                    "type": "HR",
+                    "burden": 4
+                  },
+                  {
+                    "type": "BP",
+                    "burden": 4
+                  },
+                  {
+                    "type": "Temp",
+                    "burden": 3
+                  },
+                  {
+                    "type": "SpO2",
+                    "burden": 1
+                  }
+                ],
+                "severityBarData": [
+                  {
+                    "area": "Behavioral safety",
+                    "score": 98
+                  },
+                  {
+                    "area": "Medical decompensation",
+                    "score": 92
+                  },
+                  {
+                    "area": "Medication safety",
+                    "score": 84
+                  },
+                  {
+                    "area": "Vital instability",
+                    "score": 79
+                  },
+                  {
+                    "area": "Care-transition gaps",
+                    "score": 61
+                  },
+                  {
+                    "area": "Fall and functional risk",
+                    "score": 48
+                  },
+                  {
+                    "area": "Substance and withdrawal",
+                    "score": 42
+                  }
+                ],
+                "severityPieData": [
+                  {
+                    "name": "Behavioral safety",
+                    "value": 34
+                  },
+                  {
+                    "name": "Medical decompensation",
+                    "value": 30
+                  },
+                  {
+                    "name": "Medication safety",
+                    "value": 18
+                  },
+                  {
+                    "name": "Vital instability",
+                    "value": 10
+                  },
+                  {
+                    "name": "Care-transition gaps",
+                    "value": 5
+                  },
+                  {
+                    "name": "Fall risk",
+                    "value": 3
+                  }
+                ],
+                "vitalTrend": [
+                  {
+                    "time": "06:00",
+                    "severity": 78
+                  },
+                  {
+                    "time": "10:00",
+                    "severity": 89
+                  },
+                  {
+                    "time": "14:00",
+                    "severity": 81
+                  },
+                  {
+                    "time": "18:00",
+                    "severity": 63
+                  }
+                ],
+                "vitalByType": [
+                  {
+                    "type": "HR",
+                    "burden": 4
+                  },
+                  {
+                    "type": "BP",
+                    "burden": 4
+                  },
+                  {
+                    "type": "Temp",
+                    "burden": 3
+                  },
+                  {
+                    "type": "SpO2",
+                    "burden": 1
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/main",
+              "value": {
+                "type": "Stack",
+                "props": {
+                  "direction": "vertical",
+                  "gap": "lg"
+                },
+                "children": [
+                  "header-card",
+                  "metrics-grid",
+                  "tabs"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/header-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "High-Severity Clinical History Review",
+                  "description": "Surfaces only the consequential diagnoses, safety risks, high-signal medications, labs, notes, and vital trends.",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "header-stack"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/header-stack",
+              "value": {
+                "type": "Stack",
+                "props": {
+                  "direction": "vertical",
+                  "gap": "sm"
+                },
+                "children": [
+                  "intro-text",
+                  "protocol-callout",
+                  "separator-1"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/intro-text",
+              "value": {
+                "type": "Text",
+                "props": {
+                  "content": "Top risks for this patient: behavioral safety, medical decompensation, medication safety, and vital instability, supported by the chart evidence in [1]–[5].",
+                  "muted": false
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/protocol-callout",
+              "value": {
+                "type": "Callout",
+                "props": {
+                  "type": "warning",
+                  "title": "Protocol stance",
+                  "content": "Rank by potential for near-term harm — bleeding and decompensation, self-harm, withdrawal and sedation, falls, and other destabilizing conditions. Don't waste attention on stable routine problems unless they change management."
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/separator-1",
+              "value": {
+                "type": "Separator",
+                "props": {
+                  "orientation": "horizontal"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/metrics-grid",
+              "value": {
+                "type": "Grid",
+                "props": {
+                  "columns": 4,
+                  "gap": "md"
+                },
+                "children": [
+                  "metric-conditions",
+                  "metric-alerts",
+                  "metric-vitals",
+                  "metric-meds"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/metric-conditions",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "Active conditions",
+                  "value": {
+                    "$state": "/headlineCounts/activeConditions"
+                  },
+                  "detail": "only the clinically consequential ones get classified",
+                  "trend": "neutral"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/metric-alerts",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "Active alerts",
+                  "value": {
+                    "$state": "/headlineCounts/activeAlerts"
+                  },
+                  "detail": "mental-health and housing or fall context",
+                  "trend": "up"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/metric-vitals",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "High-signal vitals",
+                  "value": {
+                    "$state": "/headlineCounts/highSignalVitals"
+                  },
+                  "detail": "the vital-trend graph flags the abnormality burden",
+                  "trend": "up"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/metric-meds",
+              "value": {
+                "type": "Metric",
+                "props": {
+                  "label": "High-signal meds",
+                  "value": {
+                    "$state": "/headlineCounts/highSignalMeds"
+                  },
+                  "detail": "e.g. sedative exposure in this chart",
+                  "trend": "up"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/tabs",
+              "value": {
+                "type": "Tabs",
+                "props": {
+                  "defaultValue": "severity",
+                  "tabs": [
+                    {
+                      "value": "severity",
+                      "label": "Severity ranking"
+                    },
+                    {
+                      "value": "vitals",
+                      "label": "Vital trends"
+                    },
+                    {
+                      "value": "labs",
+                      "label": "Labs / liver-anemia"
+                    },
+                    {
+                      "value": "evidence",
+                      "label": "Evidence"
+                    }
+                  ]
+                },
+                "children": [
+                  "tab-severity",
+                  "tab-vitals",
+                  "tab-labs",
+                  "tab-evidence"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/tab-severity",
+              "value": {
+                "type": "TabContent",
+                "props": {
+                  "value": "severity"
+                },
+                "children": [
+                  "severity-grid",
+                  "routes-accordion"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/severity-grid",
+              "value": {
+                "type": "Grid",
+                "props": {
+                  "columns": 2,
+                  "gap": "md"
+                },
+                "children": [
+                  "severity-bar-card",
+                  "severity-pie-card"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/severity-bar-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Severity ranking",
+                  "description": "Higher means more consequential in the next hours to days.",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "severity-bar-chart"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/severity-bar-chart",
+              "value": {
+                "type": "BarChart",
+                "props": {
+                  "data": {
+                    "$state": "/severityBarData"
+                  },
+                  "xKey": "area",
+                  "yKey": "score",
+                  "color": "#c2410c",
+                  "height": 280
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/severity-pie-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Risk weight split",
+                  "description": "Where this patient's near-term risk sits across the severe domains.",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "severity-pie-chart"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/severity-pie-chart",
+              "value": {
+                "type": "PieChart",
+                "props": {
+                  "data": {
+                    "$state": "/severityPieData"
+                  },
+                  "nameKey": "name",
+                  "valueKey": "value",
+                  "height": 280
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/routes-accordion",
+              "value": {
+                "type": "Accordion",
+                "props": {
+                  "type": "multiple",
+                  "items": [
+                    {
+                      "title": "Medical decompensation route",
+                      "content": "Looks for a severe diagnosis plus bleeding risk, organ dysfunction, infection, or a high-risk medication that could change care in the next hours to days. Horse: upper GI bleed with anemia and anticoagulation. Zebra: occult malignancy or variceal source if instability worsens."
+                    },
+                    {
+                      "title": "Behavioral safety route",
+                      "content": "Looks for suicide attempt, self-harm, active ideation, behavioral-health alerts, or observation precautions. Horse: depressive crisis with active suicidal ideation. Zebra: delirium or intoxication amplifying risk."
+                    },
+                    {
+                      "title": "Medication and substance route",
+                      "content": "Looks for substance use, detox/intoxication/withdrawal, or sedative exposure that intersects with psychiatric, liver, fall, or vital-sign risk. Keep it quiet unless it changes the severe picture."
+                    },
+                    {
+                      "title": "Vital-trend route",
+                      "content": "Looks for abnormal vital clusters, deterioration, or missing monitoring; it should rank the burden over time, not overreact to a single normal value."
+                    },
+                    {
+                      "title": "Mundane suppression rule",
+                      "content": "Stable, routine, minor, or administrative problems stay out of the ranked list and do not trigger follow-up unless they change severe-risk management."
+                    }
+                  ]
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/tab-vitals",
+              "value": {
+                "type": "TabContent",
+                "props": {
+                  "value": "vitals"
+                },
+                "children": [
+                  "vitals-callout",
+                  "vitals-line-card",
+                  "vitals-bar-card",
+                  "vitals-table-card"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/vitals-callout",
+              "value": {
+                "type": "Callout",
+                "props": {
+                  "type": "info",
+                  "title": "Vital trends",
+                  "content": "This view summarizes the burden and direction of abnormal vitals over time. A single reassuring recent value does not cancel a broader instability trend."
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/vitals-line-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Vital severity over time",
+                  "description": "Trend of the abnormality burden across the charted vitals.",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "vitals-line-chart"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/vitals-line-chart",
+              "value": {
+                "type": "LineChart",
+                "props": {
+                  "data": {
+                    "$state": "/vitalTrend"
+                  },
+                  "xKey": "time",
+                  "yKey": "severity",
+                  "color": "#2563eb",
+                  "height": 240
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/vitals-bar-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Abnormality burden by vital",
+                  "description": "Which vital signs are contributing most to the severity picture.",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "vitals-bar-chart"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/vitals-bar-chart",
+              "value": {
+                "type": "BarChart",
+                "props": {
+                  "data": {
+                    "$state": "/vitalByType"
+                  },
+                  "xKey": "type",
+                  "yKey": "burden",
+                  "color": "#dc2626",
+                  "height": 220
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/vitals-table-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Vital readings",
+                  "description": "When it was taken, which vital, the value and unit, whether it is flagged, and why.",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "vitals-table"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/vitals-table",
+              "value": {
+                "type": "Table",
+                "props": {
+                  "data": {
+                    "$state": "/vitals"
+                  },
+                  "columns": [
+                    {
+                      "key": "when",
+                      "label": "When"
+                    },
+                    {
+                      "key": "type",
+                      "label": "Vital"
+                    },
+                    {
+                      "key": "value",
+                      "label": "Value"
+                    },
+                    {
+                      "key": "unit",
+                      "label": "Unit"
+                    },
+                    {
+                      "key": "flagged",
+                      "label": "Flagged"
+                    },
+                    {
+                      "key": "reason",
+                      "label": "Why"
+                    }
+                  ],
+                  "emptyMessage": "No vitals available"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/tab-labs",
+              "value": {
+                "type": "TabContent",
+                "props": {
+                  "value": "labs"
+                },
+                "children": [
+                  "labs-bar-card",
+                  "labs-table-card"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/labs-bar-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Lab-signal burden",
+                  "description": "Burden by test, emphasizing labs that alter near-term management.",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "labs-bar-chart"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/labs-bar-chart",
+              "value": {
+                "type": "BarChart",
+                "props": {
+                  "data": {
+                    "$state": "/labSignals"
+                  },
+                  "xKey": "test",
+                  "yKey": "burden",
+                  "color": "#7c3aed",
+                  "height": 240
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/labs-table-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Labs / liver-anemia",
+                  "description": "When, which lab, the value and unit, the reference range, and whether it is flagged.",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "labs-table",
+                  "labs-download"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/labs-table",
+              "value": {
+                "type": "Table",
+                "props": {
+                  "data": {
+                    "$state": "/labs"
+                  },
+                  "columns": [
+                    {
+                      "key": "when",
+                      "label": "When"
+                    },
+                    {
+                      "key": "lab",
+                      "label": "Lab"
+                    },
+                    {
+                      "key": "value",
+                      "label": "Value"
+                    },
+                    {
+                      "key": "unit",
+                      "label": "Unit"
+                    },
+                    {
+                      "key": "range",
+                      "label": "Reference range"
+                    },
+                    {
+                      "key": "flagged",
+                      "label": "Flagged"
+                    }
+                  ],
+                  "emptyMessage": "No labs available"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/labs-download",
+              "value": {
+                "type": "Button",
+                "props": {
+                  "label": "Download CSV",
+                  "variant": "outline",
+                  "size": "default"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/tab-evidence",
+              "value": {
+                "type": "TabContent",
+                "props": {
+                  "value": "evidence"
+                },
+                "children": [
+                  "evidence-grid"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/evidence-grid",
+              "value": {
+                "type": "Grid",
+                "props": {
+                  "columns": 2,
+                  "gap": "md"
+                },
+                "children": [
+                  "conditions-card",
+                  "alerts-card"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/conditions-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Conditions",
+                  "description": "Clinical evidence pulled from the chart.",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "conditions-table",
+                  "conditions-download"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/conditions-table",
+              "value": {
+                "type": "Table",
+                "props": {
+                  "data": {
+                    "$state": "/conditions"
+                  },
+                  "columns": [
+                    {
+                      "key": "when",
+                      "label": "When"
+                    },
+                    {
+                      "key": "condition",
+                      "label": "Condition"
+                    },
+                    {
+                      "key": "status",
+                      "label": "Status"
+                    }
+                  ],
+                  "emptyMessage": "No conditions available"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/conditions-download",
+              "value": {
+                "type": "Button",
+                "props": {
+                  "label": "Download CSV",
+                  "variant": "outline",
+                  "size": "default"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/alerts-card",
+              "value": {
+                "type": "Card",
+                "props": {
+                  "title": "Alerts",
+                  "description": "Operational and safety context pulled from the chart.",
+                  "maxWidth": "full"
+                },
+                "children": [
+                  "alerts-table",
+                  "alerts-download"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/alerts-table",
+              "value": {
+                "type": "Table",
+                "props": {
+                  "data": {
+                    "$state": "/alerts"
+                  },
+                  "columns": [
+                    {
+                      "key": "when",
+                      "label": "When"
+                    },
+                    {
+                      "key": "alert",
+                      "label": "Alert"
+                    },
+                    {
+                      "key": "status",
+                      "label": "Status"
+                    }
+                  ],
+                  "emptyMessage": "No alerts available"
+                },
+                "children": []
+              }
+            }
+          }
+        },
+        {
+          "type": "data-spec",
+          "data": {
+            "type": "patch",
+            "patch": {
+              "op": "add",
+              "path": "/elements/alerts-download",
+              "value": {
+                "type": "Button",
+                "props": {
+                  "label": "Download CSV",
+                  "variant": "outline",
+                  "size": "default"
+                },
+                "children": []
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+- Badge: { text: string, variant?: "default" | "secondary" | "destructive" | "outline" } - Status badge

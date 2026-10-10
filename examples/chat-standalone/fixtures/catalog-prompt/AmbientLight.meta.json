@@ -1,0 +1,14 @@
+{
+  "componentName": "AmbientLight",
+  "catalogSource": "examples/chat-standalone/lib/render/catalog.ts",
+  "description": "Ambient light that illuminates all objects equally. Use for base scene illumination.",
+  "slots": null,
+  "events": null,
+  "promptLine": "- AmbientLight: { color?: string, intensity?: number } - Ambient light that illuminates all objects equally. Use for base scene illumination.",
+  "promptMentions": [
+    "- AmbientLight: { color?: string, intensity?: number } - Ambient light that illuminates all objects equally. Use for base scene illumination."
+  ],
+  "promptMode": "standalone",
+  "promptFullLength": 22951,
+  "promptSha256": "b5b59e6c3d103cfed155fe42d8884eac60c7ab629889b200f266c83d5ce765b7"
+}

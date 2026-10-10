@@ -1,0 +1,32 @@
+{
+  "root": "main",
+  "elements": {
+    "main": {
+      "type": "Stack",
+      "props": { "direction": "vertical", "gap": "md" },
+      "children": ["name-input", "list"]
+    },
+    "name-input": {
+      "type": "TextInput",
+      "props": {
+        "label": "Name",
+        "value": { "$bindState": "/draftName" }
+      },
+      "children": []
+    },
+    "list": {
+      "type": "Stack",
+      "props": { "direction": "vertical", "gap": "sm" },
+      "repeat": { "statePath": "/items", "key": "id" },
+      "children": ["row"]
+    },
+    "row": {
+      "type": "Card",
+      "props": {
+        "title": { "$state": "/items" }
+      },
+      "children": [],
+      "visible": { "$state": "/showRows", "eq": true }
+    }
+  }
+}
