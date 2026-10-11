@@ -23,11 +23,11 @@ const FORM_SPEC_RULES = [
   'For PHQ-9: use state path /phq9/responses (object) and /phq9/totalScore (number). ScoreSummary currentScore: { $state: "/phq9/totalScore" }.',
   'For PHQ-9 with refusal: use 4 Steps (Patient Screening, Depression Symptom Assessment, Functional Impairment, Scoring). Step 1: Refusal Radio + Message. Steps 2-4: visible: { $state: "/refusal", eq: "no" }. Refusal Radio: options yes/no, value: { $bindState: "/refusal" }.',
   'Use visible: { $state: "/path", eq: "value" } to show/hide sections conditionally (e.g. hide assessment when patient refused: visible when refusal=no).',
-  'For clinical pathways: output {"op":"add","path":"/clinicalPathway","value":{...}} after /score. Reference element keys as field refs (refusal-radio, phq9-matrix). Actions: referral, task, alert, medication, education.',
-  "PHQ-9 pathway GOALPOST: initialState state-refusal-check. States (in order): state-refusal-check (evaluation), state-phq9-collect (evaluation), state-impairment (evaluation), state-calc-score (evaluation), state-suicidal-check (evaluation), state-suicidal-alert (action/alert), state-classify (evaluation), state-minimal (action/education), state-mild (action/task), state-moderate (action/medication), state-moderately-severe (action/referral), state-severe (action/referral), state-declined (terminal), state-complete (terminal), state-escalated (terminal). Transitions: refusal-radio=no -> state-phq9-collect; refusal-radio=yes -> state-declined; always -> state-impairment, state-calc-score, state-suicidal-check; matrixItem phq9-matrix suicidal NotEquals 0 -> state-suicidal-alert (priority 1); matrixItem phq9-matrix suicidal Equals 0 -> state-classify (priority 2); state-suicidal-alert -> state-escalated; fieldScoreInRange phq9-matrix [0,4]->state-minimal, [5,9]->state-mild, [10,14]->state-moderate, [15,19]->state-moderately-severe, [20,27]->state-severe; minimal/mild/moderate -> state-complete; moderately-severe/severe -> state-escalated.",
+  "Every element MUST include children (use [] for leaves).",
+  'For clinical pathways emit ONE patch after /score. states is an ARRAY. transitions is an ARRAY. Example: {"op":"add","path":"/clinicalPathway","value":{"pathwayId":"phq9","pathwayName":"PHQ-9","version":"1.0","initialState":"state-refusal-check","executionMode":{"single":{"selectionStrategy":"highestPriority"}},"states":[{"key":"state-refusal-check","label":"Refusal","order":1,"type":"evaluation","evaluation":{"name":"Refusal"}},{"key":"state-alert","label":"Alert","order":2,"type":"action","action":{"alert":{"message":"Suicidal ideation","severity":"Critical"}}},{"key":"state-done","label":"Done","order":3,"type":"terminal","terminal":{"outcome":"Complete"}}],"transitions":[{"from":"state-refusal-check","to":"state-alert","condition":{"field":"refusal-radio","evaluator":"Equals","value":"no"},"priority":1},{"from":"state-refusal-check","to":"state-done","condition":{"always":true},"priority":2},{"from":"state-alert","to":"state-done","condition":{"matrixItem":{"field":"phq9-matrix","itemKey":"suicidal","evaluator":"NotEquals","value":"0"}},"priority":1},{"from":"state-alert","to":"state-done","condition":{"fieldScoreInRange":["phq9-matrix",0,4]},"priority":2}]}}. Field refs are element keys. No Decision state type.',
 ];
 
-export const maxDuration = 30;
+export const maxDuration = 90;
 
 function getSystemPrompt(mode?: string) {
   const catalog = mode === "form" ? formSpecCatalog : playgroundCatalog;
@@ -85,14 +85,14 @@ export async function POST(req: Request) {
   const userPrompt = buildUserPrompt({
     prompt,
     currentSpec: context?.previousSpec,
-    maxPromptLength: MAX_PROMPT_LENGTH,
+    maxPromptLength: mode === "form" ? 4000 : MAX_PROMPT_LENGTH,
   });
 
   const result = streamText({
     model: getModel(),
     system: getSystemPrompt(mode),
     prompt: userPrompt,
-    temperature: 0.7,
+    temperature: mode === "form" ? 0.3 : 0.7,
   });
 
   // Stream the text, then append token usage metadata at the end

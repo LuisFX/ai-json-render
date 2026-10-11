@@ -20,8 +20,11 @@ export const schema = defineSchema(
           type: s.ref("catalog.components"),
           /** Component props */
           props: s.propsOf("catalog.components"),
-          /** Child element keys (flat reference) */
-          children: s.array(s.string()),
+          /** Child element keys (flat reference). Omitted means no children. */
+          children: {
+            ...s.array(s.string()),
+            ...s.optional(),
+          },
           /** Visibility condition */
           visible: s.any(),
         }),
@@ -52,9 +55,40 @@ export const schema = defineSchema(
         }),
         ...s.optional(),
       },
-      /** Optional clinical pathway (FormSpec) - states, transitions, conditions, actions */
+      /**
+       * Optional clinical pathway. states and transitions are arrays.
+       * Condition is one variant: always | field | matrixItem | fieldScoreInRange | scoreInRange | and/or/not.
+       */
       clinicalPathway: {
-        ...s.any(),
+        ...s.object({
+          pathwayId: { ...s.string(), ...s.optional() },
+          pathwayName: { ...s.string(), ...s.optional() },
+          version: { ...s.string(), ...s.optional() },
+          protocolSource: { ...s.string(), ...s.optional() },
+          executionMode: { ...s.any(), ...s.optional() },
+          initialState: { ...s.string(), ...s.optional() },
+          states: s.array(
+            s.object({
+              key: s.string(),
+              label: { ...s.string(), ...s.optional() },
+              order: { ...s.number(), ...s.optional() },
+              type: s.string(),
+              evaluation: { ...s.any(), ...s.optional() },
+              action: { ...s.any(), ...s.optional() },
+              actions: { ...s.any(), ...s.optional() },
+              conditionalAction: { ...s.any(), ...s.optional() },
+              terminal: { ...s.any(), ...s.optional() },
+            }),
+          ),
+          transitions: s.array(
+            s.object({
+              from: s.string(),
+              to: s.string(),
+              condition: s.any(),
+              priority: { ...s.number(), ...s.optional() },
+            }),
+          ),
+        }),
         ...s.optional(),
       },
     }),

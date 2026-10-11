@@ -61,6 +61,9 @@ importers:
       '@ai-sdk/react':
         specifier: 3.0.79
         version: 3.0.79(react@19.2.3)(zod@4.3.5)
+      '@f1studio/form-spec':
+        specifier: 5.0.0-alpha.174
+        version: 5.0.0-alpha.174
       '@json-render/codegen':
         specifier: workspace:*
         version: link:../../packages/codegen
@@ -118,6 +121,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      crypto-js:
+        specifier: 4.2.0
+        version: 4.2.0
       embla-carousel-react:
         specifier: ^8.6.0
         version: 8.6.0(react@19.2.3)
@@ -2395,6 +2401,12 @@ packages:
   '@expo/xcpretty@4.4.0':
     resolution: {integrity: sha512-o2qDlTqJ606h4xR36H2zWTywmZ3v3842K6TU8Ik2n1mfW0S580VHlt3eItVYdLYz+klaPp7CXqanja8eASZjRw==}
     hasBin: true
+
+  '@f1studio/form-spec@5.0.0-alpha.174':
+    resolution: {integrity: sha512-tuelxCRnPSOnkjAWpm7+X1LRH1HP6mfQOFXDAe7UugW3nPmnVTlvKu63bWAfmMMdNyEsgu9QsIwmd508HH30nw==}
+
+  '@fable-org/fable-library-js@1.11.0':
+    resolution: {integrity: sha512-iMz7v+nl4BpTcIRsA/N7CDMS5B980oAf15MXUQEiqw+1uXQ0vnaNQtZW2SfN815FxGUiZkp/S05yR415d3eLWw==}
 
   '@floating-ui/core@1.7.4':
     resolution: {integrity: sha512-C3HlIdsBxszvm5McXlB8PeOEWfBhcGBTZGkGlWc2U0KFY5IwG5OQEuQ8rq52DZmcHDlPLd+YFBK+cZcytwIFWg==}
@@ -5394,6 +5406,9 @@ packages:
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
     engines: {node: '>= 8'}
+
+  crypto-js@4.2.0:
+    resolution: {integrity: sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==}
 
   crypto-random-string@2.0.0:
     resolution: {integrity: sha512-v1plID3y9r/lPhviJ1wrXpLeyUIGAZ2SHNYTEapm7/8A9nLPoyvVp3RK/EPFqn5kEznyWgYZNsRtYYIWbuG8KA==}
@@ -11823,6 +11838,12 @@ snapshots:
       chalk: 4.1.2
       js-yaml: 4.1.1
 
+  '@f1studio/form-spec@5.0.0-alpha.174':
+    dependencies:
+      '@fable-org/fable-library-js': 1.11.0
+
+  '@fable-org/fable-library-js@1.11.0': {}
+
   '@floating-ui/core@1.7.4':
     dependencies:
       '@floating-ui/utils': 0.2.10
@@ -16219,6 +16240,8 @@ snapshots:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
+
+  crypto-js@4.2.0: {}
 
   crypto-random-string@2.0.0: {}
 

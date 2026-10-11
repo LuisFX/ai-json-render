@@ -49,6 +49,114 @@ function collectElementKeys(spec: Record<string, unknown>): Set<string> {
   return new Set(elements ? Object.keys(elements) : []);
 }
 
+type PathwayReport = {
+  ok: boolean;
+  reasons: string[];
+};
+
+function conditionKind(condition: unknown): string | null {
+  if (!condition || typeof condition !== "object") return null;
+  const c = condition as Record<string, unknown>;
+  if (c.always === true) return "always";
+  if (typeof c.field === "string") return "field";
+  if (c.matrixItem && typeof c.matrixItem === "object") return "matrixItem";
+  if (Array.isArray(c.fieldScoreInRange)) return "fieldScoreInRange";
+  if (Array.isArray(c.scoreInRange)) return "scoreInRange";
+  if (Array.isArray(c.and)) return "and";
+  if (Array.isArray(c.or)) return "or";
+  if (c.not) return "not";
+  return null;
+}
+
+function fieldRefsInCondition(condition: unknown): string[] {
+  if (!condition || typeof condition !== "object") return [];
+  const c = condition as Record<string, unknown>;
+  const refs: string[] = [];
+  if (typeof c.field === "string") refs.push(c.field);
+  if (c.matrixItem && typeof c.matrixItem === "object") {
+    const field = (c.matrixItem as { field?: unknown }).field;
+    if (typeof field === "string") refs.push(field);
+  }
+  if (
+    Array.isArray(c.fieldScoreInRange) &&
+    typeof c.fieldScoreInRange[0] === "string"
+  ) {
+    refs.push(c.fieldScoreInRange[0]);
+  }
+  for (const key of ["and", "or"] as const) {
+    if (Array.isArray(c[key])) {
+      for (const child of c[key] as unknown[])
+        refs.push(...fieldRefsInCondition(child));
+    }
+  }
+  if (c.not) refs.push(...fieldRefsInCondition(c.not));
+  return refs;
+}
+
+/** Tier 4: pathway must be the goalpost dialect, not merely present. */
+function scorePathway(
+  spec: Record<string, unknown>,
+  elementKeys: Set<string>,
+): PathwayReport {
+  const reasons: string[] = [];
+  const pathway = spec.clinicalPathway as Record<string, unknown> | undefined;
+  if (!pathway || typeof pathway !== "object") {
+    return { ok: false, reasons: ["clinicalPathway missing"] };
+  }
+  if (
+    typeof pathway.initialState !== "string" ||
+    pathway.initialState.length === 0
+  ) {
+    reasons.push("initialState missing");
+  }
+  if (!Array.isArray(pathway.states)) reasons.push("states is not an array");
+  if (!Array.isArray(pathway.transitions))
+    reasons.push("transitions is not an array");
+  if (reasons.length > 0) return { ok: false, reasons };
+
+  const states = pathway.states as Array<{ key?: string; type?: string }>;
+  const transitions = pathway.transitions as Array<{
+    from?: string;
+    to?: string;
+    condition?: unknown;
+  }>;
+  const types = new Set(states.map((s) => s.type).filter(Boolean));
+  for (const required of ["evaluation", "action", "terminal"] as const) {
+    if (!types.has(required)) reasons.push(`missing state type ${required}`);
+  }
+  const kinds = new Set(
+    transitions.map((t) => conditionKind(t.condition)).filter(Boolean),
+  );
+  for (const required of [
+    "field",
+    "matrixItem",
+    "fieldScoreInRange",
+    "always",
+  ] as const) {
+    if (!kinds.has(required)) reasons.push(`missing condition ${required}`);
+  }
+  const stateKeys = new Set(
+    states.map((s) => s.key).filter((k): k is string => !!k),
+  );
+  if (
+    typeof pathway.initialState === "string" &&
+    !stateKeys.has(pathway.initialState)
+  ) {
+    reasons.push(`initialState ${pathway.initialState} is not a state key`);
+  }
+  for (const t of transitions) {
+    if (t.from && !stateKeys.has(t.from))
+      reasons.push(`transition from unknown state ${t.from}`);
+    if (t.to && !stateKeys.has(t.to))
+      reasons.push(`transition to unknown state ${t.to}`);
+    for (const ref of fieldRefsInCondition(t.condition)) {
+      if (!elementKeys.has(ref))
+        reasons.push(`condition field ref ${ref} is not an element`);
+    }
+  }
+  return { ok: reasons.length === 0, reasons };
+}
+
 async function main() {
   console.log("FormSpec generation test (Tier", TIER, ")");
   console.log("========================");
@@ -183,25 +291,42 @@ async function main() {
     }
   }
 
+  const pathway =
+    TIER >= 4
+      ? scorePathway(compiled, elementKeys)
+      : { ok: true, reasons: [] as string[] };
+  if (TIER >= 4) {
+    console.log("");
+    console.log("Pathway shape:", pathway.ok ? "PASS" : "FAIL");
+    for (const reason of pathway.reasons) console.log("  -", reason);
+  }
+
+  const needsStepsAndScore = TIER >= 2;
   const landmark =
     validation.success &&
     hasMatrix &&
     hasRoot &&
-    (TIER < 4 || hasClinicalPathway) &&
+    (!needsStepsAndScore || (hasSteps && hasScore)) &&
+    (TIER < 4 || (hasClinicalPathway && pathway.ok)) &&
     orphanChildren.length === 0;
 
   console.log("");
   console.log("Landmark (mappable):", landmark ? "YES" : "no");
 
   const savePath = process.env.SAVE_JSON;
-  if (savePath) {
+  if (savePath && landmark) {
     const outPath = savePath.startsWith("/")
       ? savePath
       : `${process.cwd()}/${savePath}`;
     writeFileSync(outPath, JSON.stringify(compiled, null, 2), "utf-8");
     console.log("");
     console.log("Saved compiled spec to:", outPath);
+  } else if (savePath) {
+    console.log("");
+    console.log("Did not write", savePath, "(landmark was no)");
   }
+
+  if (!landmark) process.exit(1);
 }
 
 main().catch((err) => {
