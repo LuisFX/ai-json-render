@@ -183,6 +183,121 @@ export interface ScoreMeta {
   ranges: ScoreRange[];
 }
 
+// ---------------------------------------------------------------------------
+// ClinicalPathway (Phase 4) - maps to F# PathwayExecutor
+// StateType: Evaluation, Action, CompoundAction, ConditionalAction, Terminal
+// (Decision removed as superfluous)
+// ---------------------------------------------------------------------------
+
+/** Field reference: element key (e.g. "phq9-matrix") - mapper resolves to FieldKey */
+export type PathwayFieldRef = string;
+
+/** Transition condition - variant shapes for JSON */
+export type PathwayCondition =
+  | { always: true }
+  | {
+      field: PathwayFieldRef;
+      evaluator:
+        | "Equals"
+        | "NotEquals"
+        | "GreaterThan"
+        | "GreaterOrEqual"
+        | "LessThan"
+        | "LessOrEqual"
+        | "Contains"
+        | "IsPresent"
+        | "IsAbsent"
+        | "InRange";
+      value?: string | number | [number, number];
+    }
+  | { scoreInRange: [number, number] }
+  | { fieldScoreInRange: [PathwayFieldRef, number, number] }
+  | {
+      /** Check specific Matrix item (e.g. PHQ-9 item 9 suicidal ideation) */
+      matrixItem: {
+        field: PathwayFieldRef;
+        itemKey: string;
+        evaluator: "Equals" | "NotEquals";
+        value: string;
+      };
+    }
+  | { and: PathwayCondition[] }
+  | { or: PathwayCondition[] }
+  | { not: PathwayCondition };
+
+/** Clinical pathway action - variant shapes */
+export type PathwayAction =
+  | { referral: { target: string; urgency?: string; reason?: string } }
+  | { task: { category?: string; description: string; priority?: string } }
+  | { alert: { category?: string; message: string; severity?: string } }
+  | { medication: { name: string; dose?: string; route?: string } }
+  | { test: { testName: string; testType?: string } }
+  | { education: { topics: string[] } }
+  | {
+      setFieldValue: {
+        targetField: PathwayFieldRef;
+        value: string | { field: PathwayFieldRef };
+        condition?: PathwayCondition;
+      };
+    };
+
+/** State definition - type discriminates payload */
+export interface PathwayState {
+  key: string;
+  label: string;
+  order: number;
+  type:
+    | "evaluation"
+    | "action"
+    | "compoundAction"
+    | "conditionalAction"
+    | "terminal";
+  /** For type=evaluation */
+  evaluation?: {
+    name: string;
+    parameters?: Array<[PathwayFieldRef, string, string]>;
+    criticalFindings?: string[];
+  };
+  /** For type=action */
+  action?: PathwayAction;
+  /** For type=compoundAction */
+  actions?: PathwayAction[];
+  /** For type=conditionalAction */
+  conditionalAction?: {
+    condition: PathwayCondition;
+    thenAction: PathwayAction;
+    elseAction?: PathwayAction;
+  };
+  /** For type=terminal */
+  terminal?: { outcome: string; documentation?: string };
+}
+
+/** Transition definition */
+export interface PathwayTransition {
+  from: string;
+  to: string;
+  condition: PathwayCondition;
+  priority?: number;
+}
+
+/** Execution mode - simplified for JSON */
+export type PathwayExecutionMode =
+  | { single: { selectionStrategy?: "highestPriority" | "mostSpecific" } }
+  | { multi: { combinationStrategy?: "allMatching" } }
+  | { trigger: { timing: "onFormSave" | "onFormLoad" | "onFormSubmit" } };
+
+/** Clinical pathway spec - top-level in Spec */
+export interface ClinicalPathwaySpec {
+  pathwayId: string;
+  pathwayName: string;
+  version: string;
+  protocolSource?: string;
+  executionMode: PathwayExecutionMode;
+  initialState?: string;
+  states: PathwayState[];
+  transitions: PathwayTransition[];
+}
+
 /**
  * Flat UI tree structure (optimized for LLM generation)
  */
@@ -198,6 +313,8 @@ export interface Spec {
   steps?: StepMeta[];
   /** Optional score config for scored forms (FormSpec) */
   score?: ScoreMeta;
+  /** Optional clinical pathway (FormSpec) - states, transitions, conditions, actions */
+  clinicalPathway?: ClinicalPathwaySpec;
 }
 
 /**

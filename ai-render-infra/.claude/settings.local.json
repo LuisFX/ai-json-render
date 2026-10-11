@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/luisfx/code/luisfx/ai-json-render/skills/json-render-core/**)",
+      "Read(//Users/luisfx/code/luisfx/ai-json-render/skills/skill-creator/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

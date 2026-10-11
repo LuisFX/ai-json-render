@@ -162,9 +162,9 @@ ai-json-render/
    ```
 
 4. **Access Applications**
-   - http://localhost:3000 - Docs & Playground
-   - http://localhost:3001 - Example Dashboard
-   - http://localhost:3002 - Remotion Video Example
+   - http://localhost:51840 - Docs & Playground
+   - http://localhost:51841 - Example Dashboard
+   - http://localhost:51842 - Remotion Video Example
    - Chat: run `pnpm dev` in `examples/chat`
    - React Native: run `npx expo start` in `examples/react-native`
 

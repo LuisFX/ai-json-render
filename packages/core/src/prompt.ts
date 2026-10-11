@@ -2,6 +2,9 @@ import type { Spec } from "./types";
 
 /**
  * Options for building a user prompt.
+ *
+ * For Form mode: use a sufficiently sophisticated user request. See
+ * prompts/form-spec-generation.md for example prompts and feature reference.
  */
 export interface UserPromptOptions {
   /** The user's text prompt */

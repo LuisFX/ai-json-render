@@ -21,6 +21,61 @@ export const formSpecFullFixture: Spec = {
       { min: 20, max: 30, label: "High risk", tag: "danger" },
     ],
   },
+  clinicalPathway: {
+    pathwayId: "assessment-pathway",
+    pathwayName: "Assessment Follow-up",
+    version: "1.0",
+    protocolSource: "Clinical guidelines",
+    executionMode: { single: { selectionStrategy: "highestPriority" } },
+    initialState: "state-start",
+    states: [
+      {
+        key: "state-start",
+        label: "Evaluate",
+        order: 0,
+        type: "evaluation",
+        evaluation: {
+          name: "Total score",
+          parameters: [["matrix-scale", "GreaterOrEqual", "10"]],
+          criticalFindings: ["High score may indicate need for referral"],
+        },
+      },
+      {
+        key: "state-refer",
+        label: "Refer to specialist",
+        order: 1,
+        type: "action",
+        action: {
+          referral: {
+            target: "Mental Health Specialist",
+            urgency: "routine",
+            reason: "Assessment score indicates moderate to high risk",
+          },
+        },
+      },
+      {
+        key: "state-complete",
+        label: "Complete",
+        order: 2,
+        type: "terminal",
+        terminal: { outcome: "Low risk - no action needed" },
+      },
+    ],
+    transitions: [
+      {
+        from: "state-start",
+        to: "state-refer",
+        condition: { scoreInRange: [10, 27] },
+        priority: 1,
+      },
+      {
+        from: "state-start",
+        to: "state-complete",
+        condition: { scoreInRange: [0, 9] },
+        priority: 2,
+      },
+    ],
+  },
   state: {
     name: "",
     email: "",

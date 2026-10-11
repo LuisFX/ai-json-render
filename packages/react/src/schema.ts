@@ -52,6 +52,11 @@ export const schema = defineSchema(
         }),
         ...s.optional(),
       },
+      /** Optional clinical pathway (FormSpec) - states, transitions, conditions, actions */
+      clinicalPathway: {
+        ...s.any(),
+        ...s.optional(),
+      },
     }),
 
     // What the CATALOG must provide

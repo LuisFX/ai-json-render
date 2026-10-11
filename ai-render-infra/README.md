@@ -1,6 +1,6 @@
 # PostgreSQL for dashboard example
 
-Port **15432**. From repo root:
+Port **51832**. From repo root:
 
 ```bash
 pnpm db:setup   # start postgres + apply schema (run once)

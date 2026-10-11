@@ -5,11 +5,12 @@
   "private": true,
   "license": "Apache-2.0",
   "scripts": {
-    "dev": "next dev --turbopack --port 3000",
+    "dev": "next dev --turbopack --port 51840",
     "build": "next build",
     "start": "next start",
     "lint": "eslint --max-warnings 0",
-    "check-types": "next typegen && tsc --noEmit"
+    "check-types": "next typegen && tsc --noEmit",
+    "test:form-gen": "tsx scripts/test-form-generation.ts"
   },
   "dependencies": {
     "@ai-sdk/react": "3.0.79",
@@ -51,6 +52,7 @@
     "zod": "^4.0.0"
   },
   "devDependencies": {
+    "tsx": "^4.21.0",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@tailwindcss/postcss": "^4.1.18",

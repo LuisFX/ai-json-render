@@ -913,7 +913,7 @@ npm install
 npm run dev
 \`\`\`
 
-Open [http://localhost:3000](http://localhost:3000) to view.
+Open [http://localhost:51840](http://localhost:51840) to view.
 `,
     });
 

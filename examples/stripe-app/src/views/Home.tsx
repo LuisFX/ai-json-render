@@ -503,7 +503,7 @@ const Home = (_props: ExtensionContextValue) => {
     setError(null);
 
     try {
-      const response = await fetch("http://localhost:3000/api/generate", {
+      const response = await fetch("http://localhost:51840/api/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

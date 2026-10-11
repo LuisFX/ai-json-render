@@ -95,10 +95,11 @@ const EXAMPLE_PROMPTS_UI = [
 
 const EXAMPLE_PROMPTS_FORM = [
   "Create a clinical assessment form with demographics, symptoms checklist, and signature",
-  "Build a multi-step intake form with 3 steps: contact info, medical history, consent",
-  "Design a scored risk assessment form with Radio/Select options that have scores and ScoreSummary ranges",
-  "Make a patient registration form with Input, Textarea, Select, Checkbox, and Matrix for severity scales",
-  "Build a PHQ-9 style depression screening: Matrix with 9 items (questions), options 0-4 with scores, ScoreSummary with ranges 0-4 minimal, 5-9 mild, 10-14 moderate, 15-19 moderately severe, 20-27 severe",
+  "Build a multi-step intake form with 3 steps: contact info, medical history, consent. Output /steps.",
+  "Design a scored risk assessment form with Radio options that have scores. Output /score and ScoreSummary with ranges.",
+  "Build a PHQ-9 style depression screening: Matrix with 9 items (Little interest, Feeling down, Sleep, Tired, Appetite, Self-worth, Concentration, Slow/fast, Suicidal thoughts), options 0-3 with scores. ScoreSummary with ranges 0-4 minimal, 5-9 mild, 10-14 moderate, 15-19 moderately severe, 20-27 severe.",
+  "PHQ-9 with clinical pathway (goalpost): Refusal Radio, Matrix (9 items incl. suicidal), ScoreSummary. Output /clinicalPathway: initialState state-refusal-check; refusal=no->phq9-collect, refusal=yes->declined; matrixItem suicidal != 0->suicidal-alert; fieldScoreInRange [0,4]->minimal, [5,9]->mild, [10,14]->moderate, [15,19]->moderately-severe, [20,27]->severe; actions->complete or escalated.",
+  "Create a form with ALL FormSpec features: Step, Form, Input, Textarea, Radio, Select, Checkbox, CheckboxList, Matrix, Signature, Message, ReadOnly, ScoreSummary. Output /steps, /score, /clinicalPathway.",
 ];
 
 export function Playground() {

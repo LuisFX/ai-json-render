@@ -148,19 +148,20 @@ flowchart TB
 
 ---
 
-## Phase 4: ClinicalPathway
+## Phase 4: ClinicalPathway (DONE)
 
 **Deliverable:** Top-level `clinicalPathway` object in spec. No execution in playground; JSON structure only for mapper.
 
 ### 4.1 Define clinicalPathway JSON Shape
 
 - States, Transitions, Conditions, Actions per [docs/form-spec/00-BRAINSTORM.md](docs/form-spec/00-BRAINSTORM.md)
+- StateType: Evaluation, Action, CompoundAction, ConditionalAction, Terminal (Decision removed)
 - Add to Spec type and schema as optional
-- Prompt rules: "For clinical pathways, output clinicalPathway with states, transitions, conditions, actions. Reference field keys and score ranges in conditions."
+- Prompt rules: "For clinical pathways, output clinicalPathway with states, transitions, conditions, actions. Reference element keys as field refs. Example: transition condition { scoreInRange: [10,27] } to state with action { referral: { target, urgency, reason } }."
 
 ### 4.2 Validation
 
-- Schema validates structure. No pathway execution in playground.
+- Schema validates structure (s.any for optional clinicalPathway). No pathway execution in playground.
 
 ---
 
@@ -172,7 +173,7 @@ flowchart TB
 | 1     | —                                       | types.ts, schema.ts, catalog.ts, registry.tsx, route.ts, hooks.ts (if needed) |
 | 2     | form-spec-catalog.ts, form-registry.tsx | Playground page, route.ts                                                     |
 | 3     | —                                       | types.ts, schema.ts, form-spec-catalog prompt                                 |
-| 4     | —                                       | types.ts, schema.ts, form-spec-catalog prompt                                 |
+| 4     | —                                       | types.ts, schema.ts, form-spec-fixture, route.ts, playground.tsx               |
 
 
 ---

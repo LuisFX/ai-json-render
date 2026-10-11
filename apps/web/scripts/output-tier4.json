@@ -1,0 +1,322 @@
+{
+  "root": "phq9-form",
+  "elements": {
+    "phq9-form": {
+      "type": "Form",
+      "props": {
+        "submitAction": "formSubmit",
+        "submitActionParams": {}
+      },
+      "children": [
+        "phq9-steps"
+      ]
+    },
+    "phq9-steps": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "lg"
+      },
+      "children": [
+        "step-refusal",
+        "step-phq9",
+        "step-impairment",
+        "step-scoring"
+      ]
+    },
+    "step-refusal": {
+      "type": "Step",
+      "props": {
+        "label": "Patient Screening",
+        "order": 1,
+        "description": "Does the patient consent to screening?"
+      },
+      "children": [
+        "refusal-radio",
+        "refusal-message"
+      ]
+    },
+    "refusal-radio": {
+      "type": "Radio",
+      "props": {
+        "label": "Patient willing to complete PHQ-9?",
+        "name": "refusal",
+        "options": [
+          {
+            "value": "no",
+            "description": "No, patient declines"
+          },
+          {
+            "value": "yes",
+            "description": "Yes, proceed with assessment"
+          }
+        ],
+        "value": {
+          "$bindState": "/refusal"
+        }
+      },
+      "on": {
+        "change": {
+          "action": "setState",
+          "params": {
+            "statePath": "/refusal",
+            "value": {
+              "$state": "/refusal"
+            }
+          }
+        }
+      }
+    },
+    "refusal-message": {
+      "type": "Message",
+      "props": {
+        "heading": "Screening Status",
+        "message": "Patient consent is required to proceed with the PHQ-9 assessment.",
+        "messageType": "info"
+      },
+      "visible": {
+        "$state": "/refusal",
+        "not": true
+      }
+    },
+    "step-phq9": {
+      "type": "Step",
+      "props": {
+        "label": "Depression Symptom Assessment",
+        "order": 2,
+        "description": "Over the last two weeks, how often have you been bothered by the following problems?"
+      },
+      "visible": {
+        "$state": "/refusal",
+        "eq": "yes"
+      },
+      "children": [
+        "phq9-matrix"
+      ]
+    },
+    "phq9-matrix": {
+      "type": "Matrix",
+      "props": {
+        "label": "PHQ-9 Depression Symptoms",
+        "name": "phq9",
+        "items": [
+          {
+            "key": "little-interest",
+            "label": "Little interest or pleasure in doing things"
+          },
+          {
+            "key": "feeling-down",
+            "label": "Feeling down, depressed, or hopeless"
+          },
+          {
+            "key": "sleep",
+            "label": "Trouble falling or staying asleep, or sleeping too much"
+          },
+          {
+            "key": "tired",
+            "label": "Feeling tired or having little energy"
+          },
+          {
+            "key": "appetite",
+            "label": "Poor appetite or overeating"
+          },
+          {
+            "key": "self-worth",
+            "label": "Feeling bad about yourself, or that you are a failure, or have let your family down"
+          },
+          {
+            "key": "concentration",
+            "label": "Trouble concentrating on things, such as reading the newspaper or watching television"
+          },
+          {
+            "key": "slow-or-fast",
+            "label": "Moving or speaking so slowly that other people could have noticed, or the opposite—being so fidgety or restless that you have been moving around a lot more than usual"
+          },
+          {
+            "key": "suicidal",
+            "label": "Thoughts that you would be better off dead, or of hurting yourself"
+          }
+        ],
+        "options": [
+          {
+            "value": 0,
+            "description": "Not at all",
+            "score": 0
+          },
+          {
+            "value": 1,
+            "description": "Several days",
+            "score": 1
+          },
+          {
+            "value": 2,
+            "description": "More than half the days",
+            "score": 2
+          },
+          {
+            "value": 3,
+            "description": "Nearly every day",
+            "score": 3
+          }
+        ],
+        "value": {
+          "$bindState": "/phq9/responses"
+        }
+      }
+    },
+    "step-impairment": {
+      "type": "Step",
+      "props": {
+        "label": "Functional Impairment",
+        "order": 3,
+        "description": "How difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?"
+      },
+      "visible": {
+        "$state": "/refusal",
+        "eq": "yes"
+      },
+      "children": [
+        "impairment-radio"
+      ]
+    },
+    "impairment-radio": {
+      "type": "Radio",
+      "props": {
+        "label": "Difficulty with work, home, or relationships",
+        "name": "impairment",
+        "options": [
+          {
+            "value": "not-difficult",
+            "description": "Not difficult at all"
+          },
+          {
+            "value": "somewhat-difficult",
+            "description": "Somewhat difficult"
+          },
+          {
+            "value": "very-difficult",
+            "description": "Very difficult"
+          },
+          {
+            "value": "extremely-difficult",
+            "description": "Extremely difficult"
+          }
+        ],
+        "value": {
+          "$bindState": "/impairment"
+        }
+      },
+      "on": {
+        "change": {
+          "action": "setState",
+          "params": {
+            "statePath": "/impairment",
+            "value": {
+              "$state": "/impairment"
+            }
+          }
+        }
+      }
+    },
+    "step-scoring": {
+      "type": "Step",
+      "props": {
+        "label": "Assessment Results",
+        "order": 4,
+        "description": "Your PHQ-9 assessment summary and recommendations"
+      },
+      "visible": {
+        "$state": "/refusal",
+        "eq": "yes"
+      },
+      "children": [
+        "score-summary",
+        "severity-message"
+      ]
+    },
+    "score-summary": {
+      "type": "ScoreSummary",
+      "props": {
+        "maxScore": 27,
+        "currentScore": {
+          "$state": "/phq9/totalScore"
+        },
+        "ranges": [
+          {
+            "min": 0,
+            "max": 4,
+            "label": "Minimal",
+            "tag": "success"
+          },
+          {
+            "min": 5,
+            "max": 9,
+            "label": "Mild",
+            "tag": "info"
+          },
+          {
+            "min": 10,
+            "max": 14,
+            "label": "Moderate",
+            "tag": "warning"
+          },
+          {
+            "min": 15,
+            "max": 19,
+            "label": "Moderately Severe",
+            "tag": "warning"
+          },
+          {
+            "min": 20,
+            "max": 27,
+            "label": "Severe",
+            "tag": "danger"
+          }
+        ]
+      }
+    },
+    "severity-message": {
+      "type": "Message",
+      "props": {
+        "heading": "Clinical Recommendation",
+        "message": "Assessment complete. Please review results with your healthcare provider.",
+        "messageType": "success"
+      }
+    }
+  },
+  "score": {
+    "maxScore": 27,
+    "ranges": [
+      {
+        "min": 0,
+        "max": 4,
+        "label": "Minimal",
+        "tag": "success"
+      },
+      {
+        "min": 5,
+        "max": 9,
+        "label": "Mild",
+        "tag": "info"
+      },
+      {
+        "min": 10,
+        "max": 14,
+        "label": "Moderate",
+        "tag": "warning"
+      },
+      {
+        "min": 15,
+        "max": 19,
+        "label": "Moderately Severe",
+        "tag": "warning"
+      },
+      {
+        "min": 20,
+        "max": 27,
+        "label": "Severe",
+        "tag": "danger"
+      }
+    ]
+  }
+}

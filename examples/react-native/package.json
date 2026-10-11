@@ -4,9 +4,9 @@
   "private": true,
   "main": "expo-router/entry",
   "scripts": {
-    "start": "expo start",
-    "ios": "expo start --ios",
-    "android": "expo start --android",
+    "start": "expo start --port 52881",
+    "ios": "expo start --ios --port 52881",
+    "android": "expo start --android --port 52881",
     "check-types": "tsc --noEmit"
   },
   "dependencies": {

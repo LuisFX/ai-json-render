@@ -1,4 +1,4 @@
-import { defineCatalog } from "@json-render/core";
+import { defineCatalog, DynamicNumberSchema } from "@json-render/core";
 import { schema } from "@json-render/react/schema";
 import { z } from "zod";
 
@@ -13,6 +13,32 @@ const fieldOption = z.object({
   optionKey: z.string().nullable(),
   score: z.number().nullable(),
 });
+
+/** Matrix item: accepts value/description OR key/label (LLM often uses key/label) */
+const matrixItem = z
+  .object({
+    value: z.string().optional(),
+    description: z.string().nullable().optional(),
+    key: z.string().optional(),
+    label: z.string().optional(),
+  })
+  .transform((v) => ({
+    value: v.value ?? v.key ?? "",
+    description: v.description ?? v.label ?? null,
+  }));
+
+/** Matrix option: accepts value as number or string, score for PHQ-9-style scoring */
+const matrixOption = z
+  .object({
+    value: z.union([z.string(), z.number()]),
+    description: z.string().nullable().optional(),
+    score: z.number().nullable().optional(),
+  })
+  .transform((v) => ({
+    value: String(v.value),
+    description: v.description ?? null,
+    score: v.score ?? null,
+  }));
 
 export const formSpecCatalog = defineCatalog(schema, {
   components: {
@@ -175,8 +201,8 @@ export const formSpecCatalog = defineCatalog(schema, {
       props: z.object({
         label: z.string(),
         name: z.string(),
-        items: z.array(fieldOption),
-        options: z.array(fieldOption),
+        items: z.array(matrixItem),
+        options: z.array(matrixOption),
         value: z.record(z.string(), z.string()).nullable(),
       }),
       slots: [],
@@ -223,7 +249,7 @@ export const formSpecCatalog = defineCatalog(schema, {
     ScoreSummary: {
       props: z.object({
         maxScore: z.number(),
-        currentScore: z.number().nullable(),
+        currentScore: DynamicNumberSchema.nullable(),
         ranges: z
           .array(
             z.object({

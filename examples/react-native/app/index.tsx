@@ -26,10 +26,10 @@ function getApiBaseUrl(): string {
     Constants.manifest2?.extra?.expoGo?.debuggerHost;
   if (debuggerHost) {
     const host = debuggerHost.split(":").shift();
-    // Metro dev server runs on port 8081 by default
-    return `http://${host}:8081`;
+    // Metro dev server runs on the project-scoped port.
+    return `http://${host}:52881`;
   }
-  return "http://localhost:8081";
+  return "http://localhost:52881";
 }
 
 const API_BASE = getApiBaseUrl();

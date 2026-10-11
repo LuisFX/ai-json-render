@@ -36,17 +36,22 @@ import {
 } from "@/components/ui/table";
 
 type FieldOption = {
-  value: string;
+  value?: string | number;
   description?: string | null;
   score?: number | null;
+  key?: string;
+  label?: string;
 };
 
 function getOptionValue(opt: FieldOption | string): string {
-  return typeof opt === "string" ? opt : opt.value;
+  if (typeof opt === "string") return opt;
+  const v = opt.value ?? opt.key;
+  return v != null ? String(v) : "";
 }
 
 function getOptionLabel(opt: FieldOption | string): string {
-  return typeof opt === "string" ? opt : (opt.description ?? opt.value);
+  if (typeof opt === "string") return opt;
+  return (opt.description ?? opt.label ?? opt.value ?? opt.key ?? "") as string;
 }
 
 export const { registry: formRegistry, executeAction } = defineRegistry(
@@ -485,7 +490,8 @@ export const { registry: formRegistry, executeAction } = defineRegistry(
         </div>
       ),
       ScoreSummary: ({ props }) => {
-        const current = props.currentScore ?? null;
+        const current =
+          typeof props.currentScore === "number" ? props.currentScore : null;
         const max = props.maxScore ?? 0;
         const ranges = (props.ranges ?? []) as Array<{
           min: number;

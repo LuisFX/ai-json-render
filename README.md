@@ -308,9 +308,9 @@ pnpm db:setup   # postgres + schema (run once)
 pnpm dev
 ```
 
-- http://localhost:3000 - Docs & Playground
-- http://localhost:3001 - Example Dashboard
-- http://localhost:3002 - Remotion Video Example
+- http://localhost:51840 - Docs & Playground
+- http://localhost:51841 - Example Dashboard
+- http://localhost:51842 - Remotion Video Example
 - Chat Example: run `pnpm dev` in `examples/chat`
 - React Native example: run `npx expo start` in `examples/react-native`
 
